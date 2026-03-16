@@ -1,0 +1,78 @@
+{%- liquid
+  assign product = block.settings.product
+
+  capture children
+    content_for 'blocks'
+  endcapture
+-%}
+
+<li class="product-grid__item">
+  {% render 'product-card',
+    children: children,
+    product: product
+  %}
+</li>
+
+{% schema %}
+{
+  "name": "t:names.product",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-card-group"
+    },
+    {
+      "type": "_product-card-title"
+    },
+    {
+      "type": "_product-card-price"
+    },
+    {
+      "type": "_product-card-rating"
+    },
+    {
+      "type": "_product-card-swatches"
+    },
+    {
+      "type": "_product-card-sku"
+    },
+    {
+      "type": "_product-card-quick-add"
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:settings.product"
+    },
+    {
+      "type": "range",
+      "id": "product_card_gap",
+      "label": "t:settings.gap",
+      "min": 4,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "checkbox",
+      "id": "inherit_color_scheme",
+      "label": "t:settings.inherit_color_scheme",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
+    }
+  ]
+}
+{% endschema %}

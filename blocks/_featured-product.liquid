@@ -25,7 +25,7 @@
   {% endif %}
 {% endcapture %}
 
-{% render 'product-card', children: product_card_children, product: closest.product, product_card_gap: 8 %}
+{% render 'product-card', children: product_card_children, product: closest.product, product_card_gap: 8, block: block %}
 
 {% stylesheet %}
   .featured-product-content-top {

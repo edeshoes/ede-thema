@@ -1,173 +1,57 @@
-{%- doc -%}
-  Renders block content for all blocks that extend the group block.
-  (Grid-based Absolute Alignment - Optimized)
-{%- enddoc -%}
+{% liquid
+  assign product_resource = product | default: closest.product
 
-<div
-  class="
-    group-block
-    group-block--height-{{ settings.height }}
-    group-block--width-{{ settings.width }}
-    group-block--d-pos-{{ settings.content_position_desktop }}
-    group-block--m-pos-{{ settings.content_position_mobile }}
-    border-style
-    spacing-style
-    size-style
-    {% if settings.background_image_hover != blank %} group-block--has-hover{% endif %}
-    {% if settings.inherit_color_scheme == false %} color-{{ settings.color_scheme }}{% endif %}
-    {{ class }}
-  "
-  style="
-    {% render 'border-override', settings: settings %}
-    {% render 'spacing-style', settings: settings %}
-    {% render 'size-style', settings: settings %}
-    --hover-speed: {{ settings.hover_transition_speed | default: 0.4 }}s;
-    --vertical-align: {{ settings.overlay_alignment | default: 'center' }};
-    {{ style }}
-  "
-  {{ shopify_attributes }}
+  assign product_url = product_resource.selected_or_first_available_variant.url
+  unless product_url
+    assign product_url = product_resource.first_available_variant.url
+  endunless
+  unless product_url
+    assign product_url = product_resource.url
+  endunless
+
+  assign anchor_id = product_resource.id
+  if block != blank and block.id != blank
+    assign anchor_id = block.id | append: '-' | append: product_resource.id
+  elsif section_id != blank
+    assign anchor_id = section_id | append: '-' | append: product_resource.id
+  endif
+
+  assign card_gap = product_card_gap
+  if card_gap == blank and block != blank
+    assign card_gap = block.settings.product_card_gap
+  endif
+  assign card_gap = card_gap | default: 16
+
+  if settings.transition_to_main_product
+    assign featured_media_url = product_resource.selected_or_first_available_variant.featured_image | image_url: width: 500
+    if featured_media_url == blank
+      assign featured_media_url = product_resource.featured_media.preview_image | image_url: width: 500
+    endif
+  endif
+%}
+
+<product-card
+  class="product-card{% if block != blank and block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}{% endif %}"
+  data-product-id="{{ product_resource.id }}"
+  style="--product-card-gap: {{ card_gap }}px;"
+  {% if settings.transition_to_main_product %}
+    data-product-transition="true"
+    {% if featured_media_url != blank %}
+      data-featured-media-url="{{ featured_media_url }}"
+    {% endif %}
+    on:click="/handleViewTransition"
+  {% endif %}
+  {{ block.shopify_attributes }}
 >
-  {%- if settings.link != blank -%}
-    <a href="{{ settings.link }}" class="group-block__link" {% if settings.open_in_new_tab %}target="_blank"{% endif %}></a>
-  {%- endif -%}
+  <a
+    class="product-card__link"
+    href="{{ product_url }}"
+    id="{{ anchor_id }}"
+    ref="productCardLink"
+    aria-label="{{ product_resource.title }}"
+  ></a>
 
-  {%- comment -%} Medya Katmanı {%- endcomment -%}
-  <div class="group-block__media-wrapper">
-    <div class="group-block__media-main">
-      {% render 'background-media',
-        background_media: settings.background_media,
-        background_video: settings.video,
-        background_video_position: settings.video_position,
-        background_image: settings.background_image,
-        background_image_position: settings.background_image_position,
-        placeholder: settings.placeholder
-      %}
-    </div>
-
-    {% if settings.background_media == 'image' and settings.background_image_hover != blank %}
-      <div class="group-block__media-hover">
-        {% render 'background-media',
-          background_media: 'image',
-          background_image: settings.background_image_hover,
-          background_image_position: settings.background_image_position
-        %}
-      </div>
-    {% endif %}
-
-    {% if settings.toggle_overlay %}
-      {% render 'overlay', settings: settings, layer: '0' %}
-    {% endif %}
-  </div>
-
-  {%- comment -%} İçerik Katmanı {%- endcomment -%}
-  <div
-    class="
-      group-block-content
-      {% if request.design_mode %}group-block-content--design-mode{% endif %}
-      layout-panel-flex
-      layout-panel-flex--{{ settings.content_direction | default: 'column' }}
-      {% if settings.vertical_on_mobile %} mobile-column{% endif %}
-    "
-    style="{% render 'layout-panel-style', settings: settings %}"
-  >
+  <div class="product-grid__card product-card__content">
     {{- children -}}
   </div>
-</div>
-
-{% stylesheet %}
-  .group-block {
-    position: relative;
-    display: grid;
-    grid-template-areas: "stack";
-    overflow: hidden;
-    width: 100%;
-    /* Temadaki height settings'i desteklemesi için */
-    min-height: var(--min-height, 400px); 
-  }
-
-  /* Hem Medya hem İçerik aynı alana (stack) biniyor */
-  .group-block__media-wrapper,
-  .group-block-content {
-    grid-area: stack;
-  }
-
-  /* MEDYA AYARLARI */
-  .group-block__media-wrapper {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-  }
-
-  .group-block__media-main, 
-  .group-block__media-hover {
-    position: absolute;
-    inset: 0;
-  }
-
-  .group-block__media-hover {
-    opacity: 0;
-    transition: opacity var(--hover-speed) ease;
-    z-index: 2;
-  }
-
-  .group-block--has-hover:hover .group-block__media-hover {
-    opacity: 1;
-  }
-
-  /* İÇERİK AYARLARI (Overlay Durumu) */
-  .group-block-content {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    pointer-events: none;
-    padding: 24px;
-    height: 100%;
-    width: 100%;
-    /* DİKEY HİZALAMA BURADA ÇALIŞIR */
-    justify-content: var(--vertical-align); 
-  }
-
-  .group-block-content > * {
-    pointer-events: auto;
-  }
-
-  /* RESMİN ALTINDA (AFTER) DURUMU */
-  /* Desktop */
-  @media (min-width: 768px) {
-    .group-block--d-pos-after {
-      display: flex;
-      flex-direction: column;
-    }
-    .group-block--d-pos-after .group-block__media-wrapper {
-      height: auto;
-      aspect-ratio: 1/1; /* Kare oran, istersen değiştirebilirsin */
-    }
-    .group-block--d-pos-after .group-block-content {
-      padding: 15px 0;
-    }
-  }
-
-  /* Mobil */
-  @media (max-width: 767px) {
-    .group-block--m-pos-after {
-      display: flex;
-      flex-direction: column;
-    }
-    .group-block--m-pos-after .group-block__media-wrapper {
-      height: auto;
-      aspect-ratio: 1/1;
-    }
-    .group-block--m-pos-after .group-block-content {
-      padding: 12px 0;
-    }
-  }
-
-  /* Link en üstte */
-  .group-block__link {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-  }
-{% endstylesheet %}
+</product-card>
