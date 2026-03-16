@@ -1,0 +1,173 @@
+{%- doc -%}
+  Renders block content for all blocks that extend the group block.
+  (Grid-based Absolute Alignment - Optimized)
+{%- enddoc -%}
+
+<div
+  class="
+    group-block
+    group-block--height-{{ settings.height }}
+    group-block--width-{{ settings.width }}
+    group-block--d-pos-{{ settings.content_position_desktop }}
+    group-block--m-pos-{{ settings.content_position_mobile }}
+    border-style
+    spacing-style
+    size-style
+    {% if settings.background_image_hover != blank %} group-block--has-hover{% endif %}
+    {% if settings.inherit_color_scheme == false %} color-{{ settings.color_scheme }}{% endif %}
+    {{ class }}
+  "
+  style="
+    {% render 'border-override', settings: settings %}
+    {% render 'spacing-style', settings: settings %}
+    {% render 'size-style', settings: settings %}
+    --hover-speed: {{ settings.hover_transition_speed | default: 0.4 }}s;
+    --vertical-align: {{ settings.overlay_alignment | default: 'center' }};
+    {{ style }}
+  "
+  {{ shopify_attributes }}
+>
+  {%- if settings.link != blank -%}
+    <a href="{{ settings.link }}" class="group-block__link" {% if settings.open_in_new_tab %}target="_blank"{% endif %}></a>
+  {%- endif -%}
+
+  {%- comment -%} Medya Katmanı {%- endcomment -%}
+  <div class="group-block__media-wrapper">
+    <div class="group-block__media-main">
+      {% render 'background-media',
+        background_media: settings.background_media,
+        background_video: settings.video,
+        background_video_position: settings.video_position,
+        background_image: settings.background_image,
+        background_image_position: settings.background_image_position,
+        placeholder: settings.placeholder
+      %}
+    </div>
+
+    {% if settings.background_media == 'image' and settings.background_image_hover != blank %}
+      <div class="group-block__media-hover">
+        {% render 'background-media',
+          background_media: 'image',
+          background_image: settings.background_image_hover,
+          background_image_position: settings.background_image_position
+        %}
+      </div>
+    {% endif %}
+
+    {% if settings.toggle_overlay %}
+      {% render 'overlay', settings: settings, layer: '0' %}
+    {% endif %}
+  </div>
+
+  {%- comment -%} İçerik Katmanı {%- endcomment -%}
+  <div
+    class="
+      group-block-content
+      {% if request.design_mode %}group-block-content--design-mode{% endif %}
+      layout-panel-flex
+      layout-panel-flex--{{ settings.content_direction | default: 'column' }}
+      {% if settings.vertical_on_mobile %} mobile-column{% endif %}
+    "
+    style="{% render 'layout-panel-style', settings: settings %}"
+  >
+    {{- children -}}
+  </div>
+</div>
+
+{% stylesheet %}
+  .group-block {
+    position: relative;
+    display: grid;
+    grid-template-areas: "stack";
+    overflow: hidden;
+    width: 100%;
+    /* Temadaki height settings'i desteklemesi için */
+    min-height: var(--min-height, 400px); 
+  }
+
+  /* Hem Medya hem İçerik aynı alana (stack) biniyor */
+  .group-block__media-wrapper,
+  .group-block-content {
+    grid-area: stack;
+  }
+
+  /* MEDYA AYARLARI */
+  .group-block__media-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .group-block__media-main, 
+  .group-block__media-hover {
+    position: absolute;
+    inset: 0;
+  }
+
+  .group-block__media-hover {
+    opacity: 0;
+    transition: opacity var(--hover-speed) ease;
+    z-index: 2;
+  }
+
+  .group-block--has-hover:hover .group-block__media-hover {
+    opacity: 1;
+  }
+
+  /* İÇERİK AYARLARI (Overlay Durumu) */
+  .group-block-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    padding: 24px;
+    height: 100%;
+    width: 100%;
+    /* DİKEY HİZALAMA BURADA ÇALIŞIR */
+    justify-content: var(--vertical-align); 
+  }
+
+  .group-block-content > * {
+    pointer-events: auto;
+  }
+
+  /* RESMİN ALTINDA (AFTER) DURUMU */
+  /* Desktop */
+  @media (min-width: 768px) {
+    .group-block--d-pos-after {
+      display: flex;
+      flex-direction: column;
+    }
+    .group-block--d-pos-after .group-block__media-wrapper {
+      height: auto;
+      aspect-ratio: 1/1; /* Kare oran, istersen değiştirebilirsin */
+    }
+    .group-block--d-pos-after .group-block-content {
+      padding: 15px 0;
+    }
+  }
+
+  /* Mobil */
+  @media (max-width: 767px) {
+    .group-block--m-pos-after {
+      display: flex;
+      flex-direction: column;
+    }
+    .group-block--m-pos-after .group-block__media-wrapper {
+      height: auto;
+      aspect-ratio: 1/1;
+    }
+    .group-block--m-pos-after .group-block-content {
+      padding: 12px 0;
+    }
+  }
+
+  /* Link en üstte */
+  .group-block__link {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+  }
+{% endstylesheet %}
