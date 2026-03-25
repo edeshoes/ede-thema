@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "{% if product.metafields.custom.gender != blank %}\n  <div style=\"\n    width: 100%;\n    text-align: left;\n    font-size: 14px;\n    opacity: 0.68;\n    margin: 2px 0 8px 0;\n    line-height: 1.1;\n  \">\n    {{ product.metafields.custom.gender }}\n  </div>\n{% endif %}"
+                "custom_liquid": "{% if product.metafields.custom.gender != blank %}\n  <div style=\"\n    width: 100%;\n    text-align: center;\n    font-size: 14px;\n    opacity: 0.68;\n    margin: 2px 0 8px 0;\n    line-height: 1.1;\n  \">\n    {{ product.metafields.custom.gender }}\n  </div>\n{% endif %}"
               },
               "blocks": {}
             },
