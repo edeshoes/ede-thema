@@ -72,7 +72,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>{{ product.metafields.custom.gender.value }}</p>",
+                "text": "<p>{{ product.metafields.custom.series.value }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
