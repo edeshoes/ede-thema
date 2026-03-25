@@ -5087,4 +5087,20 @@ h1, h2, h3, h4 {
   font-size: 15px !important;
   opacity: 0.72 !important;
   text-align: left !important;
+}.product-series-label {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.38;
+  text-align: right;
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+.product-gender-label {
+  font-size: 15px;
+  opacity: 0.72;
+  text-align: left;
+  margin: 0 0 14px 0;
+  width: 100%;
 }
