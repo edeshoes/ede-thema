@@ -203,4 +203,41 @@
 
 })();
 </script>
+@media (min-width: 990px) {
+  .product-details {
+    scroll-behavior: smooth;
+  }
+}@media (min-width: 990px) {
+  .product-details {
+    position: relative;
+  }
+
+  .product-details::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #f5f1eb);
+  }
+}.product-details {
+  scrollbar-width: none; /* Firefox */
+}
+
+.product-details::-webkit-scrollbar {
+  display: none; /* Chrome */
+}rightCol.addEventListener('mouseenter', () => {
+  rightCol.style.scrollBehavior = 'smooth';
+});
+
+rightCol.addEventListener('mouseleave', () => {
+  rightCol.style.scrollBehavior = 'auto';
+});
+@media (min-width: 990px) {
+  .product-details {
+    box-shadow: -8px 0 20px rgba(0,0,0,0.03);
+  }
+}
    </body>
