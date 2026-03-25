@@ -283,8 +283,16 @@ rightCol.addEventListener('mouseleave', () => {
   white-space: nowrap;
 }
 </style>
-.product-eyebrow {
-  font-family: "Space Grotesk", sans-serif;
-  letter-spacing: 2.6px;
-}
+document.addEventListener('wheel', function(e) {
+  const right = document.querySelector('#ProductInformation-template--18452952907874__main');
+
+  if (!right) return;
+
+  const rect = right.getBoundingClientRect();
+  const isOnRight = e.clientX > rect.left;
+
+  if (isOnRight) {
+    e.stopPropagation();
+  }
+}, { passive: true });
    </body>
