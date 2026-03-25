@@ -136,44 +136,76 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-    <script>
+    <style>
+@media (min-width: 990px) {
+  #ProductInformation-template--18452952097874__main {
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+</style>
+
+<script>
 (function () {
-  function initSmartScroll() {
+  function initSmartProductScroll() {
     if (window.innerWidth < 990) return;
 
-    const rightCol = document.querySelector('[id^="ProductInformation-template"]');
-
-    // 🔥 SOL TARAFI DOĞRU YAKALAMA
-    const leftCol = document.querySelector('.product-media-container')?.closest('ul') 
-                 || document.querySelector('.product__media-list')
-                 || document.querySelector('[data-testid="product-media"]');
+    const rightCol = document.querySelector('#ProductInformation-template--18452952097874__main');
+    const leftCol = document.querySelector('ul.media-gallery__grid.list-unstyled');
 
     if (!rightCol || !leftCol) return;
+    if (document.documentElement.dataset.edbSmartScrollBound === '1') return;
+
+    function updateRightHeight() {
+      const rect = rightCol.getBoundingClientRect();
+      const topOffset = Math.max(0, rect.top);
+      const maxHeight = window.innerHeight - topOffset - 16;
+      rightCol.style.maxHeight = maxHeight + 'px';
+      rightCol.style.height = maxHeight + 'px';
+      rightCol.style.overflowY = 'auto';
+    }
 
     function canScroll(el, delta) {
       if (delta > 0) {
         return el.scrollTop + el.clientHeight < el.scrollHeight - 2;
-      } else {
-        return el.scrollTop > 2;
       }
+      return el.scrollTop > 2;
     }
 
-    window.addEventListener('wheel', function (e) {
-      const mouseX = e.clientX;
-      const screenMid = window.innerWidth / 2;
+    updateRightHeight();
+    document.documentElement.dataset.edbSmartScrollBound = '1';
 
-      let target = mouseX > screenMid ? rightCol : leftCol;
+    document.addEventListener('wheel', function (e) {
+      if (window.innerWidth < 990) return;
 
-      if (canScroll(target, e.deltaY)) {
-        e.preventDefault();
-        target.scrollTop += e.deltaY;
+      const inRight = e.target.closest('#ProductInformation-template--18452952097874__main');
+      const inLeft = e.target.closest('ul.media-gallery__grid.list-unstyled');
+
+      /* Mouse sağ sütundaysa önce sağ sütun scroll */
+      if (inRight) {
+        if (canScroll(rightCol, e.deltaY)) {
+          e.preventDefault();
+          rightCol.scrollTop += e.deltaY;
+        }
+        return;
       }
 
-    }, { passive: false });
+      /* Mouse soldaysa normal sayfa/galeri scroll'u devam etsin */
+      if (inLeft) {
+        return;
+      }
+    }, { passive: false, capture: true });
+
+    window.addEventListener('resize', updateRightHeight);
   }
 
-  document.addEventListener('DOMContentLoaded', initSmartScroll);
-  window.addEventListener('load', initSmartScroll);
+  document.addEventListener('DOMContentLoaded', initSmartProductScroll);
+  window.addEventListener('load', initSmartProductScroll);
+
+  const observer = new MutationObserver(initSmartProductScroll);
+  observer.observe(document.body, { childList: true, subtree: true });
 })();
 </script>
    </body>
