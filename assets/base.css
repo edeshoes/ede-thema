@@ -5100,3 +5100,7 @@ h1 {
 .product__policies {
   display: none !important;
 }
+.price {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 700 !important;
+}
