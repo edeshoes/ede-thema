@@ -5054,14 +5054,14 @@ h1, h2, h3, h4 {
 
 /* SERIES (OKN SERIES) - sağ üst */
 .product-series-label {
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: block;
+  width: 100%;
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   opacity: 0.28;
   text-align: right;
+  margin: 0 0 10px 0;
 }
 
 /* GENDER (Women / Men) */
