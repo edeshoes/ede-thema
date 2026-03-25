@@ -72,7 +72,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "{% if product.metafields.custom.series.value != blank %}\n  <div class=\"product-series-label\">\n    {{ product.metafields.custom.series.value }}\n  </div>\n{% endif %}"
+                "custom_liquid": "{% if product.metafields.custom.series != blank %}\n  <div style=\"\n    width: 100%;\n    text-align: right;\n    font-size: 12px;\n    letter-spacing: 0.34em;\n    text-transform: uppercase;\n    opacity: 0.22;\n    font-weight: 600;\n    margin: 0 0 2px 0;\n  \">\n    {{ product.metafields.custom.series }}\n  </div>\n{% endif %}"
               },
               "blocks": {}
             },
@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "{% if product.metafields.custom.gender != blank %}\n  <div class=\"product-gender-label\">\n    {{ product.metafields.custom.gender }}\n  </div>\n{% endif %}"
+                "custom_liquid": "{% if product.metafields.custom.gender != blank %}\n  <div style=\"\n    width: 100%;\n    text-align: left;\n    font-size: 14px;\n    opacity: 0.72;\n    margin: 0 0 8px 0;\n    line-height: 1.1;\n  \">\n    {{ product.metafields.custom.gender }}\n  </div>\n{% endif %}"
               },
               "blocks": {}
             },
