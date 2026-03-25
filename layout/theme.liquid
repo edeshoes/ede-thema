@@ -273,5 +273,29 @@ rightCol.addEventListener('mouseleave', () => {
   font-size: 16px;
   font-weight: 500;
   border-radius: 12px;
+}<style>
+@media (min-width: 990px) {
+  .product-details .product-form__buttons,
+  .product-details .shopify-payment-button,
+  .product-details .shopify-payment-button__button--unbranded {
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 20 !important;
+  }
+
+  .product-details .product-form__buttons,
+  .product-details .shopify-payment-button {
+    background: #f5f1eb !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    box-shadow: 0 -10px 25px rgba(0,0,0,0.06) !important;
+  }
+
+  .product-details .shopify-payment-button__button,
+  .product-details .shopify-payment-button__button--unbranded {
+    min-height: 50px !important;
+    border-radius: 14px !important;
+  }
 }
+</style>
    </body>
