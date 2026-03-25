@@ -5078,7 +5078,7 @@ h1, h2, h3, h4 {
 .product__title,
 h1 {
   margin-top: 0 !important;
-  margin-bottom: 2px !important;
+  margin-bottom: 0px !important;
 }
 
 /* PRICE */
