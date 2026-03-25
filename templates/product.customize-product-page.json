@@ -68,6 +68,14 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "custom_liquid_N3Pwar": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% if product.metafields.custom.gender.value != blank %}\n  <div class=\"product-gender-label\">\n    {{ product.metafields.custom.gender.value }}\n  </div>\n{% endif %}"
+              },
+              "blocks": {}
+            },
             "custom_liquid_ckUUzR": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
@@ -324,6 +332,7 @@
             }
           },
           "block_order": [
+            "custom_liquid_N3Pwar",
             "custom_liquid_ckUUzR",
             "group",
             "variant_picker",
