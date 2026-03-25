@@ -136,5 +136,51 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+    <script>
+(function () {
+  function initProductPriorityScroll() {
+    if (window.innerWidth < 990) return;
+
+    const rightCol = document.querySelector('#ProductInformation-template--18452952097874__main');
+    const grid = document.querySelector('#product-information-grid-content');
+
+    if (!rightCol || !grid) return;
+
+    const rect = rightCol.getBoundingClientRect();
+    const topOffset = Math.max(0, rect.top);
+    const maxHeight = window.innerHeight - topOffset - 16;
+
+    rightCol.style.maxHeight = maxHeight + 'px';
+    rightCol.style.overflowY = 'auto';
+    rightCol.style.overscrollBehavior = 'contain';
+
+    if (rightCol.dataset.priorityScrollBound === '1') return;
+    rightCol.dataset.priorityScrollBound = '1';
+
+    grid.addEventListener('wheel', function (e) {
+      if (window.innerWidth < 990) return;
+
+      const insideRight = e.target.closest('#ProductInformation-template--18452952097874__main');
+      if (insideRight) return;
+
+      const delta = e.deltaY;
+      const canScrollDown = rightCol.scrollTop + rightCol.clientHeight < rightCol.scrollHeight - 2;
+      const canScrollUp = rightCol.scrollTop > 2;
+
+      if ((delta > 0 && canScrollDown) || (delta < 0 && canScrollUp)) {
+        e.preventDefault();
+        rightCol.scrollTop += delta;
+      }
+    }, { passive: false });
+  }
+
+  document.addEventListener('DOMContentLoaded', initProductPriorityScroll);
+  window.addEventListener('load', initProductPriorityScroll);
+  window.addEventListener('resize', initProductPriorityScroll);
+
+  const observer = new MutationObserver(initProductPriorityScroll);
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
   </body>
 </html>
