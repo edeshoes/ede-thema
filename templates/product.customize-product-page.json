@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<div style=\"margin: 0 0 2px 0;\">\n  <h1 style=\"\n    font-family: 'Fraunces', serif;\n    font-weight: 500;\n    font-size: 42px;\n    line-height: 1.1;\n    letter-spacing: -0.01em;\n    margin: 0;\n  \">\n    {{ product.title }}\n  </h1>\n</div>"
+                "custom_liquid": "<h1 style=\"\n  font-family: 'Fraunces', serif;\n  font-weight: 300;\n  font-size: 44px;\n  line-height: 1.1;\n  letter-spacing: -0.015em;\n  margin: 0;\n\">\n  {{ product.title }}\n</h1>"
               },
               "blocks": {}
             },
