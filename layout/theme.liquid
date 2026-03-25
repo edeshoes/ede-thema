@@ -136,20 +136,34 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-    <style>
+<style>
 @media (min-width: 990px) {
-.product-details {
-  position: sticky;
-  top: 0;
-  /* overflow-y: auto; */
-  /* overscroll-behavior: contain; */
-.product-details {
-  position: sticky;
-  top: 20px;
-}.product-details {
-  position: sticky;
-  top: 20px;
-  align-self: start;
+  .product-details {
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .product-details::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
+  }
+
+  .product-details::-webkit-scrollbar-track {
+    display: none !important;
+    background: transparent !important;
+  }
+
+  .product-details::-webkit-scrollbar-thumb {
+    display: none !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
 }
 </style>
 
@@ -190,12 +204,11 @@
 
       if (inRight) {
         if (canScroll(rightCol, e.deltaY)) {
-          //e.preventDefault();
-          //e.stopPropagation();
-          //rightCol.scrollTop += e.deltaY;
+          e.preventDefault();
+          e.stopPropagation();
+          rightCol.scrollTop += e.deltaY;
         }
       }
-
     }, { passive: false });
 
     window.addEventListener('resize', updateHeight);
@@ -206,7 +219,6 @@
 
   const observer = new MutationObserver(initPerfectScroll);
   observer.observe(document.body, { childList: true, subtree: true });
-
 })();
 </script>
 @media (min-width: 990px) {
