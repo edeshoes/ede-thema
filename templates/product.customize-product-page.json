@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<h1 style=\"\n  font-family: 'Fraunces', serif;\n  font-weight: 300;\n  font-size: 44px;\n  line-height: 1.1;\n  letter-spacing: -0.015em;\n  margin: 0;\n\">\n  {{ product.title }}\n</h1>"
+                "custom_liquid": "<link href=\"https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap\" rel=\"stylesheet\">\n\n<h1 style=\"\n  font-family: 'Libre Baskerville', serif;\n  font-weight: 400;\n  font-size: 44px;\n  line-height: 1.1;\n  letter-spacing: -0.4px;\n  margin: 0 0 4px 0;\n  color: #111111;\n\">\n  {{ product.title }}\n</h1>"
               },
               "blocks": {}
             },
