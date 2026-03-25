@@ -138,7 +138,7 @@
     {% endif %}
     <style>
 @media (min-width: 990px) {
-  #ProductInformation-template--18452952097874__main {
+  .product-details {
     position: sticky;
     top: 0;
     overflow-y: auto;
@@ -149,22 +149,22 @@
 
 <script>
 (function () {
-  function initSmartProductScroll() {
+  function initPerfectScroll() {
     if (window.innerWidth < 990) return;
 
-    const rightCol = document.querySelector('#ProductInformation-template--18452952097874__main');
-    const leftCol = document.querySelector('ul.media-gallery__grid.list-unstyled');
+    const rightCol = document.querySelector('.product-details');
+    const leftCol = document.querySelector('.media-gallery__grid');
 
     if (!rightCol || !leftCol) return;
-    if (document.documentElement.dataset.edbSmartScrollBound === '1') return;
+    if (document.documentElement.dataset.scrollBound === '1') return;
 
-    function updateRightHeight() {
+    function updateHeight() {
       const rect = rightCol.getBoundingClientRect();
       const topOffset = Math.max(0, rect.top);
       const maxHeight = window.innerHeight - topOffset - 16;
-      rightCol.style.maxHeight = maxHeight + 'px';
+
       rightCol.style.height = maxHeight + 'px';
-      rightCol.style.overflowY = 'auto';
+      rightCol.style.maxHeight = maxHeight + 'px';
     }
 
     function canScroll(el, delta) {
@@ -174,38 +174,33 @@
       return el.scrollTop > 2;
     }
 
-    updateRightHeight();
-    document.documentElement.dataset.edbSmartScrollBound = '1';
+    updateHeight();
+    document.documentElement.dataset.scrollBound = '1';
 
     document.addEventListener('wheel', function (e) {
       if (window.innerWidth < 990) return;
 
-      const inRight = e.target.closest('#ProductInformation-template--18452952097874__main');
-      const inLeft = e.target.closest('ul.media-gallery__grid.list-unstyled');
+      const inRight = e.target.closest('.product-details');
 
-      /* Mouse sağ sütundaysa önce sağ sütun scroll */
       if (inRight) {
         if (canScroll(rightCol, e.deltaY)) {
           e.preventDefault();
+          e.stopPropagation();
           rightCol.scrollTop += e.deltaY;
         }
-        return;
       }
 
-      /* Mouse soldaysa normal sayfa/galeri scroll'u devam etsin */
-      if (inLeft) {
-        return;
-      }
-    }, { passive: false, capture: true });
+    }, { passive: false });
 
-    window.addEventListener('resize', updateRightHeight);
+    window.addEventListener('resize', updateHeight);
   }
 
-  document.addEventListener('DOMContentLoaded', initSmartProductScroll);
-  window.addEventListener('load', initSmartProductScroll);
+  document.addEventListener('DOMContentLoaded', initPerfectScroll);
+  window.addEventListener('load', initPerfectScroll);
 
-  const observer = new MutationObserver(initSmartProductScroll);
+  const observer = new MutationObserver(initPerfectScroll);
   observer.observe(document.body, { childList: true, subtree: true });
+
 })();
 </script>
    </body>
