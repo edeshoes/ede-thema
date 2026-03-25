@@ -239,5 +239,16 @@ rightCol.addEventListener('mouseleave', () => {
   .product-details {
     box-shadow: -8px 0 20px rgba(0,0,0,0.03);
   }
+}@media (min-width: 990px) {
+  .product-details {
+    -ms-overflow-style: none;  /* IE / Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  .product-details::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    display: none;
+  }
 }
    </body>
