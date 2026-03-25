@@ -68,19 +68,19 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "custom_liquid_bh4pyJ": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% if product.metafields.custom.gender != blank %}\n  <div class=\"product-gender-label\">\n    {{ product.metafields.custom.gender }}\n  </div>\n{% endif %}"
-              },
-              "blocks": {}
-            },
             "custom_liquid_ckUUzR": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
                 "custom_liquid": "{% if product.metafields.custom.series.value != blank %}\n  <div class=\"product-series-label\">\n    {{ product.metafields.custom.series.value }}\n  </div>\n{% endif %}"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_bh4pyJ": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% if product.metafields.custom.gender != blank %}\n  <div class=\"product-gender-label\">\n    {{ product.metafields.custom.gender }}\n  </div>\n{% endif %}"
               },
               "blocks": {}
             },
@@ -332,8 +332,8 @@
             }
           },
           "block_order": [
-            "custom_liquid_bh4pyJ",
             "custom_liquid_ckUUzR",
+            "custom_liquid_bh4pyJ",
             "group",
             "variant_picker",
             "buy_buttons",
