@@ -5103,4 +5103,6 @@ h1 {
 .price {
   font-family: Georgia, "Times New Roman", serif !important;
   font-weight: 700 !important;
+}.product-information .variant-picker {
+  margin-top: 26px !important;
 }
