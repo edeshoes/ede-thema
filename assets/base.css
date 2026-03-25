@@ -5046,34 +5046,57 @@ h1, h2, h3, h4 {
   letter-spacing: 0.08em;
   font-size: 12px;
   opacity: 0.7;
+
 /* ===== PRODUCT META FINAL ===== */
 
 .product-information .details {
   position: relative;
 }
 
-/* SERIES (OKN SERIES) - sağ üst */
+/* SERIES */
 .product-series-label {
   display: block;
   width: 100%;
-  font-size: 11px;
-  letter-spacing: 0.28em;
+  font-size: 12px;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
-  opacity: 0.28;
+  opacity: 0.22;
   text-align: right;
-  margin: 0 0 10px 0;
+  margin: 0 0 2px 0;
+  font-weight: 600;
 }
 
-/* GENDER (Women / Men) */
+/* GENDER */
 .product-gender-label {
   font-size: 14px;
-  margin-top: 24px;
-  margin-bottom: 6px;
-  opacity: 0.7;
+  opacity: 0.72;
+  margin: 0 0 8px 0;
+  line-height: 1.1;
 }
 
-/* TITLE spacing */
+/* TITLE */
 .product__title,
 h1 {
-  margin-top: 4px !important;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+/* PRICE */
+.price {
+  font-size: 24px !important;
+  line-height: 1 !important;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+/* Vergi / kargo yazısı */
+.tax-caption,
+.product__tax,
+.caption-with-letter-spacing,
+.price + .caption,
+.price__tax,
+.product__view-details,
+.product__taxes,
+.product__policies {
+  display: none !important;
 }
