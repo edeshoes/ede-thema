@@ -68,6 +68,14 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "custom_liquid_ckUUzR": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% if product.metafields.custom.series.value != blank %}\n  <div class=\"product-series-label\">\n    {{ product.metafields.custom.series.value }}\n  </div>\n{% endif %}"
+              },
+              "blocks": {}
+            },
             "group": {
               "type": "group",
               "name": "Header",
@@ -316,6 +324,7 @@
             }
           },
           "block_order": [
+            "custom_liquid_ckUUzR",
             "group",
             "variant_picker",
             "buy_buttons",
