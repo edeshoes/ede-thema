@@ -53,6 +53,7 @@
         <div
           class="sticky-add-to-cart__image"
         >
+          
           {% assign image_alt = image_to_show.alt | default: product.title | escape %}
           {{
             image_to_show
@@ -91,6 +92,7 @@
           class="sticky-add-to-cart__title"
           data-testid="sticky-product-title"
         >
+          
           {{ product.title | escape }}
         </h3>
         <div
