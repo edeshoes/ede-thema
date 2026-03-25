@@ -253,11 +253,19 @@
               "settings": {
                 "variant_style": "buttons",
                 "show_swatches": true,
-                "alignment": "left",
+                "alignment": "right",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "custom_liquid_gPDVhU": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<div class=\"size-guide-link\">\n  <a href=\"/pages/women-size-guide\" target=\"_blank\">\n    About size information\n  </a>\n</div>"
               },
               "blocks": {}
             },
@@ -347,6 +355,7 @@
             "custom_liquid_mXq6A8",
             "group",
             "variant_picker",
+            "custom_liquid_gPDVhU",
             "buy_buttons",
             "divider",
             "text"
