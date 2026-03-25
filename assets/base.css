@@ -5001,4 +5001,49 @@ h1, h2, h3 {
 h2 {
   text-transform: uppercase;
   letter-spacing: 2px;
+}/* ==== FORCE FONT SYSTEM (FINAL) ==== */
+
+:root {
+  --font-body-family: 'Inter', sans-serif !important;
+  --font-heading-family: 'Space Grotesk', sans-serif !important;
+}
+
+/* BODY */
+body {
+  font-family: var(--font-body-family) !important;
+}
+
+/* HEADINGS */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading-family) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em;
+}
+
+/* MENU */
+.header__menu-item,
+.list-menu__item {
+  font-family: var(--font-body-family) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+}
+
+/* WOMEN / MEN özel */
+.split-showcase h2,
+.split-showcase h3 {
+  font-family: var(--font-heading-family) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+/* ALT YAZI */
+.split-showcase p,
+.subtitle,
+.caption {
+  font-family: var(--font-body-family) !important;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  opacity: 0.7;
 }
