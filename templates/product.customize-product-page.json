@@ -72,15 +72,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "{% if product.metafields.custom.series != blank %}\n  <div style=\"\n    width: 100%;\n    text-align: right;\n    font-size: 12px;\n    letter-spacing: 0.38em;\n    text-transform: uppercase;\n    opacity: 0.18;\n    font-weight: 600;\n    margin: -2px 0 0 0;\n  \">\n    {{ product.metafields.custom.series }}\n  </div>\n{% endif %}"
-              },
-              "blocks": {}
-            },
-            "custom_liquid_bh4pyJ": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% if product.metafields.custom.gender != blank %}\n  <div style=\"\n    width: fit-content;\n    margin: 2px auto 8px auto;\n    font-size: 14px;\n    opacity: 0.68;\n    line-height: 1.1;\n    text-align: center;\n  \">\n    {{ product.metafields.custom.gender }}\n  </div>\n{% endif %}"
+                "custom_liquid": "{% if product.metafields.custom.series != blank or product.metafields.custom.gender != blank %}\n  <div style=\"width: 100%; text-align: right; margin: 0 0 8px 0;\">\n    \n    {% if product.metafields.custom.series != blank %}\n      <div style=\"\n        display: inline-block;\n        text-align: center;\n      \">\n        <div style=\"\n          font-size: 12px;\n          letter-spacing: 0.38em;\n          text-transform: uppercase;\n          opacity: 0.18;\n          font-weight: 600;\n          margin: 0 0 4px 0;\n          white-space: nowrap;\n        \">\n          {{ product.metafields.custom.series }}\n        </div>\n\n        {% if product.metafields.custom.gender != blank %}\n          <div style=\"\n            font-size: 14px;\n            opacity: 0.68;\n            line-height: 1.1;\n            margin: 0;\n          \">\n            {{ product.metafields.custom.gender }}\n          </div>\n        {% endif %}\n      </div>\n\n    {% elsif product.metafields.custom.gender != blank %}\n      <div style=\"\n        font-size: 14px;\n        opacity: 0.68;\n        line-height: 1.1;\n        margin: 0;\n      \">\n        {{ product.metafields.custom.gender }}\n      </div>\n    {% endif %}\n\n  </div>\n{% endif %}"
               },
               "blocks": {}
             },
@@ -333,7 +325,6 @@
           },
           "block_order": [
             "custom_liquid_ckUUzR",
-            "custom_liquid_bh4pyJ",
             "group",
             "variant_picker",
             "buy_buttons",
