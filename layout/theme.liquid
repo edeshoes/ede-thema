@@ -136,7 +136,16 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-    <script>
+    <style>
+@media (min-width: 990px) {
+  #ProductInformation-template--18452952097874__main {
+    position: sticky;
+    top: 0;
+  }
+}
+</style>
+
+<script>
 (function () {
   function initProductPriorityScroll() {
     if (window.innerWidth < 990) return;
@@ -182,5 +191,6 @@
   observer.observe(document.body, { childList: true, subtree: true });
 })();
 </script>
+</body>
   </body>
 </html>
