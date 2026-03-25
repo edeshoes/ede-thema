@@ -194,27 +194,56 @@
 </body>
 <style>
 @media (min-width: 990px) {
-
-  /* ANA GRID */
-  #product-information-grid-content {
-    height: 100vh !important;
-    overflow: hidden !important;
-  }
-
-  /* SOL TARAF (fotoğraflar) */
-  .product-information__media,
-  [data-testid="product-information-media"] {
-    height: 100vh !important;
-    overflow: hidden !important;
-  }
-
-  /* SAĞ TARAF = ASIL SCROLL */
   #ProductInformation-template--18452952097874__main {
-    height: 100vh !important;
-    overflow-y: auto !important;
-    padding-right: 10px; /* scrollbar nefes alsın */
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
-
 }
 </style>
+
+<script>
+(function () {
+  function initRightColumnHoverScroll() {
+    if (window.innerWidth < 990) return;
+
+    const rightCol = document.querySelector('#ProductInformation-template--18452952097874__main');
+    if (!rightCol) return;
+    if (rightCol.dataset.edbHoverScrollBound === '1') return;
+
+    function updateRightColHeight() {
+      const rect = rightCol.getBoundingClientRect();
+      const topOffset = Math.max(0, rect.top);
+      const maxHeight = window.innerHeight - topOffset - 16;
+      rightCol.style.maxHeight = maxHeight + 'px';
+    }
+
+    updateRightColHeight();
+    rightCol.dataset.edbHoverScrollBound = '1';
+
+    rightCol.addEventListener('wheel', function (e) {
+      const delta = e.deltaY;
+      const canScrollDown = rightCol.scrollTop + rightCol.clientHeight < rightCol.scrollHeight - 2;
+      const canScrollUp = rightCol.scrollTop > 2;
+
+      if ((delta > 0 && canScrollDown) || (delta < 0 && canScrollUp)) {
+        e.preventDefault();
+        rightCol.scrollTop += delta;
+      }
+      /* sağ sütun sonuna geldiyse veya başındaysa
+         normal sayfa scroll'una izin veriyoruz */
+    }, { passive: false });
+
+    window.addEventListener('resize', updateRightColHeight);
+  }
+
+  document.addEventListener('DOMContentLoaded', initRightColumnHoverScroll);
+  window.addEventListener('load', initRightColumnHoverScroll);
+
+  const observer = new MutationObserver(initRightColumnHoverScroll);
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
 </html>
