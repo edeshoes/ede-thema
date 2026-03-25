@@ -192,5 +192,29 @@
 })();
 </script>
 </body>
-  </body>
+<style>
+@media (min-width: 990px) {
+
+  /* ANA GRID */
+  #product-information-grid-content {
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  /* SOL TARAF (fotoğraflar) */
+  .product-information__media,
+  [data-testid="product-information-media"] {
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  /* SAĞ TARAF = ASIL SCROLL */
+  #ProductInformation-template--18452952097874__main {
+    height: 100vh !important;
+    overflow-y: auto !important;
+    padding-right: 10px; /* scrollbar nefes alsın */
+  }
+
+}
+</style>
 </html>
