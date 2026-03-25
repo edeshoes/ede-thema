@@ -269,14 +269,6 @@
               },
               "blocks": {}
             },
-            "custom_liquid_jFJBdG": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "<div style=\"margin-top:24px;\">\n  <div style=\"\n    font-size:11px;\n    letter-spacing:0.25em;\n    text-transform:uppercase;\n    opacity:0.5;\n    margin-bottom:10px;\n  \">\n    How to Measure Your Foot\n  </div>\n\n  <video autoplay muted loop playsinline preload=\"metadata\"\n    style=\"\n      width:100%;\n      border-radius:12px;\n      object-fit:cover;\n      box-shadow: 0 10px 30px rgba(0,0,0,0.08);\n    \">\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/0cc9bdabe7b7459d97f9294fa4ef9945.mp4 type=\"video/mp4\">\n  </video>\n</div>"
-              },
-              "blocks": {}
-            },
             "custom_liquid_gPDVhU": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
@@ -372,7 +364,6 @@
             "group",
             "variant_picker",
             "custom_liquid_UjW8L8",
-            "custom_liquid_jFJBdG",
             "custom_liquid_gPDVhU",
             "buy_buttons",
             "divider",
