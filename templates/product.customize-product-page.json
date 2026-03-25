@@ -88,7 +88,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<div style=\"margin: 0px 0 14px 0;\">\n  <span style=\"\n    font-family: 'Fraunces', serif;\n    font-weight: 600;\n    font-size: 22px;\n    letter-spacing: 0.02em;\n    color: #3a342f;\n  \">\n    {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}\n  </span>\n</div>"
+                "custom_liquid": "<div style=\"margin: -10px 0 10px 0;\">\n  <span style=\"\n    font-family: 'Fraunces', serif;\n    font-weight: 600;\n    font-size: 22px;\n    letter-spacing: 0.01em;\n    line-height: 1;\n    color: #3a342f;\n    display: block;\n  \">\n    {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}\n  </span>\n</div>"
               },
               "blocks": {}
             },
