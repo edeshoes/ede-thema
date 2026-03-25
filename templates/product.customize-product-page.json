@@ -147,7 +147,7 @@
                   "type": "custom-liquid",
                   "name": "t:names.custom_liquid",
                   "settings": {
-                    "custom_liquid": "<div style=\"margin: -4px 0 12px 0;\">\n  <span style=\"\n    font-family: 'Fraunces', serif;\n    font-size: 32px;\n    font-weight: 600;\n    letter-spacing: -0.01em;\n    line-height: 1.2;\n    color: #2a2a2a;\n  \">\n    {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}\n  </span>\n</div>"
+                    "custom_liquid": "<div style=\"margin: -2px 0 12px 0;\">\n  <span style=\"\n    font-family: Inter, -apple-system, sans-serif;\n    font-size: 26px;\n    font-weight: 500;\n    letter-spacing: -0.01em;\n    line-height: 1.2;\n    color: #2a2a2a;\n  \">\n    {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}\n  </span>\n</div>"
                   },
                   "blocks": {}
                 },
