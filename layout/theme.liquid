@@ -136,68 +136,12 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-    <style>
+   <style>
 @media (min-width: 990px) {
   #ProductInformation-template--18452952097874__main {
     position: sticky;
     top: 0;
-  }
-}
-</style>
-
-<script>
-(function () {
-  function initProductPriorityScroll() {
-    if (window.innerWidth < 990) return;
-
-    const rightCol = document.querySelector('#ProductInformation-template--18452952097874__main');
-    const grid = document.querySelector('#product-information-grid-content');
-
-    if (!rightCol || !grid) return;
-
-    const rect = rightCol.getBoundingClientRect();
-    const topOffset = Math.max(0, rect.top);
-    const maxHeight = window.innerHeight - topOffset - 16;
-
-    rightCol.style.maxHeight = maxHeight + 'px';
-    rightCol.style.overflowY = 'auto';
-    rightCol.style.overscrollBehavior = 'contain';
-
-    if (rightCol.dataset.priorityScrollBound === '1') return;
-    rightCol.dataset.priorityScrollBound = '1';
-
-    grid.addEventListener('wheel', function (e) {
-      if (window.innerWidth < 990) return;
-
-      const insideRight = e.target.closest('#ProductInformation-template--18452952097874__main');
-      if (insideRight) return;
-
-      const delta = e.deltaY;
-      const canScrollDown = rightCol.scrollTop + rightCol.clientHeight < rightCol.scrollHeight - 2;
-      const canScrollUp = rightCol.scrollTop > 2;
-
-      if ((delta > 0 && canScrollDown) || (delta < 0 && canScrollUp)) {
-        e.preventDefault();
-        rightCol.scrollTop += delta;
-      }
-    }, { passive: false });
-  }
-
-  document.addEventListener('DOMContentLoaded', initProductPriorityScroll);
-  window.addEventListener('load', initProductPriorityScroll);
-  window.addEventListener('resize', initProductPriorityScroll);
-
-  const observer = new MutationObserver(initProductPriorityScroll);
-  observer.observe(document.body, { childList: true, subtree: true });
-})();
-</script>
-</body>
-<style>
-@media (min-width: 990px) {
-  #ProductInformation-template--18452952097874__main {
-    position: sticky;
-    top: 0;
-    max-height: 100vh;
+    max-height: calc(100vh - 16px);
     overflow-y: auto;
     overscroll-behavior: contain;
   }
@@ -206,12 +150,12 @@
 
 <script>
 (function () {
-  function initRightColumnHoverScroll() {
+  function initRightColumnWheelPriority() {
     if (window.innerWidth < 990) return;
 
     const rightCol = document.querySelector('#ProductInformation-template--18452952097874__main');
     if (!rightCol) return;
-    if (rightCol.dataset.edbHoverScrollBound === '1') return;
+    if (rightCol.dataset.edbWheelBound === '1') return;
 
     function updateRightColHeight() {
       const rect = rightCol.getBoundingClientRect();
@@ -220,30 +164,36 @@
       rightCol.style.maxHeight = maxHeight + 'px';
     }
 
+    function canScrollDown(el) {
+      return el.scrollTop + el.clientHeight < el.scrollHeight - 2;
+    }
+
+    function canScrollUp(el) {
+      return el.scrollTop > 2;
+    }
+
     updateRightColHeight();
-    rightCol.dataset.edbHoverScrollBound = '1';
+    rightCol.dataset.edbWheelBound = '1';
 
     rightCol.addEventListener('wheel', function (e) {
-      const delta = e.deltaY;
-      const canScrollDown = rightCol.scrollTop + rightCol.clientHeight < rightCol.scrollHeight - 2;
-      const canScrollUp = rightCol.scrollTop > 2;
+      if (window.innerWidth < 990) return;
 
-      if ((delta > 0 && canScrollDown) || (delta < 0 && canScrollUp)) {
+      const delta = e.deltaY;
+
+      if ((delta > 0 && canScrollDown(rightCol)) || (delta < 0 && canScrollUp(rightCol))) {
         e.preventDefault();
         rightCol.scrollTop += delta;
       }
-      /* sağ sütun sonuna geldiyse veya başındaysa
-         normal sayfa scroll'una izin veriyoruz */
     }, { passive: false });
 
     window.addEventListener('resize', updateRightColHeight);
   }
 
-  document.addEventListener('DOMContentLoaded', initRightColumnHoverScroll);
-  window.addEventListener('load', initRightColumnHoverScroll);
+  document.addEventListener('DOMContentLoaded', initRightColumnWheelPriority);
+  window.addEventListener('load', initRightColumnWheelPriority);
 
-  const observer = new MutationObserver(initRightColumnHoverScroll);
+  const observer = new MutationObserver(initRightColumnWheelPriority);
   observer.observe(document.body, { childList: true, subtree: true });
 })();
 </script>
-</html>
+</body>
