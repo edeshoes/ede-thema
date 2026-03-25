@@ -221,6 +221,24 @@
   observer.observe(document.body, { childList: true, subtree: true });
 })();
 </script>
+.product-details {
+  backdrop-filter: blur(6px);
+}
+.product-details::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  display: block;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #f5f1eb);
+}.shopify-payment-button__button {
+  transition: all 0.25s ease;
+}
+
+.shopify-payment-button__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 @media (min-width: 990px) {
   .product-details {
     scroll-behavior: smooth;
