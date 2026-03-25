@@ -142,7 +142,11 @@
     if (window.innerWidth < 990) return;
 
     const rightCol = document.querySelector('[id^="ProductInformation-template"]');
-    const leftCol = document.querySelector('.product__media-wrapper');
+
+    // 🔥 SOL TARAFI DOĞRU YAKALAMA
+    const leftCol = document.querySelector('.product-media-container')?.closest('ul') 
+                 || document.querySelector('.product__media-list')
+                 || document.querySelector('[data-testid="product-media"]');
 
     if (!rightCol || !leftCol) return;
 
@@ -158,15 +162,7 @@
       const mouseX = e.clientX;
       const screenMid = window.innerWidth / 2;
 
-      let target;
-
-      if (mouseX > screenMid) {
-        target = rightCol;
-      } else {
-        target = leftCol;
-      }
-
-      if (!target) return;
+      let target = mouseX > screenMid ? rightCol : leftCol;
 
       if (canScroll(target, e.deltaY)) {
         e.preventDefault();
