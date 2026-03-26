@@ -56,9 +56,10 @@
           "blocks": {
             "spacer_Gc4wNi": {
               "type": "spacer",
+              "disabled": true,
               "settings": {
-                "size": "pixel",
-                "percent_size": 100,
+                "size": "percent",
+                "percent_size": 0,
                 "pixel_size": 16,
                 "custom_mobile_size": false,
                 "size_mobile": "percent",
@@ -182,7 +183,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "color": "var(--color-foreground)",
+                "color": "var(--color-foreground-heading)",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
