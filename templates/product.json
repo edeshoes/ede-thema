@@ -222,6 +222,14 @@
                 "group_8B3NLh"
               ]
             },
+            "kiwi_size_chart_recommender_kiwi_sizing_jyqzht": {
+              "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
+              "settings": {
+                "fallbackToBlockPosition": false,
+                "waitForElementSelector": "",
+                "waitForElementDelay": 5
+              }
+            },
             "variant_picker": {
               "type": "variant-picker",
               "settings": {
@@ -315,6 +323,7 @@
           },
           "block_order": [
             "group",
+            "kiwi_size_chart_recommender_kiwi_sizing_jyqzht",
             "variant_picker",
             "buy_buttons",
             "divider",
