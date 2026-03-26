@@ -318,17 +318,29 @@ rightCol.addEventListener('mouseleave', () => {
   margin-bottom: 6px;
   white-space: nowrap;
 }
-</style>
-document.addEventListener('wheel', function(e) {
-  const right = document.querySelector('#ProductInformation-template--18452952907874__main');
+<script>
+document.addEventListener('DOMContentLoaded', function () {
 
-  if (!right) return;
-
-  const rect = right.getBoundingClientRect();
-  const isOnRight = e.clientX > rect.left;
-
-  if (isOnRight) {
-    e.stopPropagation();
+  // 🔥 MOBİLDE TÜM CUSTOM SCROLL'U KAPAT
+  if (window.innerWidth < 990) {
+    return;
   }
-}, { passive: true });
+
+  // 👉 SENİN MEVCUT DESKTOP SCROLL MANTIĞIN
+  document.addEventListener('wheel', function(e) {
+    const right = document.querySelector('#ProductInformation-template--18452952907874__main');
+
+    if (!right) return;
+
+    const rect = right.getBoundingClientRect();
+    const isOnRight = e.clientX > rect.left;
+
+    if (isOnRight) {
+      e.stopPropagation();
+    }
+
+  }, { passive: true });
+
+});
+</script>
    </body>
