@@ -5074,21 +5074,6 @@ h1, h2, h3, h4 {
   line-height: 1.1;
 }
 
-/* TITLE */
-.product__title,
-h1 {
-  margin-top: 0 !important;
-  margin-bottom: 0px !important;
-}
-
-/* PRICE */
-.price {
-  font-size: 24px !important;
-  line-height: 1 !important;
-  margin-top: 6px !important;
-  margin-bottom: 6px !important;
-}
-
 /* Vergi / kargo yazısı */
 .tax-caption,
 .product__tax,
@@ -5146,47 +5131,4 @@ h1 {
 
 .size-guide-link a:hover {
   color: #000;
-}/* ===== PREMIUM TYPOGRAPHY SYSTEM ===== */
-
-/* BODY */
-body {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  color: #1a1a1a;
-}
-
-/* PRODUCT TITLE (ASHEN) */
-.product__title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: 44px;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-  margin-bottom: 6px;
-}
-
-/* PRICE */
-.price, .price__container {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  opacity: 0.65;
-  letter-spacing: 0.02em;
-  margin-top: -4px;
-}
-
-/* SIZE GRID */
-.product-form__input,
-.variant-picker {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-}
-
-/* BUTTON */
-.shopify-payment-button__button {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  font-size: 14px;
 }
