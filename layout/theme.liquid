@@ -221,112 +221,12 @@
   observer.observe(document.body, { childList: true, subtree: true });
 })();
 </script>
-.product-details {
-  backdrop-filter: blur(6px);
-}
-.product-details::after {
-  content: "";
-  position: sticky;
-  bottom: 0;
-  display: block;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, #f5f1eb);
-}.shopify-payment-button__button {
-  transition: all 0.25s ease;
-}
-
-.shopify-payment-button__button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-@media (min-width: 990px) {
-  .product-details {
-    scroll-behavior: smooth;
-  }
-}@media (min-width: 990px) {
-  .product-details {
-    position: relative;
-  }
-
-  .product-details::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    pointer-events: none;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), #f5f1eb);
-  }
-}.product-details {
-  scrollbar-width: none; /* Firefox */
-}
-
-.product-details::-webkit-scrollbar {
-  display: none; /* Chrome */
-}rightCol.addEventListener('mouseenter', () => {
-  rightCol.style.scrollBehavior = 'smooth';
-});
-
-rightCol.addEventListener('mouseleave', () => {
-  rightCol.style.scrollBehavior = 'auto';
-});
-@media (min-width: 990px) {
-  .product-details {
-    box-shadow: -8px 0 20px rgba(0,0,0,0.03);
-  }
-}@media (min-width: 990px) {
-  .product-details {
-    -ms-overflow-style: none;  /* IE / Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
-
-  .product-details::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    display: none;
-  }
-}@media (min-width: 990px) {
-  .product-form__buttons,
-  .product-form,
-  .buy-buttons {
-    position: sticky;
-    bottom: 0;
-    z-index: 5;
-    background: #f5f1eb;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-@media (min-width: 990px) {
-  .product-details .shopify-payment-button__button--unbranded {
-    position: sticky;
-    bottom: 12px;
-    z-index: 30;
-    border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.14);
-}<div class="product-eyebrow">
-  OKN SERIES
-</div>
-<style>
-.product-eyebrow {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 300;
-  color: #8e857b;
-  opacity: 0.9;
-  margin-bottom: 6px;
-  white-space: nowrap;
-}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-
-  // 🔥 MOBİLDE TÜM CUSTOM SCROLL'U KAPAT
   if (window.innerWidth < 990) {
     return;
   }
 
-  // 👉 SENİN MEVCUT DESKTOP SCROLL MANTIĞIN
   document.addEventListener('wheel', function(e) {
     const right = document.querySelector('#ProductInformation-template--18452952907874__main');
 
@@ -338,9 +238,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isOnRight) {
       e.stopPropagation();
     }
-
   }, { passive: true });
-
 });
 </script>
    </body>
+   
