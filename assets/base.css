@@ -5171,4 +5171,15 @@ h1, h2, h3, h4 {
   letter-spacing: 0.28em;
   font-size: 11px;
   opacity: 0.45;
+}.product__info-container .price,
+.product__info-container .price * {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  color: #2f2722 !important;
+}
+
+.product__info-container .price {
+  font-size: 56px !important;
+  line-height: 1 !important;
 }
