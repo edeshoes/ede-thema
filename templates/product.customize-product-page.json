@@ -88,15 +88,15 @@
               "type": "custom-liquid",
               "name": "BASLIK Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"\n  font-family: 'Cormorant Garamond', serif;\n  font-size: 56px;\n  font-weight: 500;\n  line-height: 0.95;\n  letter-spacing: -0.02em;\n  margin: 0 0 4px 0;\n  color: #151515;\n\">\n  {{ product.title }}\n</div>"
+                "custom_liquid": "<div style=\"\n  font-family: 'Cormorant Garamond', serif;\n  font-size: 56px;\n  font-weight: 500;\n  line-height: 0.95;\n  letter-spacing: -0.02em;\n  margin: 0 0 2px 0; /* 🔥 küçülttük */\n  color: #151515;\n\">\n  {{ product.title }}\n</div>"
               },
               "blocks": {}
             },
             "custom_liquid_bAtXme": {
               "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
+              "name": "kisa aciklama Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"\n  font-family: Inter, sans-serif;\n  font-size: 11px;\n  font-weight: 400;\n  line-height: 1.45;\n  letter-spacing: 0.12em;\n  text-transform: uppercase;\n  color: #7c746b;\n  margin: -2px 0 16px 0;\n  max-width: 460px;\n\">\n  {{ product.metafields.custom.short_desc | default: \"BUFFALO SOLE • COPPER RIVETS • GAZIANTEP CRAFT\" }}\n</div>"
+                "custom_liquid": "<div style=\"\n  font-family: Inter, sans-serif;\n  font-size: 12px;\n  font-weight: 400;\n  line-height: 1.4;\n  letter-spacing: 0.12em;\n  text-transform: uppercase;\n  color: #7a736b;\n  margin: 2px 0 0 0; /* 🔥 başlığa yaklaş */\n  max-width: 420px;\n\">\n  {{ product.metafields.custom.short_desc | default: \"Buffalo leather sole • Copper grounding rivets • Gaziantep craftsmanship\" }}\n</div>"
               },
               "blocks": {}
             },
