@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "Fiyat Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"\n  display: flex;\n  align-items: baseline;\n  gap: 6px;\n  margin: 0 0 46px 0;\n\">\n\n  <span style=\"\n    font-family: Inter, sans-serif;\n    font-size: 20px;\n    font-weight: 500;\n    line-height: 1;\n    color: #3b342e;\n    opacity: 0.72;\n  \">\n    $\n  </span>\n\n  <span style=\"\n    font-family: Inter, sans-serif;\n    font-size: 46px;\n    font-weight: 600;\n    line-height: 0.92;\n    letter-spacing: -0.03em;\n    color: #111111;\n  \">\n    {{ product.price | money_without_currency }}\n  </span>\n\n</div>"
+                "custom_liquid": "<div style=\"padding-bottom: 22px;\">\n\n  <div style=\"\n    display: flex;\n    align-items: baseline;\n    gap: 6px;\n  \">\n\n    <span style=\"\n      font-family: Inter, sans-serif;\n      font-size: 20px;\n      font-weight: 500;\n      line-height: 1;\n      color: #3b342e;\n      opacity: 0.72;\n    \">\n      $\n    </span>\n\n    <span style=\"\n      font-family: Inter, sans-serif;\n      font-size: 46px;\n      font-weight: 600;\n      line-height: 0.92;\n      letter-spacing: -0.03em;\n      color: #111111;\n    \">\n      {{ product.price | money_without_currency }}\n    </span>\n\n  </div>\n\n</div>"
               },
               "blocks": {}
             },
@@ -88,13 +88,22 @@
               "type": "custom-liquid",
               "name": "BASLIK Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"\n  font-family: 'Cormorant Garamond', serif;\n  font-size: 56px;\n  font-weight: 500;\n  line-height: 0.95;\n  letter-spacing: -0.02em;\n  margin: 6 0 4px 0;\n  color: #151515;\n\">\n  {{ product.title }}\n</div>"
+                "custom_liquid": "<div style=\"padding-top: 10px; padding-bottom: 34px;\">\n\n  <div style=\"\n    font-family: 'Cormorant Garamond', serif;\n    font-size: 56px;\n    font-weight: 500;\n    line-height: 0.95;\n    letter-spacing: -0.02em;\n    color: #151515;\n    margin: 0;\n  \">\n    {{ product.title }}\n  </div>\n\n  <div style=\"\n    font-family: Inter, sans-serif;\n    font-size: 11px;\n    font-weight: 400;\n    line-height: 1.45;\n    letter-spacing: 0.14em;\n    text-transform: uppercase;\n    color: #7a736b;\n    margin-top: 6px;\n    max-width: 440px;\n  \">\n    {{ product.metafields.custom.short_desc | default: \"BUFFALO SOLE • COPPER RIVETS • GAZIANTEP CRAFT\" }}\n  </div>\n\n</div>"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_gzbzCa": {
+              "type": "custom-liquid",
+              "name": "bosluk",
+              "settings": {
+                "custom_liquid": "<div style=\"height: 22px;\"></div>"
               },
               "blocks": {}
             },
             "custom_liquid_bAtXme": {
               "type": "custom-liquid",
               "name": "kisa aciklama Liquid",
+              "disabled": true,
               "settings": {
                 "custom_liquid": "<div style=\"\n  font-family: Inter, sans-serif;\n  font-size: 11px;\n  font-weight: 400;\n  line-height: 1.45;\n  letter-spacing: 0.14em;\n  text-transform: uppercase;\n  color: #7a736b;\n  margin: -18 0 48px 0;\n  max-width: 440px;\n\">\n  {{ product.metafields.custom.short_desc | default: \"BUFFALO SOLE • COPPER RIVETS • GAZIANTEP CRAFT\" }}\n</div>"
               },
@@ -369,6 +378,7 @@
             "custom_liquid_ckUUzR",
             "custom_liquid_mXq6A8",
             "custom_liquid_NPr8F3",
+            "custom_liquid_gzbzCa",
             "custom_liquid_bAtXme",
             "group",
             "variant_picker",
