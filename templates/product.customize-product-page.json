@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "Fiyat Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n  margin-top: 2px;\n  margin-bottom: 28px;\n\">\n\n  <span style=\"\n    font-family: Inter, sans-serif;\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1;\n    color: #2a2a2a;\n    opacity: 0.65;\n    position: relative;\n    top: 8px;\n  \">\n    $\n  </span>\n\n  <span style=\"\n    font-family: Inter, sans-serif;\n    font-size: 40px;\n    font-weight: 600;\n    line-height: 0.92;\n    letter-spacing: -0.03em;\n    color: #111111;\n  \">\n    {{ product.price | money_without_currency }}\n  </span>\n\n</div>"
+                "custom_liquid": "<div style=\"\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n  margin-bottom: 10px;\n\">\n\n  <span style=\"\n    font-family: Inter, sans-serif;\n    font-size: 14px;\n    opacity: 0.6;\n    position: relative;\n    top: 6px;\n  \">\n    $\n  </span>\n\n  <span style=\"\n    font-family: Inter, sans-serif;\n    font-size: 38px;\n    font-weight: 600;\n    letter-spacing: -0.02em;\n    line-height: 0.9;\n    color: #111;\n  \">\n    {{ product.price | money_without_currency }}\n  </span>\n\n</div>"
               },
               "blocks": {}
             },
@@ -88,7 +88,7 @@
               "type": "custom-liquid",
               "name": "BASLIK Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"\n  font-family: 'Playfair Display', serif;\n  font-size: 54px;\n  line-height: 0.98;\n  letter-spacing: -0.03em;\n  color: #161616;\n  margin: 0 0 10px 0;\n\">\n  {{ product.title }}\n</div>"
+                "custom_liquid": "<div style=\"\n  font-family: 'Cormorant Garamond', serif;\n  font-size: 56px;\n  font-weight: 500;\n  line-height: 0.95;\n  letter-spacing: -0.02em;\n  margin: 0 0 4px 0;\n  color: #151515;\n\">\n  {{ product.title }}\n</div>"
               },
               "blocks": {}
             },
@@ -96,7 +96,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<div style=\"\n  font-family: Inter, sans-serif;\n  font-size: 14px;\n  line-height: 1.5;\n  color: #5f5a54;\n  letter-spacing: 0.01em;\n  margin: 8px 0 22px 0;\n  max-width: 420px;\n\">\n  {{ product.metafields.custom.short_desc | default: \"Buffalo leather sole • Copper grounding rivets • Gaziantep craftsmanship\" }}\n</div>"
+                "custom_liquid": "<div style=\"\n  font-family: Inter, sans-serif;\n  font-size: 11px;\n  font-weight: 400;\n  line-height: 1.45;\n  letter-spacing: 0.12em;\n  text-transform: uppercase;\n  color: #7c746b;\n  margin: -2px 0 16px 0;\n  max-width: 460px;\n\">\n  {{ product.metafields.custom.short_desc | default: \"BUFFALO SOLE • COPPER RIVETS • GAZIANTEP CRAFT\" }}\n</div>"
               },
               "blocks": {}
             },
