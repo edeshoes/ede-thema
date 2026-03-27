@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "Fiyat Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"margin-bottom: 40px;\">\n\n  <span style=\"\n    font-family: 'Playfair Display', serif;\n    font-size: 56px;\n    font-weight: 400;\n    line-height: 1;\n    color: #2f2722;\n    letter-spacing: 0.01em;\n  \">\n    {{ product.price | money_without_trailing_zeros }}\n  </span>\n\n</div>"
+                "custom_liquid": "<div style=\"margin-bottom: 40px;\">\n  <span style=\"\n    font-family: 'Playfair Display', serif;\n    font-size: 52px;\n    font-weight: 400;\n    line-height: 1;\n    letter-spacing: 0;\n    color: #2a231d;\n  \">\n    {{ product.price | money_without_trailing_zeros }}\n  </span>\n</div>"
               },
               "blocks": {}
             },
