@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "BASLIK Liquid",
               "settings": {
-                "custom_liquid": "<link href=\"https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap\" rel=\"stylesheet\">\n\n<h1 style=\"\n  font-family: 'DM Serif Display', serif;\n  font-weight: 400;\n  font-size: 48px;\n  line-height: 1.05;\n  letter-spacing: -0.02em;\n  margin: 0 0 6px 0;\n  color: #171717;\n\">\n  {{ product.title }}\n</h1>"
+                "custom_liquid": "<div class=\"desktop-only-product-title\">\n  <h1 style=\"\n    font-family: 'DM Serif Display', serif;\n    font-weight: 400;\n    font-size: 48px;\n    line-height: 1.05;\n    letter-spacing: -0.02em;\n    margin: 0 0 6px 0;\n    color: #171717;\n  \">\n    {{ product.title }}\n  </h1>\n</div>"
               },
               "blocks": {}
             },
@@ -88,7 +88,7 @@
               "type": "custom-liquid",
               "name": "Fiyat Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"\n  font-family: 'DM Serif Display', serif;\n  font-size: 20px;\n  margin-top: -2px;\n  margin-bottom: 22px;\n  color: #2a2a2a;\n  opacity: 0.9;\n\">\n  {{ product.price | money }}\n</div>"
+                "custom_liquid": "<div class=\"desktop-only-product-price\" style=\"\n  font-family: 'DM Serif Display', serif;\n  font-size: 20px;\n  margin-top: -2px;\n  margin-bottom: 22px;\n  color: #2a2a2a;\n  opacity: 0.9;\n\">\n  {{ product.price | money }}\n</div>"
               },
               "blocks": {}
             },
