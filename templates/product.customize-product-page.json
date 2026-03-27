@@ -84,6 +84,14 @@
               },
               "blocks": {}
             },
+            "custom_liquid_9FaAia": {
+              "type": "custom-liquid",
+              "name": "bosluk",
+              "settings": {
+                "custom_liquid": "<div style=\"height: 22px;\"></div>"
+              },
+              "blocks": {}
+            },
             "custom_liquid_NPr8F3": {
               "type": "custom-liquid",
               "name": "BASLIK Liquid",
@@ -377,6 +385,7 @@
           "block_order": [
             "custom_liquid_ckUUzR",
             "custom_liquid_mXq6A8",
+            "custom_liquid_9FaAia",
             "custom_liquid_NPr8F3",
             "custom_liquid_gzbzCa",
             "custom_liquid_bAtXme",
