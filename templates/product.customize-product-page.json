@@ -80,7 +80,7 @@
               "type": "custom-liquid",
               "name": "Fiyat Liquid",
               "settings": {
-                "custom_liquid": "<div style=\"padding-bottom: 22px;\">\n\n  <div style=\"\n    display: flex;\n    align-items: baseline;\n    gap: 6px;\n  \">\n\n    <span style=\"\n      font-family: Inter, sans-serif;\n      font-size: 20px;\n      font-weight: 500;\n      line-height: 1;\n      color: #3b342e;\n      opacity: 0.72;\n    \">\n      $\n    </span>\n\n    <span style=\"\n      font-family: Inter, sans-serif;\n      font-size: 46px;\n      font-weight: 600;\n      line-height: 0.92;\n      letter-spacing: -0.03em;\n      color: #111111;\n    \">\n      {{ product.price | money_without_currency }}\n    </span>\n\n  </div>\n\n</div>"
+                "custom_liquid": "<div style=\"\n  display: flex;\n  align-items: baseline;\n  gap: 4px;\n\">\n\n  <span style=\"\n    font-family: 'Playfair Display', serif;\n    font-size: 46px;\n    font-weight: 600;\n    line-height: 0.95;\n    letter-spacing: -0.03em;\n    color: #2a231d;\n    opacity: 0.85;\n  \">\n    $\n  </span>\n\n  <span style=\"\n    font-family: 'Playfair Display', serif;\n    font-size: 46px;\n    font-weight: 600;\n    line-height: 0.95;\n    letter-spacing: -0.03em;\n    color: #2a231d;\n  \">\n    {{ product.price | money_without_currency }}\n  </span>\n\n</div>"
               },
               "blocks": {}
             },
