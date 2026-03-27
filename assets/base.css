@@ -5167,4 +5167,8 @@ h1, h2, h3, h4 {
   .product-information .variant-picker {
     margin-top: 12px !important;
   }
+}.product-eyebrow {
+  letter-spacing: 0.28em;
+  font-size: 11px;
+  opacity: 0.45;
 }
