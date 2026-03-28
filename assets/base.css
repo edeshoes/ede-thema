@@ -5273,4 +5273,94 @@ h1, h2, h3, h4 {
   .product__info-container .form__label {
     margin-bottom: 12px !important;
   }
+}/* ===== PREMIUM SIZE PICKER (APPLE STYLE) ===== */
+
+.product-form__input--pill input[type="radio"] {
+  display: none;
+}
+
+.product-form__input--pill label {
+  font-family: "Albert Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+
+  border: 1px solid #e5e5e5;
+  background-color: #ffffff;
+  color: #111;
+
+  padding: 10px 16px;
+  margin: 6px 6px 0 0;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover (Apple hissi: çok hafif) */
+.product-form__input--pill label:hover {
+  border-color: #111;
+}
+
+/* Seçili state */
+.product-form__input--pill input[type="radio"]:checked + label {
+  border-color: #111;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Disabled (stok yoksa) */
+.product-form__input--pill input[type="radio"]:disabled + label {
+  border-color: #eee;
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+/* Mobil spacing fix */
+.product-form__input--pill {
+  display: flex;
+  flex-wrap: wrap;
+}/* ===== PREMIUM SIZE PICKER V2 ===== */
+
+.product-form__input--pill label {
+  border-radius: 12px;
+  border: 1px solid #dcdcdc;
+  background: #f9f9f9;
+
+  padding: 12px 18px;
+  min-width: 52px;
+  text-align: center;
+
+  transition: all 0.18s ease;
+}
+
+/* Hover → çok hafif yükselme */
+.product-form__input--pill label:hover {
+  border-color: #111;
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+/* Seçili → güçlü ama clean */
+.product-form__input--pill input[type="radio"]:checked + label {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+/* Grid spacing iyileştirme */
+.product-form__input--pill {
+  gap: 8px;
+}
+
+/* Mobil → daha nefesli */
+@media (max-width: 768px) {
+  .product-form__input--pill label {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
 }
