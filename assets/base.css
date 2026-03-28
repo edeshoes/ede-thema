@@ -5318,3 +5318,16 @@ h1, h2, h3, h4 {
   font-size: 16px;
   letter-spacing: 0.01em;
 }
+/* ===== FINAL TYPOGRAPHY POLISH ===== */
+
+.product-form__input--pill label {
+  font-family: var(--font-heading-family);
+  font-weight: 500;          /* biraz yumuşattık */
+  font-size: 17px;           /* büyüttük */
+  letter-spacing: 0.04em;    /* genişlettik */
+}
+
+/* seçili olan biraz daha güçlü */
+.product-form__input--pill input[type="radio"]:checked + label {
+  font-weight: 600;
+}
