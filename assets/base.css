@@ -5183,3 +5183,94 @@ h1, h2, h3, h4 {
   font-size: 56px !important;
   line-height: 1 !important;
 }
+/* ===== PREMIUM SIZE PICKER ===== */
+
+.product__info-container variant-picker,
+.product__info-container .product-form__input,
+.product__info-container .product-form__input--pill {
+  margin-top: 0 !important;
+}
+
+.product__info-container .product-form__input legend,
+.product__info-container .form__label {
+  font-family: Inter, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #7c746b !important;
+  margin-bottom: 14px !important;
+}
+
+.product__info-container .product-form__input--pill input[type="radio"] + label,
+.product__info-container .product-form__input input[type="radio"] + label,
+.product__info-container variant-picker input[type="radio"] + label {
+  min-width: 56px !important;
+  min-height: 56px !important;
+  padding: 0 14px !important;
+  border-radius: 14px !important;
+  border: 1px solid #d8d0c8 !important;
+  background: #f7f3ee !important;
+  color: #2f2923 !important;
+  font-family: 'Albert Sans', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  box-shadow: none !important;
+  transition: all 0.18s ease !important;
+}
+
+/* hover */
+.product__info-container .product-form__input--pill input[type="radio"] + label:hover,
+.product__info-container .product-form__input input[type="radio"] + label:hover,
+.product__info-container variant-picker input[type="radio"] + label:hover {
+  border-color: #b8aea4 !important;
+  background: #fbf8f4 !important;
+  transform: translateY(-1px);
+}
+
+/* selected */
+.product__info-container .product-form__input--pill input[type="radio"]:checked + label,
+.product__info-container .product-form__input input[type="radio"]:checked + label,
+.product__info-container variant-picker input[type="radio"]:checked + label {
+  background: #1f1a16 !important;
+  color: #f6f1ea !important;
+  border-color: #1f1a16 !important;
+  box-shadow: 0 8px 20px rgba(31, 26, 22, 0.10) !important;
+}
+
+/* unavailable */
+.product__info-container .product-form__input--pill input[type="radio"].disabled + label,
+.product__info-container .product-form__input input[type="radio"].disabled + label,
+.product__info-container variant-picker input[type="radio"].disabled + label,
+.product__info-container .product-form__input--pill input[type="radio"]:disabled + label,
+.product__info-container .product-form__input input[type="radio"]:disabled + label,
+.product__info-container variant-picker input[type="radio"]:disabled + label {
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+  text-decoration: none !important;
+}
+
+/* spacing between rows */
+.product__info-container .product-form__input--pill,
+.product__info-container variant-picker fieldset {
+  gap: 10px !important;
+}
+
+/* mobile */
+@media screen and (max-width: 989px) {
+  .product__info-container .product-form__input--pill input[type="radio"] + label,
+  .product__info-container .product-form__input input[type="radio"] + label,
+  .product__info-container variant-picker input[type="radio"] + label {
+    min-width: 52px !important;
+    min-height: 52px !important;
+    border-radius: 12px !important;
+    font-size: 15px !important;
+  }
+
+  .product__info-container .product-form__input legend,
+  .product__info-container .form__label {
+    margin-bottom: 12px !important;
+  }
+}
