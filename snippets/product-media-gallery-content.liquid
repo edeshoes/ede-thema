@@ -638,18 +638,20 @@ thumbnails: limited_thumbnails,
   </media-gallery>
   {% if sorted_media.size > 6 %}
   <div class="custom-lifestyle-grid">
-    {% for media in sorted_media offset: 6 limit: 6 %}
-      <div class="custom-lifestyle-item">
-        {%- liquid
-          assign media_sizes = '(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw'
-        -%}
-
-        {% render 'product-media',
-          media: media,
-          sizes: media_sizes,
-          is_main_product_media: false
-        %}
-      </div>
+  {    {% for media in sorted_media offset: 6 limit: 6 %}
+      {% if media.media_type == 'image' %}
+        <div class="custom-lifestyle-item">
+          {{
+            media.preview_image
+            | image_url: width: 1200
+            | image_tag:
+              widths: '400, 600, 800, 1200',
+              loading: 'lazy',
+              alt: media.alt,
+              class: 'custom-lifestyle-image'
+          }}
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 {% endif %}
