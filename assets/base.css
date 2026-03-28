@@ -5303,3 +5303,10 @@ h1, h2, h3, h4 {
 .product-form__input--pill label {
   flex: 0 0 auto;
 }
+/* ===== SIZE TYPOGRAPHY UPGRADE ===== */
+
+.product-form__input--pill label {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.06em; /* en kritik nokta */
+}
