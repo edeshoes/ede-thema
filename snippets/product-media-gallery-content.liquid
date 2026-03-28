@@ -353,7 +353,7 @@
     {{ block_shopify_attributes }}
   >
     {% capture slides %}
-      {% for media in sorted_media limit: 6 %}
+      {% for media in sorted_media %}
         {% capture children %}
           {%- liquid
               if needs_both_sizes and forloop.first
@@ -447,7 +447,7 @@
         class="media-gallery__grid list-unstyled"
         data-testid="media-gallery-grid"
       >
-        {% for media in sorted_media %}
+        {% for media in sorted_media limit: 6 %}
           <li
             ref="media[]"
             class="{{ product_media_container_class }} product-media-container--{{ media.media_type }}"
