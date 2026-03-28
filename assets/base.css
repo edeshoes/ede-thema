@@ -5183,184 +5183,114 @@ h1, h2, h3, h4 {
   font-size: 56px !important;
   line-height: 1 !important;
 }
-/* ===== PREMIUM SIZE PICKER ===== */
+/* ===== SIZE PICKER — LUXURY EDITORIAL VERSION ===== */
 
-.product__info-container variant-picker,
-.product__info-container .product-form__input,
-.product__info-container .product-form__input--pill {
-  margin-top: 0 !important;
-}
-
-.product__info-container .product-form__input legend,
-.product__info-container .form__label {
-  font-family: Inter, sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  color: #7c746b !important;
-  margin-bottom: 14px !important;
-}
-
-.product__info-container .product-form__input--pill input[type="radio"] + label,
-.product__info-container .product-form__input input[type="radio"] + label,
-.product__info-container variant-picker input[type="radio"] + label {
-  min-width: 56px !important;
-  min-height: 56px !important;
-  padding: 0 14px !important;
-  border-radius: 14px !important;
-  border: 1px solid #d8d0c8 !important;
-  background: #f7f3ee !important;
-  color: #2f2923 !important;
-  font-family: 'Albert Sans', sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.01em !important;
-  line-height: 1 !important;
-  box-shadow: none !important;
-  transition: all 0.18s ease !important;
-}
-
-/* hover */
-.product__info-container .product-form__input--pill input[type="radio"] + label:hover,
-.product__info-container .product-form__input input[type="radio"] + label:hover,
-.product__info-container variant-picker input[type="radio"] + label:hover {
-  border-color: #b8aea4 !important;
-  background: #fbf8f4 !important;
-  transform: translateY(-1px);
-}
-
-/* selected */
-.product__info-container .product-form__input--pill input[type="radio"]:checked + label,
-.product__info-container .product-form__input input[type="radio"]:checked + label,
-.product__info-container variant-picker input[type="radio"]:checked + label {
-  background: #1f1a16 !important;
-  color: #f6f1ea !important;
-  border-color: #1f1a16 !important;
-  box-shadow: 0 8px 20px rgba(31, 26, 22, 0.10) !important;
-}
-
-/* unavailable */
-.product__info-container .product-form__input--pill input[type="radio"].disabled + label,
-.product__info-container .product-form__input input[type="radio"].disabled + label,
-.product__info-container variant-picker input[type="radio"].disabled + label,
-.product__info-container .product-form__input--pill input[type="radio"]:disabled + label,
-.product__info-container .product-form__input input[type="radio"]:disabled + label,
-.product__info-container variant-picker input[type="radio"]:disabled + label {
-  opacity: 0.35 !important;
-  cursor: not-allowed !important;
-  text-decoration: none !important;
-}
-
-/* spacing between rows */
-.product__info-container .product-form__input--pill,
-.product__info-container variant-picker fieldset {
-  gap: 10px !important;
-}
-
-/* mobile */
-@media screen and (max-width: 989px) {
-  .product__info-container .product-form__input--pill input[type="radio"] + label,
-  .product__info-container .product-form__input input[type="radio"] + label,
-  .product__info-container variant-picker input[type="radio"] + label {
-    min-width: 52px !important;
-    min-height: 52px !important;
-    border-radius: 12px !important;
-    font-size: 15px !important;
-  }
-
-  .product__info-container .product-form__input legend,
-  .product__info-container .form__label {
-    margin-bottom: 12px !important;
-  }
-}/* ===== PREMIUM SIZE PICKER (APPLE STYLE) ===== */
-
-.product-form__input--pill input[type="radio"] {
-  display: none;
-}
-
-.product-form__input--pill label {
-  font-family: "Albert Sans", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-
-  border: 1px solid #e5e5e5;
-  background-color: #ffffff;
-  color: #111;
-
-  padding: 10px 16px;
-  margin: 6px 6px 0 0;
-
-  border-radius: 10px;
-  cursor: pointer;
-
-  transition: all 0.2s ease;
-}
-
-/* Hover (Apple hissi: çok hafif) */
-.product-form__input--pill label:hover {
-  border-color: #111;
-}
-
-/* Seçili state */
-.product-form__input--pill input[type="radio"]:checked + label {
-  border-color: #111;
-  background-color: #111;
-  color: #fff;
-}
-
-/* Disabled (stok yoksa) */
-.product-form__input--pill input[type="radio"]:disabled + label {
-  border-color: #eee;
-  color: #bbb;
-  cursor: not-allowed;
-}
-
-/* Mobil spacing fix */
+/* genel alan */
 .product-form__input--pill {
   display: flex;
   flex-wrap: wrap;
-}/* ===== PREMIUM SIZE PICKER V2 ===== */
+  gap: 10px;
+  margin-top: 14px;
+}
 
+/* radio gizle */
+.product-form__input--pill input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* kutular */
 .product-form__input--pill label {
-  border-radius: 12px;
-  border: 1px solid #dcdcdc;
-  background: #f9f9f9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  padding: 12px 18px;
-  min-width: 52px;
-  text-align: center;
+  min-width: 64px;
+  height: 52px;
+  padding: 0 18px;
 
-  transition: all 0.18s ease;
+  border: 1px solid #d7d0c8;
+  border-radius: 8px;
+  background: #f7f3ee;
+  color: #2a241f;
+
+  font-family: "Albert Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
 }
 
-/* Hover → çok hafif yükselme */
+/* hover */
 .product-form__input--pill label:hover {
-  border-color: #111;
-  background: #fff;
+  background: #fbf8f4;
+  border-color: #8e7f71;
+  color: #171310;
   transform: translateY(-1px);
 }
 
-/* Seçili → güçlü ama clean */
+/* seçili */
 .product-form__input--pill input[type="radio"]:checked + label {
-  background: #111;
-  color: #fff;
-  border-color: #111;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #1a1613;
+  color: #f6f1ea;
+  border-color: #1a1613;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
   transform: translateY(-1px);
 }
 
-/* Grid spacing iyileştirme */
-.product-form__input--pill {
-  gap: 8px;
+/* focus */
+.product-form__input--pill input[type="radio"]:focus-visible + label {
+  outline: 2px solid rgba(26, 22, 19, 0.18);
+  outline-offset: 2px;
 }
 
-/* Mobil → daha nefesli */
+/* stok dışı */
+.product-form__input--pill input[type="radio"]:disabled + label {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  box-shadow: none;
+  transform: none;
+}
+
+/* size başlığı */
+.variant-picker__label,
+.form__label {
+  font-family: "Albert Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7f746a;
+  margin-bottom: 12px;
+}
+
+/* size guide çizgisiyle biraz daha nefes */
+.product-form__input {
+  margin-bottom: 28px;
+}
+
+/* mobil */
 @media (max-width: 768px) {
+  .product-form__input--pill {
+    gap: 8px;
+  }
+
   .product-form__input--pill label {
-    padding: 10px 14px;
-    font-size: 13px;
+    min-width: 56px;
+    height: 46px;
+    padding: 0 14px;
+    font-size: 14px;
+    border-radius: 7px;
   }
 }
