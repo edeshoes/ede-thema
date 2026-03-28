@@ -76,6 +76,14 @@
               },
               "blocks": {}
             },
+            "custom_liquid_mXq6A8": {
+              "type": "custom-liquid",
+              "name": "Fiyat Liquid",
+              "settings": {
+                "custom_liquid": "<div style=\"margin-bottom: 46px;\">\n  <span style=\"\n    font-family: 'Playfair Display', serif;\n    font-size: 50px;\n    font-weight: 300;\n    line-height: 1;\n    letter-spacing: 0.01em;\n    color: #6b625a;\n  \">\n    {{ product.price | money_without_trailing_zeros }}\n  </span>\n</div>"
+              },
+              "blocks": {}
+            },
             "custom_liquid_NPr8F3": {
               "type": "custom-liquid",
               "name": "BASLIK Liquid",
@@ -90,14 +98,6 @@
               "disabled": true,
               "settings": {
                 "custom_liquid": "<div style=\"height: 22px;\"></div>"
-              },
-              "blocks": {}
-            },
-            "custom_liquid_mXq6A8": {
-              "type": "custom-liquid",
-              "name": "Fiyat Liquid",
-              "settings": {
-                "custom_liquid": "<div style=\"margin-bottom: 46px;\">\n  <span style=\"\n    font-family: 'Playfair Display', serif;\n    font-size: 50px;\n    font-weight: 300;\n    line-height: 1;\n    letter-spacing: 0.01em;\n    color: #6b625a;\n  \">\n    {{ product.price | money_without_trailing_zeros }}\n  </span>\n</div>"
               },
               "blocks": {}
             },
@@ -386,9 +386,9 @@
           },
           "block_order": [
             "custom_liquid_ckUUzR",
+            "custom_liquid_mXq6A8",
             "custom_liquid_NPr8F3",
             "custom_liquid_9FaAia",
-            "custom_liquid_mXq6A8",
             "custom_liquid_gzbzCa",
             "custom_liquid_bAtXme",
             "group",
