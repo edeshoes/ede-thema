@@ -5334,3 +5334,36 @@ h1, h2, h3, h4 {
 .product-form__input--pill input[type="radio"]:checked + label {
   transform: scale(1.05);
 }
+/* ===== LIFESTYLE GRID UNDER PRODUCT GALLERY ===== */
+
+.custom-lifestyle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.custom-lifestyle-item {
+  width: 100%;
+}
+
+.custom-lifestyle-item .product-media {
+  width: 100%;
+}
+
+.custom-lifestyle-item img,
+.custom-lifestyle-item video,
+.custom-lifestyle-item model-viewer,
+.custom-lifestyle-item iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-lifestyle-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+  }
+}
