@@ -400,7 +400,7 @@
       {% capture controls %}
         {% assign limited_thumbnails = sorted_media | slice: 0, 6 %}
         {% if render_slideshow_controls %}
-          {% render '_slideshow-controls',
+         {% render 'slideshow-controls',
   class: slideshow_controls_class,
   style: slideshow_controls_style,
   item_count: 6,
