@@ -5294,3 +5294,12 @@ h1, h2, h3, h4 {
     border-radius: 7px;
   }
 }
+/* ===== EDITORIAL BREAK — LESS PERFECT GRID ===== */
+
+.product-form__input--pill {
+  max-width: 360px;
+}
+
+.product-form__input--pill label {
+  flex: 0 0 auto;
+}
