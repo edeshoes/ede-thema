@@ -1,0 +1,74 @@
+{% if product and product.media.size > 6 %}
+  <section class="product-lifestyle-grid-section">
+    <div class="page-width">
+      <div class="product-lifestyle-grid">
+        {% for media in product.media offset: 6 limit: 6 %}
+          {% if media.media_type == 'image' %}
+            <div class="product-lifestyle-grid__item">
+              {{
+                media
+                | image_url: width: 1200
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 600, 800, 1200',
+                  sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw',
+                  class: 'product-lifestyle-grid__image',
+                  alt: media.alt
+              }}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<style>
+  .product-lifestyle-grid-section {
+    margin-top: 20px;
+  }
+
+  .product-lifestyle-grid-section .page-width {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .product-lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .product-lifestyle-grid__item {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .product-lifestyle-grid__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 989px) {
+    .product-lifestyle-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product lifestyle grid",
+  "templates": ["product"],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product lifestyle grid"
+    }
+  ]
+}
+{% endschema %}
