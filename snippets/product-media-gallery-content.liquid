@@ -353,7 +353,7 @@
     {{ block_shopify_attributes }}
   >
     {% capture slides %}
-      {% for media in sorted_media %}
+      {% for media in sorted_media limit: 6 %}
         {% capture children %}
           {%- liquid
               if needs_both_sizes and forloop.first
