@@ -635,6 +635,23 @@
       </script>
     {%- endif -%}
   </media-gallery>
+  {% if sorted_media.size > 6 %}
+  <div class="custom-lifestyle-grid">
+    {% for media in sorted_media offset: 6 limit: 6 %}
+      <div class="custom-lifestyle-item">
+        {%- liquid
+          assign media_sizes = '(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw'
+        -%}
+
+        {% render 'product-media',
+          media: media,
+          sizes: media_sizes,
+          is_main_product_media: false
+        %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
 {% endif %}
 
 {% stylesheet %}
