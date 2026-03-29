@@ -4994,4 +4994,30 @@ product-recommendations:has([data-has-recommendations='false']) {
   [data-testid="product-information-details"] .group-block-content::-webkit-scrollbar {
     display: none;              /* Chrome/Safari */
   }
+}@media screen and (min-width: 990px) {
+  [data-testid="product-information-details"] {
+    position: sticky;
+    top: 0;
+  }
+}@media screen and (min-width: 990px) {
+  [data-testid="product-information-details"] {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  [data-testid="product-information-details"] .group-block-content {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+@media screen and (min-width: 990px) {
+  [data-testid="product-information-details"] .group-block-content {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  [data-testid="product-information-details"] .group-block-content::-webkit-scrollbar {
+    display: none;
+  }
 }
