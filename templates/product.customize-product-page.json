@@ -79,8 +79,45 @@
             "custom_liquid_mXq6A8": {
               "type": "custom-liquid",
               "name": "Fiyat Liquid",
+              "disabled": true,
               "settings": {
                 "custom_liquid": "<div style=\"margin-bottom: 28px;\">\n  <span style=\"\n    font-family: 'Albert Sans', sans-serif;\n    font-size: 48px;\n    font-weight: 400;\n    line-height: 1;\n    letter-spacing: 0.015em;\n    color: #2f2923;\n  \">\n    {{ product.price | money_without_trailing_zeros }}\n  </span>\n</div>"
+              },
+              "blocks": {}
+            },
+            "price_YqEjX8": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": true,
+                "show_tax_info": true,
+                "type_preset": "h2",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground-heading)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "review_VqzFXB": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
               },
               "blocks": {}
             },
@@ -190,7 +227,6 @@
                 "group_8B3NLh": {
                   "type": "group",
                   "name": "Price & Rating",
-                  "disabled": true,
                   "settings": {
                     "content_direction": "row",
                     "vertical_on_mobile": true,
@@ -387,6 +423,8 @@
           "block_order": [
             "custom_liquid_ckUUzR",
             "custom_liquid_mXq6A8",
+            "price_YqEjX8",
+            "review_VqzFXB",
             "custom_liquid_NPr8F3",
             "custom_liquid_9FaAia",
             "custom_liquid_gzbzCa",
