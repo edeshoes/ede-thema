@@ -5011,13 +5011,147 @@ product-recommendations:has([data-has-recommendations='false']) {
     overflow-y: auto;
   }
 }
+/* ==============================
+   EDE PRODUCT PAGE STICKY POPUP
+   Desktop only
+================================= */
+
 @media screen and (min-width: 990px) {
-  [data-testid="product-information-details"] .group-block-content {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+
+  /* Sağ sütun geniş davranmasın */
+  .product__info-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
   }
 
-  [data-testid="product-information-details"] .group-block-content::-webkit-scrollbar {
-    display: none;
+  /* Asıl popup kart */
+  .product__info-container {
+    position: sticky;
+    top: 88px; /* üstten boşluk */
+    width: min(100%, 560px); /* biraz daha küçük kutu */
+    margin-right: 22px; /* sağdan boşluk */
+    padding: 34px 34px 28px;
+    background: rgba(244, 238, 231, 0.96);
+    border: 1px solid rgba(60, 45, 35, 0.08);
+    border-radius: 28px;
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.08),
+      0 6px 18px rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-sizing: border-box;
+  }
+
+  /* Başlık blokları daha nefesli olsun */
+  .product__info-container > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  .product__info-container .price {
+    margin-top: 0 !important;
+    margin-bottom: 26px !important;
+  }
+
+  .product__title,
+  .product__title h1 {
+    margin-bottom: 10px !important;
+  }
+
+  /* Varyant alanı */
+  .product-form__input {
+    margin-bottom: 24px !important;
+  }
+
+  /* Size/variant kutuları daha premium dursun */
+  .product-form__input input[type='radio'] + label {
+    border-radius: 16px !important;
+    min-width: 64px;
+    min-height: 56px;
+    padding: 14px 16px !important;
+    border: 1px solid rgba(60, 45, 35, 0.10) !important;
+    background: rgba(255, 255, 255, 0.55) !important;
+    box-shadow: none !important;
+    transition: all 0.18s ease;
+  }
+
+  .product-form__input input[type='radio'] + label:hover {
+    transform: translateY(-1px);
+    border-color: rgba(60, 45, 35, 0.18) !important;
+    background: rgba(255, 255, 255, 0.72) !important;
+  }
+
+  .product-form__input input[type='radio']:checked + label {
+    background: linear-gradient(180deg, #2a2018 0%, #120d09 100%) !important;
+    color: #fff !important;
+    border-color: #1a130e !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16) !important;
+  }
+
+  /* Size guide / accordion alanı */
+  .accordion,
+  details {
+    border-top: 1px solid rgba(60, 45, 35, 0.10) !important;
+    border-bottom: 0 !important;
+    margin-top: 24px !important;
+    padding-top: 18px !important;
+  }
+
+  summary,
+  .accordion summary {
+    min-height: 44px;
+    align-items: center;
+  }
+
+  /* Alt satın alma alanı */
+  .product-form__buttons,
+  .product-form__submit,
+  .shopify-payment-button {
+    margin-top: 18px !important;
+  }
+
+  /* Quantity + button alanı */
+  quantity-input.quantity,
+  .quantity {
+    border-radius: 18px !important;
+    overflow: hidden;
+  }
+
+  .quantity:before,
+  .quantity:after {
+    display: none !important;
+  }
+
+  .button,
+  .product-form__submit,
+  .shopify-payment-button__button {
+    border-radius: 18px !important;
+    min-height: 58px !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+  }
+
+  /* Dinamik ödeme butonu çok kaba görünüyorsa */
+  .shopify-payment-button {
+    margin-top: 12px !important;
+  }
+}
+
+
+/* ==============================
+   Mobile: popup davranışı kapansın
+================================= */
+
+@media screen and (max-width: 989px) {
+  .product__info-container {
+    position: static !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 }
