@@ -23,42 +23,44 @@
   </section>
 {% endif %}
 
-<style>
-  .product-lifestyle-grid-section {
-    margin-top: 20px;
-  }
+.product-lifestyle-grid-section {
+  margin-top: 20px;
+}
 
-  .product-lifestyle-grid-section .page-width {
-    max-width: none;
-    padding-left: 0;
-    padding-right: 0;
-  }
+.product-lifestyle-grid-section .page-width {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
 
+.product-lifestyle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  width: 66.666%;
+  margin-right: auto;
+}
+
+.product-lifestyle-grid__item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-lifestyle-grid__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 989px) {
   .product-lifestyle-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .product-lifestyle-grid__item {
     width: 100%;
-    overflow: hidden;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
-
-  .product-lifestyle-grid__image {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-  }
-
-  @media screen and (max-width: 989px) {
-    .product-lifestyle-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-  }
-</style>
+}
 
 {% schema %}
 {
