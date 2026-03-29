@@ -4989,3 +4989,22 @@ product-recommendations:has([data-has-recommendations='false']) {
   }
 
 }
+/* ===== RIGHT PANEL SCROLL FIX (SAFE) ===== */
+
+@media screen and (min-width: 990px) {
+
+  /* sağ panel */
+  .product__info-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  /* içeriği scroll yap */
+  .product__info-wrapper > * {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+
+}
