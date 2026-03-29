@@ -46,311 +46,40 @@ body.template-collection #product-grid {
 /* Optional: slightly lift the text block so overlay later won't feel cramped */
 body.template-collection .card-information {
   margin-top: 10px !important;
-}/* ====== SABAH-LIKE TEXT OVER IMAGE (Collection product cards) ====== */
-
-/* Kartı referans al */
-.template-collection .card-wrapper{
-  position: relative;
 }
 
-/* Bilgi bloğunu (title + price) fotoğrafın üstüne taşı */
-.template-collection .card__content{
-  position: absolute !important;
-  inset: 0 !important;               /* top/right/bottom/left = 0 */
-  display: flex !important;
-  align-items: flex-start !important; /* üstte dursun */
-  justify-content: center !important; /* ortalı */
-  pointer-events: none;              /* altta görsel tıklansın */
-  padding-top: 28px !important;      /* metin üst boşluğu */
-  z-index: 5 !important;
-}
-
-/* İçteki yazı alanı */
-.template-collection .card__information,
-.template-collection .card-information{
-  pointer-events: auto;              /* metin de tıklanabilir olsun */
-  text-align: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Title stili */
-.template-collection .card__heading,
-.template-collection .card__heading a{
-  font-size: 13px !important;
-  letter-spacing: 0.12em !important; /* Sabah hissi */
-  text-transform: none !important;   /* istersen uppercase yaparız */
-  line-height: 1.15 !important;
-  color: #111 !important;
-  text-decoration: none !important;
-}
-
-/* Price stili */
-.template-collection .price{
-  margin-top: 10px !important;
-  font-size: 13px !important;
-  letter-spacing: 0.10em !important;
-  color: #111 !important;
-}
-
-/* Kart altındaki boşluğu kapat (çünkü metni üstte gösteriyoruz) */
-.template-collection .card__content{
-  background: transparent !important;
-}
-
-/* Mobil: metni biraz daha yukarı ve küçük yap */
-@media (max-width: 749px){
-  .template-collection .card__content{
-    padding-top: 18px !important;
+@media (max-width: 768px) {
+  body.template-collection product-card .product-card__content {
+    position: relative;
   }
-  .template-collection .card__heading,
-  .template-collection .card__heading a,
-  .template-collection .price{
-    font-size: 12px !important;
-    letter-spacing: 0.10em !important;
+
+  body.template-collection product-card .product-card__content > :is(.read-more-wrapper, .text-block),
+  body.template-collection product-card .product-card__content > a[ref='productTitleLink'],
+  body.template-collection product-card .product-card__content > product-price {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    z-index: 30;
   }
-/* ==== FORCE TEXT OVER IMAGE – COLLECTION ==== */
 
-.template-collection .card-wrapper {
-  position: relative !important;
-}
-
-.template-collection .card__inner {
-  position: relative !important;
-}
-
-/* Metin bloğunu absolute yap */
-.template-collection .card__information,
-.template-collection .card-information {
-  position: absolute !important;
-  top: 24px !important;
-  left: 0;
-  width: 100%;
-  text-align: center !important;
-  z-index: 10 !important;
-}
-
-/* Kart alt boşluğunu kaldır */
-.template-collection .card__content {
-  padding: 0 !important;
-}
-
-/* Başlık */
-.template-collection .card__heading,
-.template-collection .card__heading a {
-  font-size: 13px !important;
-  letter-spacing: 0.12em !important;
-  color: #111 !important;
-  text-decoration: none !important;
-}
-
-/* Fiyat */
-.template-collection .price {
-  margin-top: 8px !important;
-  font-size: 13px !important;
-  letter-spacing: 0.10em !important;
-  color: #111 !important;
-/* TEST - Bunu görünce CSS yükleniyor demektir */
-.template-collection .card__heading,
-.template-collection .card-information,
-.template-collection .card__information {
-  outline: 3px solid red !important;
-}/* ===== Ritual - Collection text overlay ===== */
-
-.template-collection .card {
-  position: relative !important;
-}
-
-/* Yazı bloğunu üste al */
-.template-collection .card__content {
-  position: absolute !important;
-  top: 24px !important;
-  left: 0;
-  width: 100%;
-  z-index: 5;
-  text-align: center !important;
-  background: transparent !important;
-  padding: 0 20px !important;
-}
-
-/* Alt boşluğu iptal et */
-.template-collection .card__content .card__information {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Başlık stil */
-.template-collection .card__heading {
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* Fiyat biraz aşağı */
-.template-collection .price {
-  margin-top: 8px;
-}/* =========================
-   Collection: text overlay (Ritual / product-card)
-   ========================= */
-
-.template-collection .product-card{
-  position: relative !important;
-}
-
-/* Bilgi alanını (başlık + fiyat) fotoğrafın üstüne al */
-.template-collection .product-card .product-card__info,
-.template-collection .product-card .product-card__details,
-.template-collection .product-card .product-card__content{
-  position: absolute !important;
-  top: 24px !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 10 !important;
-  text-align: center !important;
-  background: transparent !important;
-  padding: 0 18px !important;
-}
-
-/* Başlık */
-.template-collection .product-card .product-card__title,
-.template-collection .product-card .product-card__heading,
-.template-collection .product-card .product-title{
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* Fiyatı başlıktan az aşağı al */
-.template-collection .product-card .price,
-.template-collection .product-card .product-price{
-  margin-top: 8px !important;
-}
-
-/* Kartın altındaki normal akıştaki boşluğu temizle (yazı altta yer tutmasın diye) */
-.template-collection .product-card .product-card__info,
-.template-collection .product-card .product-card__details,
-.template-collection .product-card .product-card__content{
-  margin: 0 !important;
-}/* =========================
-   COLLECTION: Title/Price Overlay (Sabah-style)
-   ========================= */
-
-/* sadece collection sayfasına etki etsin */
-body.template-collection .product-card,
-body.template-collection .product-card * {
-  box-sizing: border-box;
-}
-
-/* Kart referans olsun */
-body.template-collection .product-card {
-  position: relative;
-}
-
-/* Görsel alanını referans yap */
-body.template-collection .product-card .product-media,
-body.template-collection .product-card [class*="product-media"] {
-  position: relative;
-}
-
-/* Başlık + fiyat bloğunu görselin üstüne al (en sağlam yaklaşım: kart içindeki text bloklarını hedefle) */
-body.template-collection .product-card p[class*="product_title"],
-body.template-collection .product-card p[class*="product-title"],
-body.template-collection .product-card p[class*="product_title"],
-body.template-collection .product-card p[class*="product_title"],
-body.template-collection .product-card p[class*="product_title"],
-body.template-collection .product-card p.spacing-style,
-body.template-collection .product-card product-price {
-  position: absolute !important;
-  left: 22px;
-  right: 22px;
-  z-index: 5;
-}
-
-/* Başlık üstte */
-body.template-collection .product-card p.spacing-style {
-  top: 18px;
-  margin: 0 !important;
-}
-
-/* Fiyat başlığın altına */
-body.template-collection .product-card product-price {
-  top: 52px; /* gerekirse 48/56 oynarız */
-}
-
-/* Yazı görünümü (Sabah gibi sade) */
-body.template-collection .product-card p.spacing-style,
-body.template-collection .product-card product-price {
-  color: #111 !important;
-  background: transparent !important;
-  padding: 0 !important;
-  text-align: left !important;
-  pointer-events: none; /* yazı tıklamayı engellemesin */
-}
-
-/* Mobilde biraz daha sıkı */
-@media (max-width: 749px) {
-  body.template-collection .product-card p.spacing-style { top: 14px; }
-  body.template-collection .product-card product-price { top: 44px; }
-  body.template-collection .product-card p.spacing-style,
-  body.template-collection .product-card product-price {
-    left: 14px;
-    right: 14px;
+  body.template-collection product-card .product-card__content > product-price {
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
   }
-}/* =========================================
-   COLLECTION: Title + Price Overlay (genel)
-   Senin DOM yapına göre hedef: a > div > p
-   ========================================= */
 
-/* Collection sayfasında tüm product card'ları yakala */
-body.template-collection [id^="product-card-"][id*="__product-card-"]{
-  position: relative;
-}
-
-/* Senin selector'ında p şu yapının içinde:
-   ... > a > div > p
-   Bu yüzden a içindeki ilk div'i referans yapıyoruz.
-*/
-body.template-collection [id^="product-card-"][id*="__product-card-"] a > div{
-  position: relative;
-}
-
-/* BAŞLIK: a > div > p'yi fotoğrafın üstüne al */
-body.template-collection [id^="product-card-"][id*="__product-card-"] a > div > p{
-  position: absolute !important;
-  top: 18px;
-  left: 18px;
-  right: 18px;
-  z-index: 20;
-  margin: 0 !important;
-
-  /* Sabah gibi temiz görünüm */
-  color: #111 !important;
-  background: transparent !important;
-  text-align: left !important;
-
-  /* Yazı tıklamayı engellemesin */
-  pointer-events: none;
-}
-
-/* FİYAT: senin temada product-price custom elementti */
-body.template-collection [id^="product-card-"][id*="__product-card-"] product-price{
-  position: absolute !important;
-  top: 52px;     /* başlığın altı */
-  left: 18px;
-  right: 18px;
-  z-index: 20;
-  margin: 0 !important;
-
-  color: #111 !important;
-  background: transparent !important;
-  text-align: left !important;
-  pointer-events: none;
-}
-
-/* Mobilde daha sıkı */
-@media (max-width: 749px){
-  body.template-collection [id^="product-card-"][id*="__product-card-"] a > div > p{
-    top: 14px; left: 14px; right: 14px;
+  body.template-collection product-card .product-card__content > a[ref='productTitleLink'] {
+    bottom: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    pointer-events: auto;
   }
-  body.template-collection [id^="product-card-"][id*="__product-card-"] product-price{
-    top: 44px; left: 14px; right: 14px;
+
+  body.template-collection product-card .product-card__content > :is(.read-more-wrapper, .text-block) {
+    bottom: 112px;
   }
 }

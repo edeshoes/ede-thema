@@ -1,0 +1,3 @@
+ignore:
+  - "blocks/_product-card.liquid.bak-*"
+  - "snippets/product-card.liquid.bak-*"

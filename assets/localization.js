@@ -9,6 +9,7 @@ import { isClickedOutside, normalizeString, onAnimationEnd } from '@theme/utilit
  * @property {HTMLInputElement} countryInput - The country input element.
  * @property {HTMLUListElement[]} countryListItems - The country list items element.
  * @property {HTMLFormElement} form - The form element.
+ * @property {HTMLDivElement} notice - The notice element.
  * @property {HTMLDivElement} liveRegion - The live region element.
  * @property {HTMLSelectElement} languageInput - The language input element.
  * @property {HTMLSpanElement} noResultsMessage - The no results message element.
@@ -29,6 +30,7 @@ class LocalizationFormComponent extends Component {
     // Resizing the language input can be expensive for browsers that don't support field-sizing: content.
     // Spliting it into separate tasks at least helps when there are multiple localization forms on the page.
     setTimeout(() => this.resizeLanguageInput(), 0);
+    setTimeout(() => this.#maybeShowSuccessNotice(), 0);
   }
 
   disconnectedCallback() {
@@ -44,7 +46,7 @@ class LocalizationFormComponent extends Component {
    * @param {KeyboardEvent} event - The event object.
    */
   #onContainerKeyDown = (event) => {
-    const { countryInput, countryListItems, form } = this.refs;
+    const { countryListItems, form } = this.refs;
 
     switch (event.key) {
       case 'ArrowUp':
@@ -63,8 +65,23 @@ class LocalizationFormComponent extends Component {
         const focusedItem = countryListItems.find((item) => item.getAttribute('aria-selected') === 'true');
 
         if (focusedItem) {
-          countryInput.value = focusedItem.dataset.value ?? '';
-          form.submit();
+          const submitter = focusedItem.querySelector('button[name="country_code"]');
+          const iso = focusedItem.dataset.value ?? '';
+
+          if (form && submitter instanceof HTMLButtonElement && typeof form.requestSubmit === 'function') {
+            form.requestSubmit(submitter);
+            return;
+          }
+
+          if (form && iso) {
+            const countryCodeInput = /** @type {HTMLInputElement} */ (
+              form.querySelector('input[name="country_code"]') ??
+                Object.assign(document.createElement('input'), { type: 'hidden', name: 'country_code' })
+            );
+            countryCodeInput.value = iso;
+            if (!countryCodeInput.isConnected) form.appendChild(countryCodeInput);
+            form.submit();
+          }
         }
         break;
       }
@@ -93,11 +110,60 @@ class LocalizationFormComponent extends Component {
    */
   selectCountry = (countryName, event) => {
     event.preventDefault();
-    const { countryInput, form } = this.refs;
+    const { form } = this.refs;
 
-    countryInput.value = countryName;
-    form?.submit();
+    if (!form) return;
+
+    try {
+      sessionStorage.setItem('localization:pendingCountry', countryName);
+    } catch {}
+
+    const submitter =
+      event.target instanceof HTMLElement ? event.target.closest('button[name="country_code"]') : null;
+
+    if (submitter instanceof HTMLButtonElement && typeof form.requestSubmit === 'function') {
+      form.requestSubmit(submitter);
+      return;
+    }
+
+    const countryCodeInput = /** @type {HTMLInputElement} */ (
+      form.querySelector('input[name="country_code"]') ??
+        Object.assign(document.createElement('input'), { type: 'hidden', name: 'country_code' })
+    );
+    countryCodeInput.value = countryName;
+    if (!countryCodeInput.isConnected) form.appendChild(countryCodeInput);
+    form.submit();
   };
+
+  #maybeShowSuccessNotice() {
+    let pendingCountry;
+    try {
+      pendingCountry = sessionStorage.getItem('localization:pendingCountry');
+    } catch {
+      pendingCountry = null;
+    }
+
+    if (!pendingCountry) return;
+
+    const currentItem = this.querySelector('[aria-current="true"][data-value]');
+    const currentCountry = currentItem instanceof HTMLElement ? currentItem.dataset.value : null;
+
+    if (!currentCountry || normalizeString(currentCountry) !== normalizeString(pendingCountry)) return;
+
+    const notice = this.refs.notice;
+    if (notice instanceof HTMLElement) {
+      notice.textContent = this.dataset.successMessage || 'Konum güncellendi';
+      notice.hidden = false;
+      window.setTimeout(() => {
+        notice.hidden = true;
+        notice.textContent = '';
+      }, 3000);
+    }
+
+    try {
+      sessionStorage.removeItem('localization:pendingCountry');
+    } catch {}
+  }
 
   /**
    * Changes the language of the localization form.

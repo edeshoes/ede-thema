@@ -4,7 +4,12 @@
   {% content_for 'blocks' %}
 {% endcapture %}
 
-{% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes %}
+{% render 'group',
+  children: children,
+  settings: block.settings,
+  shopify_attributes: block.shopify_attributes,
+  class: 'group-block--product-card'
+%}
 
 {% schema %}
 {
@@ -187,6 +192,26 @@
       "type": "select",
       "id": "content_position",
       "label": "İçerik Konumu (Desktop)",
+      "default": "bottom",
+      "options": [
+        {
+          "value": "top",
+          "label": "Resmin Üst Tarafı"
+        },
+        {
+          "value": "center",
+          "label": "Resmin Ortası"
+        },
+        {
+          "value": "bottom",
+          "label": "Resmin Alt Tarafı"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_position_mobile",
+      "label": "İçerik Konumu (Mobil)",
       "default": "bottom",
       "options": [
         {

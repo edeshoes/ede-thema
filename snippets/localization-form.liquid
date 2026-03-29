@@ -40,6 +40,7 @@
   ref="localizationForm"
   data-label-results-count="{{ 'accessibility.country_results_count' | t: count: '[count]' }}"
   data-show-filter="{{ show_country_filter }}"
+  data-success-message="Konum güncellendi"
   style="{{ form_style }}"
 >
   {% assign localization_label = 'content.localization_region_and_language' | t %}
@@ -48,9 +49,16 @@
     id: 'LocalizationForm',
     class: 'localization-form',
     ref: 'form',
-    return_to: back,
+    return_to: request.path,
     aria-label: localization_label
   -%}
+    <div
+      class="localization-form__notice"
+      ref="notice"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
     {% if show_country %}
       {% if show_country_filter %}
         <div class="country-filter">
@@ -154,19 +162,26 @@
                   ref="countryListItems[]"
                   on:click="/selectCountry/{{ country.iso_code }}"
                 >
-                  <span class="svg-wrapper icon-checkmark">
-                    {{- 'icon-checkmark.svg' | inline_asset_content -}}
-                  </span>
-                  <span class="country">{{- country.name }}</span>
-                  <span
-                    class="localization-form__currency"
-                    {% unless show_currencies %}
-                      hidden
-                    {% endunless %}
+                  <button
+                    type="submit"
+                    class="localization-form__list-item-button"
+                    name="country_code"
+                    value="{{ country.iso_code }}"
                   >
-                    {{ country.currency.iso_code }}
-                    {{ country.currency.symbol -}}
-                  </span>
+                    <span class="svg-wrapper icon-checkmark">
+                      {{- 'icon-checkmark.svg' | inline_asset_content -}}
+                    </span>
+                    <span class="country">{{- country.name }}</span>
+                    <span
+                      class="localization-form__currency"
+                      {% unless show_currencies %}
+                        hidden
+                      {% endunless %}
+                    >
+                      {{ country.currency.iso_code }}
+                      {{ country.currency.symbol -}}
+                    </span>
+                  </button>
                 </li>
               {%- endfor -%}
             </ul>
@@ -209,30 +224,31 @@
                 ref="countryListItems[]"
                 on:click="/selectCountry/{{ country.iso_code }}"
               >
-                <span class="svg-wrapper icon-checkmark">
-                  {{- 'icon-checkmark.svg' | inline_asset_content -}}
-                </span>
-                <span class="country">{{- country.name }}</span>
-                <span
-                  class="localization-form__currency"
-                  {% unless show_currencies %}
-                    hidden
-                  {% endunless %}
+                <button
+                  type="submit"
+                  class="localization-form__list-item-button"
+                  name="country_code"
+                  value="{{ country.iso_code }}"
                 >
-                  {{ country.currency.iso_code }}
-                  {{ country.currency.symbol -}}
-                </span>
+                  <span class="svg-wrapper icon-checkmark">
+                    {{- 'icon-checkmark.svg' | inline_asset_content -}}
+                  </span>
+                  <span class="country">{{- country.name }}</span>
+                  <span
+                    class="localization-form__currency"
+                    {% unless show_currencies %}
+                      hidden
+                    {% endunless %}
+                  >
+                    {{ country.currency.iso_code }}
+                    {{ country.currency.symbol -}}
+                  </span>
+                </button>
               </li>
             {%- endfor -%}
           </ul>
         </div>
         <div class="country-selector__overlay"></div>
-        <input
-          type="hidden"
-          name="country_code"
-          value="{{ localization.country.iso_code }}"
-          ref="countryInput"
-        >
       </div>
     {% endif %}
 
@@ -294,6 +310,13 @@
     width: 100%;
   }
 
+  .localization-form__notice {
+    padding: var(--padding-xs) var(--padding-sm);
+    margin-block-end: var(--padding-xs);
+    border-radius: var(--border-radius-sm, 6px);
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-8));
+  }
+
   localization-form-component .button:is(:not(.country-filter__reset-button)) {
     --button-color: var(--color-primary);
     --button-background-color: var(--language-button-background-color, var(--color-background));
@@ -324,6 +347,24 @@
   }
 
   .localization-form__list-item:focus-visible {
+    outline: none;
+  }
+
+  .localization-form__list-item-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--padding-xs) var(--padding-sm);
+    background: transparent;
+    border: 0;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .localization-form__list-item-button:focus-visible {
     outline: none;
   }
 

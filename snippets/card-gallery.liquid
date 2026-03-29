@@ -72,9 +72,8 @@
     --gallery-aspect-ratio: {{ ratio }};
   "
   data-product-id="{{ product.id }}"
-  {% if settings.show_second_image_on_hover %}
-    on:pointerenter="/previewImage"
-    on:pointerleave="/resetImage"
+  {% if settings.show_second_image_on_hover and product.media.size > 1 %}
+    data-hover-preview="true"
   {% endif %}
   {% if settings.transition_to_main_product %}
     data-view-transition-to-main-product
@@ -94,8 +93,11 @@
       assign other_media = product.media | reject: 'src', product.featured_media
       assign media_list_to_show = product.featured_media | concat: other_media
 
-      if product.media.size > 2 and generic_media_size > 0
-        assign show_arrows = true
+      assign show_arrows = false
+      if media_list_to_show.size > 1
+        if settings.product_card_carousel or settings.show_second_image_on_hover
+          assign show_arrows = true
+        endif
       endif
 
       # Don't overfetch media if we don't need to
@@ -107,6 +109,7 @@
       endif
 
       capture slides
+        assign visible_slide_count = 0
         for media in media_list_to_show
           assign loading = 'lazy'
           assign sizes = 'auto, ' | append: image_sizes
@@ -122,11 +125,12 @@
             endif
           endif
 
+          if hidden and settings.show_second_image_on_hover and visible_slide_count < 2
+            assign hidden = false
+          endif
+
           # Performance improvement: don't render more than 5 visible images into the slideshow
           # We'll keep the images that we need for the variant images and hover next.
-          if forloop.first
-            assign visible_slide_count = 0
-          endif
           unless hidden
             assign visible_slide_count = visible_slide_count | plus: 1
           endunless
@@ -153,25 +157,18 @@
       endcapture
 
       assign slideshow_attributes = 'data-generic-media-size="[generic_media_size]"' | replace: '[generic_media_size]', generic_media_size
-      if settings.product_card_carousel == false
+      if settings.product_card_carousel == false and settings.show_second_image_on_hover == false
         assign slideshow_attributes = slideshow_attributes | append: ' disabled="true"'
       endif
     %}
-    <a
-      class="contents"
-      ref="cardGalleryLink"
-      href="{{ product.selected_or_first_available_variant.url }}"
-      aria-label="{{- product.title -}}"
-    >
-      {% render 'slideshow',
-        ref: 'slideshow',
-        initial_slide: 0,
-        slides: slides,
-        slide_count: media_list_to_show.size,
-        show_arrows: show_arrows,
-        attributes: slideshow_attributes
-      %}
-    </a>
+    {% render 'slideshow',
+      ref: 'slideshow',
+      initial_slide: 0,
+      slides: slides,
+      slide_count: media_list_to_show.size,
+      show_arrows: show_arrows,
+      attributes: slideshow_attributes
+    %}
   {% elsif product != blank and product.media.size == 0 %}
     <product-title class="product-card-gallery__title-placeholder">
       <a

@@ -104,6 +104,8 @@ if (!customElements.get('product-card-link')) {
  */
 export class ProductCard extends ProductCardLink {
   requiredRefs = ['productCardLink'];
+  /** @type {AbortController | null} */
+  #hoverPreviewController = null;
 
   get productPageUrl() {
     return this.refs.productCardLink.href;
@@ -166,22 +168,96 @@ export class ProductCard extends ProductCardLink {
 
     this.addEventListener('click', this.navigateToProduct);
 
-    // Preload the next image on the slideshow to avoid white flashes on previewImage
     setTimeout(() => {
-      if (this.refs.slideshow?.isNested) {
-        this.#preloadNextPreviewImage();
+      if (this.refs.slideshow && this.querySelector('.card-gallery[data-hover-preview="true"]')) {
+        this.#preloadSecondPreviewImage();
       }
     });
+
+    this.#setupHoverPreview();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener('click', this.navigateToProduct);
+    this.#hoverPreviewController?.abort();
+    this.#hoverPreviewController = null;
   }
 
-  #preloadNextPreviewImage() {
-    const currentSlide = this.refs.slideshow?.slides?.[this.refs.slideshow?.current];
-    currentSlide?.nextElementSibling?.querySelector('img[loading="lazy"]')?.removeAttribute('loading');
+  #setupHoverPreview() {
+    const gallery = this.querySelector('.card-gallery[data-hover-preview="true"]');
+    const { slideshow } = this.refs;
+    if (!(gallery instanceof HTMLElement) || !slideshow) return;
+
+    this.#hoverPreviewController?.abort();
+    this.#hoverPreviewController = new AbortController();
+    const { signal } = this.#hoverPreviewController;
+
+    this.addEventListener(
+      'pointerenter',
+      (event) => {
+        if (!(event instanceof PointerEvent) || event.pointerType !== 'mouse') return;
+        slideshow.setAttribute('in-viewport', '');
+        this.#preloadSecondPreviewImage();
+        slideshow.select(1, undefined, { animate: false });
+        this.#forceSecondImage();
+      },
+      { signal }
+    );
+
+    this.addEventListener(
+      'pointerleave',
+      (event) => {
+        if (!(event instanceof PointerEvent) || event.pointerType !== 'mouse') return;
+        if (this.variantPicker) {
+          this.resetVariant();
+        } else {
+          slideshow.select(0, undefined, { animate: false });
+          this.#forceFirstImage();
+        }
+      },
+      { signal }
+    );
+  }
+
+  #forceFirstImage() {
+    const slideshow = this.refs.slideshow;
+    if (!(slideshow instanceof Element)) return;
+    const scroller = slideshow.querySelector('slideshow-slides');
+    if (!(scroller instanceof HTMLElement)) return;
+
+    const slides = scroller.querySelectorAll('slideshow-slide');
+    const target = slides.item(0);
+    if (!(target instanceof HTMLElement)) return;
+
+    slides.forEach((slide, i) => {
+      slide.setAttribute('aria-hidden', i === 0 ? 'false' : 'true');
+    });
+
+    scroller.scrollTo({ left: target.offsetLeft, behavior: 'auto' });
+  }
+
+  #forceSecondImage() {
+    const slideshow = this.refs.slideshow;
+    if (!(slideshow instanceof Element)) return;
+    const scroller = slideshow.querySelector('slideshow-slides');
+    if (!(scroller instanceof HTMLElement)) return;
+
+    const slides = scroller.querySelectorAll('slideshow-slide');
+    const target = slides.item(1);
+    if (!(target instanceof HTMLElement)) return;
+
+    slides.forEach((slide, i) => {
+      slide.setAttribute('aria-hidden', i === 1 ? 'false' : 'true');
+    });
+
+    scroller.scrollTo({ left: target.offsetLeft, behavior: 'auto' });
+  }
+
+  #preloadSecondPreviewImage() {
+    const { slideshow } = this.refs;
+    const secondSlide = slideshow?.slides?.[1];
+    secondSlide?.querySelector('img[loading="lazy"]')?.removeAttribute('loading');
   }
 
   /**
@@ -407,12 +483,8 @@ export class ProductCard extends ProductCardLink {
 
     this.resetVariant.cancel();
 
-    if (this.#previousSlideIndex != null && this.#previousSlideIndex > 0) {
-      slideshow.select(this.#previousSlideIndex, undefined, { animate: false });
-    } else {
-      slideshow.next(undefined, { animate: false });
-      setTimeout(() => this.#preloadNextPreviewImage());
-    }
+    this.#preloadSecondPreviewImage();
+    slideshow.select(1, undefined, { animate: false });
   }
 
   /**
@@ -426,7 +498,7 @@ export class ProductCard extends ProductCardLink {
 
     if (!this.variantPicker) {
       if (!slideshow) return;
-      slideshow.previous(undefined, { animate: false });
+      slideshow.select(0, undefined, { animate: false });
     } else {
       this.#resetVariant();
     }
