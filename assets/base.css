@@ -5221,43 +5221,51 @@ product-recommendations:has([data-has-recommendations='false']) {
 }
 @media screen and (min-width: 990px) {
 
-  /* Kart sabit kalsın */
+  /* Ana kart sabit kalsın */
   [id^="ProductInformation-"].product-details {
-    overflow: hidden !important;
-  }
-
-  /* İç beyaz kutu taşmasın */
-  [id^="ProductInformation-"].product-details .size-guide-shell {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-@media screen and (min-width: 990px) {
-
-  /* Ana kart kendi içinde scroll almasın */
-  [id^="ProductInformation-"].product-details {
+    width: 430px !important;
+    max-width: 430px !important;
     overflow: visible !important;
-    max-height: none !important;
+    top: 108px !important;
+    margin-right: 22px !important;
+    padding: 20px 18px 16px !important;
+    border-radius: 24px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
 
-  /* Size guide kapalıyken gizli kalsın */
+  /* Kapalıyken gizli */
   [id^="ProductInformation-"].product-details .size-guide-content {
     max-height: 0 !important;
     overflow: hidden !important;
     transition: max-height 0.28s ease;
   }
 
-  /* Açılınca kutu aşağı doğru uzasın */
+  /* Açılınca biraz büyüsün ama tamamen taşmasın */
   [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content {
-    max-height: 1200px !important;
-    overflow: visible !important;
-    padding-right: 0 !important;
+    max-height: 360px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding-right: 6px !important;
+    scrollbar-width: thin;
   }
 
-  /* İç beyaz alan tam açılsın */
+  /* İç beyaz kutu tam genişlikte kalsın */
   [id^="ProductInformation-"].product-details .size-guide-shell {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+  }
+
+  /* Scrollbar */
+  [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content::-webkit-scrollbar-thumb {
+    background: rgba(60, 45, 35, 0.22);
+    border-radius: 999px;
   }
 }
