@@ -4985,4 +4985,13 @@ product-recommendations:has([data-has-recommendations='false']) {
     overflow-y: auto;
   }
 
+}@media screen and (min-width: 990px) {
+  [data-testid="product-information-details"] .group-block-content {
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* eski Edge/IE */
+  }
+
+  [data-testid="product-information-details"] .group-block-content::-webkit-scrollbar {
+    display: none;              /* Chrome/Safari */
+  }
 }
