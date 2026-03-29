@@ -4967,85 +4967,9 @@ product-recommendations:has([data-has-recommendations='false']) {
   color: #1c1c1c;
   font-weight: 500;
 }
-/* ===== SPLIT SCROLL FIX (LEFT / RIGHT INDEPENDENT) ===== */
-
 @media screen and (min-width: 990px) {
-
-  .product__info-wrapper {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    padding-right: 10px;
-  }
-
-  .product__media-wrapper {
-    height: 100vh;
-    overflow-y: auto;
-  }
-
-  .product {
-    align-items: flex-start;
-  }
-
-}
-/* ===== RIGHT PANEL SCROLL FIX (SAFE) ===== */
-
-@media screen and (min-width: 990px) {
-
-  /* sağ panel */
-  .product__info-wrapper {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-  }
-
-  /* içeriği scroll yap */
-  .product__info-wrapper > * {
-    max-height: 100vh;
-    overflow-y: auto;
-    padding-right: 8px;
-  }
-
-}/* ===== DESKTOP SPLIT SCROLL — HARD FIX ===== */
-
-@media screen and (min-width: 990px) {
-
-  /* ana ürün alanı üstten hizalansın */
-  .product-information,
-  [data-testid="product-information-details"] {
-    align-items: flex-start;
-  }
-
-  /* sağ panel sabit */
   [data-testid="product-information-details"] {
     position: sticky;
     top: 0;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  /* sağ panelin gerçek kayan iç alanı */
-  [data-testid="product-information-details"] .group-block-content,
-  [data-testid="product-information-details"] .layout-panel-flex,
-  [data-testid="product-information-details"] .layout-panel-flex--column {
-    max-height: 100vh;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding-right: 10px;
-  }
-
-  /* sol galeri alanı */
-  media-gallery {
-    display: block;
-    height: 100vh;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
-
-  /* altta gömülme hissini azalt */
-  .product-media,
-  .product-media img {
-    display: block;
   }
 }
