@@ -72,7 +72,7 @@
               "type": "custom-liquid",
               "name": "SERIES liquid",
               "settings": {
-                "custom_liquid": "{% if product.metafields.custom.series != blank or product.metafields.custom.gender != blank %}\n  <div style=\"width: 100%; text-align: left; margin: 0 0 10px 0; padding: 0;\">\n    {% if product.metafields.custom.series != blank %}\n      <div style=\"\n        display: inline-block;\n        font-size: 11px;\n        line-height: 1;\n        letter-spacing: 0.22em;\n        text-transform: uppercase;\n        color: rgba(60, 45, 35, 0.62);\n        font-weight: 500;\n        margin: 0;\n        padding: 0;\n      \">\n        {{ product.metafields.custom.series }}\n      </div>\n    {% endif %}\n  </div>\n{% endif %}"
+                "custom_liquid": "{% if product.metafields.custom.series != blank or product.metafields.custom.gender != blank %}\n  <div style=\"width: 100%; text-align: left; margin: -30 0 10px 0; padding: 0;\">\n    {% if product.metafields.custom.series != blank %}\n      <div style=\"\n        display: inline-block;\n        font-size: 11px;\n        line-height: 1;\n        letter-spacing: 0.22em;\n        text-transform: uppercase;\n        color: rgba(60, 45, 35, 0.62);\n        font-weight: 500;\n        margin: 0;\n        padding: 0;\n      \">\n        {{ product.metafields.custom.series }}\n      </div>\n    {% endif %}\n  </div>\n{% endif %}"
               },
               "blocks": {}
             },
