@@ -147,6 +147,14 @@
     scrollbar-width: none !important;
   }
 
+  .product-details.sticky-content--desktop {
+    --product-details-sticky-offset: var(--sticky-header-offset, var(--header-group-height, 0px));
+    height: calc(100vh - var(--product-details-sticky-offset));
+    max-height: calc(100vh - var(--product-details-sticky-offset));
+    -ms-overflow-style: auto !important;
+    scrollbar-width: auto !important;
+  }
+
   .product-details::-webkit-scrollbar {
     width: 0 !important;
     height: 0 !important;
@@ -154,8 +162,19 @@
     background: transparent !important;
   }
 
+  .product-details.sticky-content--desktop::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+    display: block !important;
+  }
+
   .product-details::-webkit-scrollbar-track {
     display: none !important;
+    background: transparent !important;
+  }
+
+  .product-details.sticky-content--desktop::-webkit-scrollbar-track {
+    display: block !important;
     background: transparent !important;
   }
 
@@ -163,6 +182,12 @@
     display: none !important;
     background: transparent !important;
     border: 0 !important;
+  }
+
+  .product-details.sticky-content--desktop::-webkit-scrollbar-thumb {
+    display: block !important;
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-30)) !important;
+    border-radius: 99px !important;
   }
 }
 </style>
@@ -242,3 +267,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
    </body>
+ </html>

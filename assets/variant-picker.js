@@ -27,6 +27,12 @@ export default class VariantPicker extends Component {
   /** @type {HTMLInputElement[][]} */
   #radios = [];
 
+  /** @type {'US' | 'EU'} */
+  #sizeUnit = 'US';
+
+  /** @type {AbortController | null} */
+  #sizeUnitController = null;
+
   #resizeObserver = new ResizeNotifier(() => this.updateVariantPickerCss());
 
   connectedCallback() {
@@ -45,11 +51,15 @@ export default class VariantPicker extends Component {
 
     this.addEventListener('change', this.variantChanged.bind(this));
     this.#resizeObserver.observe(this);
+    this.#initSizeUnit();
+    this.#applySizeUnitUI();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.#resizeObserver.disconnect();
+    this.#sizeUnitController?.abort();
+    this.#sizeUnitController = null;
   }
 
   /**
@@ -392,8 +402,300 @@ export default class VariantPicker extends Component {
       },
     });
     this.updateVariantPickerCss();
+    this.#applySizeUnitUI();
 
     return newProduct;
+  }
+
+  #initSizeUnit() {
+    try {
+      const stored = window.localStorage.getItem('variantPicker:sizeUnit');
+      if (stored === 'EU' || stored === 'US') this.#sizeUnit = stored;
+    } catch {}
+  }
+
+  /** @param {'US' | 'EU'} unit */
+  #setSizeUnit(unit) {
+    this.#sizeUnit = unit;
+    try {
+      window.localStorage.setItem('variantPicker:sizeUnit', unit);
+    } catch {}
+    this.#applySizeUnitUI();
+  }
+
+  #applySizeUnitUI() {
+    const sizeFieldset = this.#findSizeFieldset();
+    const sizeSelect = this.#findSizeSelect();
+
+    if (!sizeFieldset && !sizeSelect) return;
+    this.dataset.sizeUnit = this.#sizeUnit;
+    this.dataset.sizeUnitEnabled = 'true';
+    this.#applySizeHeading(sizeFieldset, sizeSelect);
+
+    this.#sizeUnitController?.abort();
+    this.#sizeUnitController = new AbortController();
+    const { signal } = this.#sizeUnitController;
+
+    const legend = sizeFieldset?.querySelector('legend') ?? sizeSelect?.closest('.variant-option')?.querySelector('label');
+    if (legend instanceof HTMLElement) {
+      let toggle = legend.querySelector('.variant-size-unit-toggle');
+      if (!(toggle instanceof HTMLElement)) {
+        toggle = document.createElement('div');
+        toggle.className = 'variant-size-unit-toggle';
+        toggle.innerHTML =
+          '<button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="false">US</button><button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>';
+        legend.append(toggle);
+      }
+      legend.classList.add('variant-option__legend--with-size-toggle');
+
+      toggle.addEventListener(
+        'click',
+        (event) => {
+          const target = event.target instanceof Element ? event.target : null;
+          const button = target?.closest('button[data-unit]');
+          if (!(button instanceof HTMLButtonElement)) return;
+          const unit = button.dataset.unit === 'EU' ? 'EU' : 'US';
+          this.#setSizeUnit(unit);
+        },
+        { signal }
+      );
+
+      toggle.querySelectorAll('button[data-unit]').forEach((btn) => {
+        const b = /** @type {HTMLButtonElement} */ (btn);
+        const active = (b.dataset.unit || 'US') === this.#sizeUnit;
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    }
+
+    if (sizeFieldset) {
+      this.#applySizeUnitToFieldset(sizeFieldset);
+    }
+
+    if (sizeSelect) {
+      this.#applySizeUnitToSelect(sizeSelect);
+    }
+  }
+
+  /**
+   * @param {HTMLFieldSetElement | null} fieldset
+   * @param {HTMLSelectElement | null} select
+   */
+  #applySizeHeading(fieldset, select) {
+    this.#ensureDynamicSizeHeadingStyle();
+    const label = this.#sizeUnit === 'EU' ? 'WOMEN / EU SIZE' : 'WOMEN / US SIZE';
+    const quoted = `"${label}"`;
+
+    if (fieldset) {
+      fieldset.style.setProperty('--variant-size-heading', quoted);
+      fieldset.setAttribute('data-size-option', '');
+      return;
+    }
+
+    if (select) {
+      const wrap = select.closest('.variant-option');
+      if (wrap instanceof HTMLElement) {
+        wrap.style.setProperty('--variant-size-heading', quoted);
+        wrap.setAttribute('data-size-option', '');
+      }
+    }
+  }
+
+  #ensureDynamicSizeHeadingStyle() {
+    if (document.getElementById('variant-size-heading-style')) return;
+    const style = document.createElement('style');
+    style.id = 'variant-size-heading-style';
+    style.textContent = `
+[data-size-option].variant-option--equal-width-buttons::before,
+.product-info__block-item [data-size-option].variant-option--equal-width-buttons::before {
+  content: var(--variant-size-heading, "WOMEN / US SIZE") !important;
+}
+`;
+    document.head.append(style);
+  }
+
+  /** @returns {HTMLFieldSetElement | null} */
+  #findSizeFieldset() {
+    const fieldsets = Array.from(this.querySelectorAll('fieldset.variant-option')).filter(
+      (el) => el instanceof HTMLFieldSetElement
+    );
+    return (
+      fieldsets.find((fs) => {
+        const legend = fs.querySelector('legend');
+        const text = legend?.textContent?.trim().toLowerCase() || '';
+        return (
+          text.includes('size') ||
+          text.includes('numara') ||
+          text.includes('number') ||
+          text.includes('beden')
+        );
+      }) ?? null
+    );
+  }
+
+  #findSizeSelect() {
+    const wrappers = Array.from(this.querySelectorAll('.variant-option--dropdowns'));
+    const wrap = wrappers.find((w) => {
+      const label = w.querySelector('label');
+      const text = label?.textContent?.trim().toLowerCase() || '';
+      return (
+        text.includes('size') ||
+        text.includes('numara') ||
+        text.includes('number') ||
+        text.includes('beden')
+      );
+    });
+    const select = wrap?.querySelector('select');
+    return select instanceof HTMLSelectElement ? select : null;
+  }
+
+  /** @param {HTMLFieldSetElement} fieldset */
+  #applySizeUnitToFieldset(fieldset) {
+    const inputs = Array.from(fieldset.querySelectorAll('input[type="radio"]')).filter((el) => el instanceof HTMLInputElement);
+    for (const input of /** @type {HTMLInputElement[]} */ (inputs)) {
+      const label = input.closest('label') ?? input.nextElementSibling;
+      if (!(label instanceof HTMLLabelElement)) continue;
+
+      const text = label.querySelector('[data-key="variant-option-text"], .variant-option__button-label__text, .size-text');
+      if (!(text instanceof HTMLElement)) continue;
+
+      const raw = input.value;
+      const numeric = this.#parseNumeric(raw);
+      if (numeric == null) continue;
+
+      if (!text.dataset.baseValue) {
+        text.dataset.baseValue = String(numeric);
+      }
+
+      if (!text.dataset.baseUnit) {
+        text.dataset.baseUnit = this.#detectBaseUnit(raw, numeric);
+      }
+
+      const baseUnit = text.dataset.baseUnit === 'EU' ? 'EU' : 'US';
+      const baseValue = this.#parseNumeric(text.dataset.baseValue) ?? numeric;
+
+      const converted = this.#convertSizeValue(baseValue, baseUnit, this.#sizeUnit);
+      if (converted == null) continue;
+      text.textContent = `${this.#sizeUnit} ${converted}`;
+    }
+  }
+
+  /** @param {HTMLSelectElement} select */
+  #applySizeUnitToSelect(select) {
+    const options = Array.from(select.options);
+    for (const option of options) {
+      const raw = option.value;
+      const numeric = this.#parseNumeric(raw);
+      if (numeric == null) continue;
+
+      if (!option.dataset.baseValue) option.dataset.baseValue = String(numeric);
+      if (!option.dataset.baseUnit) option.dataset.baseUnit = this.#detectBaseUnit(raw, numeric);
+
+      const baseUnit = option.dataset.baseUnit === 'EU' ? 'EU' : 'US';
+      const baseValue = this.#parseNumeric(option.dataset.baseValue) ?? numeric;
+      const converted = this.#convertSizeValue(baseValue, baseUnit, this.#sizeUnit);
+      if (converted == null) continue;
+      option.textContent = `${this.#sizeUnit} ${converted}`;
+    }
+  }
+
+  /** @param {string} value */
+  #parseNumeric(value) {
+    const match = String(value).replace(',', '.').match(/(\d+(\.\d+)?)/);
+    if (!match?.[1]) return null;
+    const n = Number.parseFloat(match[1]);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  /** @param {number} n */
+  #formatHalf(n) {
+    return Number.isInteger(n) ? String(n) : String(n);
+  }
+
+  /**
+   * @param {string} raw
+   * @param {number} numeric
+   * @returns {'US' | 'EU'}
+   */
+  #detectBaseUnit(raw, numeric) {
+    const normalized = String(raw).toUpperCase();
+    if (normalized.includes('EU')) return 'EU';
+    if (normalized.includes('US')) return 'US';
+    return numeric >= 20 ? 'EU' : 'US';
+  }
+
+  /**
+   * @param {number} value
+   * @param {'US' | 'EU'} from
+   * @param {'US' | 'EU'} to
+   * @returns {string | null}
+   */
+  #convertSizeValue(value, from, to) {
+    if (from === to) return from === 'US' ? this.#formatHalf(value) : String(value);
+    if (from === 'US' && to === 'EU') return this.#mapUsToEu(value);
+    if (from === 'EU' && to === 'US') return this.#mapEuToUs(value);
+    return null;
+  }
+
+  /** @param {number} us */
+  #mapUsToEu(us) {
+    /** @type {Record<string, string>} */
+    const map = {
+      3.5: '33.5',
+      4: '34',
+      4.5: '35',
+      5: '35.5',
+      5.5: '36',
+      6: '36.5',
+      6.5: '37.5',
+      7: '38',
+      7.5: '38.5',
+      8: '39',
+      8.5: '40',
+      9: '40.5',
+      9.5: '41',
+      10: '42',
+      10.5: '42.5',
+      11: '43',
+      11.5: '43.5',
+      12: '44',
+      12.5: '45',
+      13: '46',
+      13.5: '46.5',
+      14: '47',
+    };
+    const key = String(us);
+    return map[key] ?? null;
+  }
+
+  /** @param {number} eu */
+  #mapEuToUs(eu) {
+    /** @type {Record<string, string>} */
+    const map = {
+      33.5: '3.5',
+      34: '4',
+      35: '4.5',
+      35.5: '5',
+      36: '5.5',
+      36.5: '6',
+      37.5: '6.5',
+      38: '7',
+      38.5: '7.5',
+      39: '8',
+      40: '8.5',
+      40.5: '9',
+      41: '9.5',
+      42: '10',
+      42.5: '10.5',
+      43: '11',
+      43.5: '11.5',
+      44: '12',
+      45: '12.5',
+      46: '13',
+      46.5: '13.5',
+      47: '14',
+    };
+    const key = String(eu);
+    return map[key] ?? null;
   }
 
   updateVariantPickerCss() {

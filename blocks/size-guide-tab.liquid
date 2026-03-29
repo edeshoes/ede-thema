@@ -1,0 +1,46 @@
+<div
+  class="size-guide-tab"
+  data-size-guide-panel="{{ block.settings.tab }}"
+  {% if block.settings.tab != 'US' %}
+    hidden
+  {% endif %}
+  {{ block.shopify_attributes }}
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Size guide tab old",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "tab",
+      "label": "Tab",
+      "options": [
+        {
+          "value": "US",
+          "label": "US"
+        },
+        {
+          "value": "EU",
+          "label": "EU"
+        }
+      ],
+      "default": "US"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "_divider"
+    }
+  ]
+}
+{% endschema %}

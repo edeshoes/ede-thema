@@ -37,6 +37,11 @@
         {%- liquid
           assign swatch_count = product_option.values | map: 'swatch' | compact | size
           assign variant_style = block_settings.variant_style
+          assign option_name_handle = product_option.name | handleize
+          assign is_size_option = false
+          if option_name_handle contains 'size' or option_name_handle contains 'beden' or option_name_handle contains 'numara'
+            assign is_size_option = true
+          endif
 
           if swatch_count > 0 and block_settings.show_swatches
             if block_settings.variant_style == 'dropdown'
@@ -73,12 +78,27 @@
             data-fieldset-index="{{ fieldset_index }}"
             ref="fieldsets[]"
             {{ option_id_attribute }}
+            {% if is_size_option %}
+              data-size-option
+            {% endif %}
           >
-            <legend>
+            {%- if is_size_option -%}
+              <button type="button" class="variant-option__size-guide-trigger" data-open-size-guide>
+                Size Guide
+              </button>
+            {%- endif -%}
+            <legend{% if is_size_option %} class="variant-option__legend--with-size-toggle"{% endif %}>
               {{ product_option.name | escape -}}
               {%- if variant_style == 'swatch' -%}
                 <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
               {%- endif %}
+              
+              {%- if is_size_option -%}
+                <div class="variant-size-unit-toggle" data-size-unit-toggle>
+                  <button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="true">US</button>
+                  <button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>
+                </div>
+              {%- endif -%}
             </legend>
             {%- for product_option_value in product_option.values -%}
               {% if product_option_value.size > longest_value and option_id_attribute %}
@@ -168,8 +188,21 @@
             endif
           %}
 
-          <div class="variant-option variant-option--dropdowns">
-            <label for="Option-{{ block.id }}-{{ forloop.index0 }}">{{ product_option.name | escape }}</label>
+          <div class="variant-option variant-option--dropdowns"{% if is_size_option %} data-size-option{% endif %}>
+            {%- if is_size_option -%}
+              <button type="button" class="variant-option__size-guide-trigger" data-open-size-guide>
+                Size Guide
+              </button>
+            {%- endif -%}
+            <label for="Option-{{ block.id }}-{{ forloop.index0 }}"{% if is_size_option %} class="variant-option__legend--with-size-toggle"{% endif %}>
+              {{ product_option.name | escape }}
+              {%- if is_size_option -%}
+                <span class="variant-size-unit-toggle" data-size-unit-toggle>
+                  <button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="true">US</button>
+                  <button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>
+                </span>
+              {%- endif -%}
+            </label>
             <div
               class="variant-option__select-wrapper"
               style="

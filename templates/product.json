@@ -222,20 +222,27 @@
                 "group_8B3NLh"
               ]
             },
-            "kiwi_size_chart_recommender_kiwi_sizing_jyqzht": {
-              "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
-              "settings": {
-                "fallbackToBlockPosition": false,
-                "waitForElementSelector": "",
-                "waitForElementDelay": 5
-              }
-            },
             "variant_picker": {
               "type": "variant-picker",
               "settings": {
                 "variant_style": "buttons",
                 "show_swatches": true,
                 "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "size_guide_modal": {
+              "type": "size-guide",
+              "settings": {
+                "title": "Size Guide",
+                "button_label": "Size Guide",
+                "show_size_table": true,
+                "table_title": "Women / US size (in, cm, mm)",
+                "default_unit": "mm",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -323,8 +330,8 @@
           },
           "block_order": [
             "group",
-            "kiwi_size_chart_recommender_kiwi_sizing_jyqzht",
             "variant_picker",
+            "size_guide_modal",
             "buy_buttons",
             "divider",
             "text"

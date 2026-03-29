@@ -1,0 +1,630 @@
+{% liquid
+  assign modal_id = 'size-guide-modal-' | append: block.id
+%}
+
+<dialog-component
+  id="{{ modal_id }}"
+  class="size-guide-modal"
+  data-size-guide-dialog
+  style="{% render 'spacing-style', settings: block.settings %}"
+  {{ block.shopify_attributes }}
+>
+  <dialog
+    ref="dialog"
+    class="dialog-modal size-guide-modal__dialog color-{{ settings.popover_color_scheme }}"
+    scroll-lock
+    aria-label="{{ block.settings.title | escape }}"
+  >
+    <div class="size-guide-modal__header">
+      <h2 class="size-guide-modal__title">{{ block.settings.title }}</h2>
+      <button
+        type="button"
+        class="button button-unstyled close-button size-guide-modal__close"
+        aria-label="{{ 'accessibility.close_dialog' | t }}"
+        on:click="dialog-component/closeDialog"
+      >
+        <span class="svg-wrapper">
+          {{ 'icon-close.svg' | inline_asset_content }}
+        </span>
+      </button>
+    </div>
+
+    <div class="size-guide-modal__body">
+      <div class="sg-container">
+        <div class="sg-header">
+          <h1>{{ block.settings.header_heading }}</h1>
+          <p>{{ block.settings.header_subheading }}</p>
+        </div>
+
+        <div class="sg-item" data-sg-accordion-item data-default-open="{{ block.settings.size_chart_open }}">
+          <button type="button" class="sg-btn" data-sg-accordion-trigger>
+            {{ block.settings.size_chart_title }} <span aria-hidden="true">›</span>
+          </button>
+          <div class="sg-content" data-sg-accordion-content hidden>
+            <div
+              class="size-guide-modal__table"
+              data-size-guide-table
+              data-default-unit="{{ block.settings.default_unit }}"
+            >
+              <div class="toggle-group">
+                <div class="toggle-container">
+                  <button type="button" class="t-btn unit-btn" data-size-guide-unit="mm" aria-selected="false">MM</button>
+                  <button type="button" class="t-btn unit-btn" data-size-guide-unit="cm" aria-selected="false">CM</button>
+                  <button type="button" class="t-btn unit-btn" data-size-guide-unit="in" aria-selected="false">INCH</button>
+                </div>
+              </div>
+
+              {%- assign raw_rows = block.settings.size_chart_rows | replace: '\r\n', '\n' | replace: '\r', '\n' | strip -%}
+              {%- if raw_rows == blank -%}
+                {%- assign raw_rows = '34|3.5-4|8.62
+35|4.5|8.86
+36|5-5.5|9.17
+37|6-6.5|9.41
+38|7-7.5|9.65
+39|8-8.5|9.92
+40|9-9.5|10.20
+41|10-10.5|10.47
+42|11-11.5|10.79
+43|12-12.5|11.10
+44|13-13.5|11.38
+45|14-14.5|11.65' -%}
+              {%- endif -%}
+              {%- assign rows = raw_rows
+                | newline_to_br
+                | replace: '<br />', '|||'
+                | replace: '<br/>', '|||'
+                | replace: '<br>', '|||'
+                | split: '|||'
+              -%}
+
+              <table class="sg-table">
+                <thead>
+                  <tr>
+                    <th>EU</th>
+                    <th>US Size</th>
+                    <th data-unit-column="in">INCH</th>
+                    <th data-unit-column="cm">CM</th>
+                    <th data-unit-column="mm">MM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%- for row in rows -%}
+                    {%- assign cleaned = row | strip -%}
+                    {%- if cleaned != blank -%}
+                      {%- assign cols = cleaned | split: '|' -%}
+                      {%- assign inch = cols[2] | strip | replace: ',', '.' | times: 1.0 -%}
+                      {%- assign cm = inch | times: 2.54 | round: 2 -%}
+                      {%- assign mm = inch | times: 25.4 | round: 0 -%}
+                      <tr>
+                        <td>{{ cols[0] }}</td>
+                        <td>{{ cols[1] }}</td>
+                        <td class="highlight" data-unit-column="in">{{ inch | round: 2 }}</td>
+                        <td class="highlight" data-unit-column="cm">{{ cm }}</td>
+                        <td class="highlight" data-unit-column="mm">{{ mm }}</td>
+                      </tr>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </tbody>
+              </table>
+
+              <p class="sg-note">{{ block.settings.size_chart_note }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-item" data-sg-accordion-item data-default-open="{{ block.settings.measure_open }}">
+          <button type="button" class="sg-btn" data-sg-accordion-trigger>
+            {{ block.settings.measure_title }} <span aria-hidden="true">›</span>
+          </button>
+          <div class="sg-content" data-sg-accordion-content hidden>
+            {% if block.settings.measure_video_url != blank %}
+              <div class="custom-video-wrapper">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  {% if block.settings.measure_video_loop %}loop{% endif %}
+                  preload="metadata"
+                  {% if block.settings.measure_video_poster != blank %}
+                    poster="{{ block.settings.measure_video_poster | image_url: width: 1600 }}"
+                  {% endif %}
+                >
+                  <source src="{{ block.settings.measure_video_url }}" type="video/mp4">
+                  Tarayıcınız video oynatmayı desteklemiyor.
+                </video>
+              </div>
+            {% endif %}
+
+            {% if block.settings.measure_intro != blank %}
+              <div class="sg-richtext">{{ block.settings.measure_intro }}</div>
+            {% endif %}
+
+            {%- assign steps_raw = block.settings.measure_steps | replace: '\r\n', '\n' | replace: '\r', '\n' | strip -%}
+            {%- if steps_raw != blank -%}
+              {%- assign steps = steps_raw | split: '\n' -%}
+              <ul class="list-style">
+                {%- for step in steps -%}
+                  {%- assign s = step | strip -%}
+                  {%- if s != blank -%}
+                    <li>{{ s }}</li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="sg-item" data-sg-accordion-item data-default-open="{{ block.settings.notes_open }}">
+          <button type="button" class="sg-btn" data-sg-accordion-trigger>
+            {{ block.settings.notes_title }} <span aria-hidden="true">›</span>
+          </button>
+          <div class="sg-content" data-sg-accordion-content hidden>
+            {%- assign notes_raw = block.settings.notes_list | replace: '\r\n', '\n' | replace: '\r', '\n' | strip -%}
+            {%- if notes_raw != blank -%}
+              {%- assign notes = notes_raw | split: '\n' -%}
+              <ul class="list-style">
+                {%- for note in notes -%}
+                  {%- assign n = note | strip -%}
+                  {%- if n != blank -%}
+                    <li>{{ n }}</li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="footer-help">
+          <h3>{{ block.settings.footer_heading }}</h3>
+          <p>
+            {{ block.settings.footer_text }}
+            {% if block.settings.footer_link_url != blank and block.settings.footer_link_label != blank %}
+              <a href="{{ block.settings.footer_link_url }}">{{ block.settings.footer_link_label }}</a>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      {% content_for 'blocks' %}
+    </div>
+  </dialog>
+</dialog-component>
+
+{% stylesheet %}
+  .size-guide-modal__dialog {
+    width: min(720px, calc(100vw - var(--page-margin) * 2));
+    padding: 0;
+    border: var(--style-border-popover);
+    border-radius: var(--style-border-radius-popover);
+    box-shadow: var(--shadow-popover);
+  }
+
+  .dialog-modal[open].size-guide-modal__dialog {
+    transform-origin: center;
+    animation: search-element-slide-in-bottom 300ms var(--ease-out-quad) forwards;
+  }
+
+  .dialog-modal.size-guide-modal__dialog.dialog-closing {
+    animation: search-element-slide-out-bottom 200ms var(--ease-out-quad) forwards;
+  }
+
+  .size-guide-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap, 12px);
+    padding: var(--padding-lg);
+    border-bottom: var(--style-border-width) solid var(--color-border);
+    background: rgb(var(--color-background-rgb));
+  }
+
+  .size-guide-modal__title {
+    margin: 0;
+    font: inherit;
+  }
+
+  .size-guide-modal__table [data-unit-column] {
+    display: none;
+  }
+
+  .size-guide-modal__table[data-active-unit='mm'] [data-unit-column='mm'],
+  .size-guide-modal__table[data-active-unit='cm'] [data-unit-column='cm'],
+  .size-guide-modal__table[data-active-unit='in'] [data-unit-column='in'] {
+    display: table-cell;
+  }
+
+  .size-guide-modal__body {
+    padding: var(--padding-lg);
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .size-guide-modal__body table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: rgb(var(--color-background-rgb));
+  }
+
+  .size-guide-modal__body :is(th, td) {
+    padding: var(--padding-sm) var(--padding-md);
+    border-bottom: var(--style-border-width) solid var(--color-border);
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  .size-guide-modal__body th {
+    font-weight: var(--font-paragraph--weight-bold);
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+  }
+
+  .sg-container {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .sg-header h1 {
+    margin: 0 0 var(--margin-xs);
+    font: inherit;
+    font-weight: var(--font-paragraph--weight-bold);
+  }
+
+  .sg-header p {
+    margin: 0 0 var(--margin-lg);
+    opacity: 0.8;
+  }
+
+  .sg-item {
+    border-top: var(--style-border-width) solid var(--color-border);
+    padding-top: var(--padding-md);
+    margin-top: var(--margin-md);
+  }
+
+  .sg-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+  }
+
+  .sg-btn span {
+    display: inline-block;
+    transform: rotate(90deg);
+    opacity: 0.7;
+    transition: transform 200ms var(--ease-out-quad);
+  }
+
+  .sg-btn[aria-expanded='true'] span {
+    transform: rotate(-90deg);
+  }
+
+  .sg-content {
+    padding: var(--padding-md) 0 var(--padding-sm);
+  }
+
+  .toggle-container {
+    display: flex;
+    gap: var(--padding-sm);
+    justify-content: flex-end;
+    margin-bottom: var(--margin-sm);
+  }
+
+  .t-btn {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    opacity: 0.55;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 6px;
+  }
+
+  .t-btn[aria-selected='true'] {
+    opacity: 1;
+    border-bottom-color: currentColor;
+  }
+
+  .sg-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .sg-table th,
+  .sg-table td {
+    padding: var(--padding-sm) var(--padding-md);
+    border-bottom: var(--style-border-width) solid var(--color-border);
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .sg-table thead th {
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    font-weight: var(--font-paragraph--weight-bold);
+  }
+
+  .highlight {
+    font-weight: var(--font-paragraph--weight-bold);
+  }
+
+  .sg-note {
+    font-size: var(--font-size-sm);
+    opacity: 0.75;
+    margin: var(--margin-sm) 0 0;
+  }
+
+  .custom-video-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto var(--margin-md);
+    line-height: 0;
+  }
+
+  .custom-video-wrapper video {
+    border-radius: var(--style-border-radius-popover);
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.15);
+    display: block;
+  }
+
+  .list-style {
+    margin: var(--margin-md) 0 0;
+    padding-left: 18px;
+    display: grid;
+    gap: var(--padding-xs);
+  }
+
+  .footer-help {
+    text-align: center;
+    margin-top: var(--margin-lg);
+    padding-top: var(--padding-md);
+    border-top: var(--style-border-width) solid var(--color-border);
+  }
+
+  .footer-help h3 {
+    margin: 0 0 var(--margin-xs);
+    font: inherit;
+    font-weight: var(--font-paragraph--weight-bold);
+  }
+
+  .footer-help p {
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .footer-help a {
+    font-weight: var(--font-paragraph--weight-bold);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Size guide",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Size Guide"
+    },
+    {
+      "type": "select",
+      "id": "default_unit",
+      "label": "Default unit",
+      "options": [
+        { "value": "mm", "label": "MM" },
+        { "value": "cm", "label": "CM" },
+        { "value": "in", "label": "INCH" }
+      ],
+      "default": "mm"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "header_heading",
+      "label": "Heading",
+      "default": "Your feet deserve shoes made just for them"
+    },
+    {
+      "type": "text",
+      "id": "header_subheading",
+      "label": "Subheading",
+      "default": "WOMEN'S SIZE CHART"
+    },
+    {
+      "type": "header",
+      "content": "Size chart"
+    },
+    {
+      "type": "text",
+      "id": "size_chart_title",
+      "label": "Accordion title",
+      "default": "Size chart"
+    },
+    {
+      "type": "checkbox",
+      "id": "size_chart_open",
+      "label": "Open by default",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "size_chart_rows",
+      "label": "Rows (EU|US|INCH per line)",
+      "default": "34|3.5-4|8.62\n35|4.5|8.86\n36|5-5.5|9.17\n37|6-6.5|9.41\n38|7-7.5|9.65\n39|8-8.5|9.92\n40|9-9.5|10.20\n41|10-10.5|10.47\n42|11-11.5|10.79\n43|12-12.5|11.10\n44|13-13.5|11.38\n45|14-14.5|11.65"
+    },
+    {
+      "type": "text",
+      "id": "size_chart_note",
+      "label": "Note",
+      "default": "• Measurements are based on foot length. US sizes apply to orders."
+    },
+    {
+      "type": "header",
+      "content": "How to measure"
+    },
+    {
+      "type": "text",
+      "id": "measure_title",
+      "label": "Accordion title",
+      "default": "How to Measure"
+    },
+    {
+      "type": "checkbox",
+      "id": "measure_open",
+      "label": "Open by default",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "measure_video_url",
+      "label": "Video URL (mp4)"
+    },
+    {
+      "type": "image_picker",
+      "id": "measure_video_poster",
+      "label": "Video poster image"
+    },
+    {
+      "type": "checkbox",
+      "id": "measure_video_loop",
+      "label": "Loop video",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "measure_intro",
+      "label": "Intro text",
+      "default": "<p><strong>To craft your perfect fit, we'll need a simple measurement. Don't worry-it only takes a minute:</strong></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "measure_steps",
+      "label": "Steps (one per line)",
+      "default": "Place your foot on a sheet of paper.\nMark the back of your heel and the tip of your longest toe.\nMeasure the distance (in centimeters if possible).\nDo this for both feet-it's normal if they're a little different.\nSnap a photo and send it to us via direct email.\nWe'll handcraft shoes that feel born for your feet!"
+    },
+    {
+      "type": "header",
+      "content": "Important notes"
+    },
+    {
+      "type": "text",
+      "id": "notes_title",
+      "label": "Accordion title",
+      "default": "Important Notes"
+    },
+    {
+      "type": "checkbox",
+      "id": "notes_open",
+      "label": "Open by default",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "notes_list",
+      "label": "Notes (one per line)",
+      "default": "We use a special shoe last. It is normal to choose a different size from your current shoe size.\nCrazy (stiff) leathers: stretch approximately 2 mm after the first week.\nOther leathers: stretch approximately 5 mm after the first week."
+    },
+    {
+      "type": "header",
+      "content": "Footer"
+    },
+    {
+      "type": "text",
+      "id": "footer_heading",
+      "label": "Heading",
+      "default": "Need help?"
+    },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Text",
+      "default": "Feel free to contact us. We are happy to assist!"
+    },
+    {
+      "type": "url",
+      "id": "footer_link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "footer_link_label",
+      "label": "Link label",
+      "default": "contact us"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "Padding inline start",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "Padding inline end",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Padding block start",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Padding block end",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "_divider"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Size guide",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

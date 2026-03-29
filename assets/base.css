@@ -2242,6 +2242,60 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   margin-block-end: var(--margin-xs);
 }
 
+.variant-option__legend--with-size-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-sm);
+  width: 100%;
+}
+
+.variant-size-unit-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-sm);
+}
+
+.variant-size-unit-toggle__button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  opacity: 0.55;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 6px;
+}
+
+.variant-size-unit-toggle__button[aria-selected='true'] {
+  opacity: 1;
+  border-bottom-color: currentColor;
+}
+
+.variant-option__size-guide-trigger {
+  display: none;
+  align-items: center;
+  gap: var(--padding-xs);
+  margin: 0 0 var(--margin-xs);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+html[data-size-guide-enabled='true'] .variant-option[data-size-option] .variant-option__size-guide-trigger {
+  display: inline-flex;
+}
+
+.variant-option__size-guide-trigger:hover {
+  color: rgb(var(--color-foreground-rgb) / 1);
+}
+
 .variant-option__swatch-value {
   padding-inline-start: var(--padding-xs);
   color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
@@ -2448,6 +2502,11 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   }
 }
 
+.variant-option--equal-width-buttons::before,
+.product-info__block-item .variant-option--equal-width-buttons::before {
+  content: var(--variant-size-heading, "WOMEN / US SIZE");
+}
+
 .variant-option__button-label:has(:focus-visible) {
   --variant-picker-stroke-color: var(--color-foreground);
 
@@ -2587,6 +2646,16 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
     position: sticky;
     top: var(--sticky-header-offset, 0);
     z-index: var(--layer-flat);
+  }
+
+  .product-details.sticky-content--desktop {
+    --product-details-sticky-offset: var(--sticky-header-offset, var(--header-group-height, 0px));
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    height: calc(100vh - var(--product-details-sticky-offset));
+    max-height: calc(100vh - var(--product-details-sticky-offset));
+    scrollbar-width: auto !important;
+    -ms-overflow-style: auto !important;
   }
 }
 
