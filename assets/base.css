@@ -5195,17 +5195,14 @@ product-recommendations:has([data-has-recommendations='false']) {
   }
 @media screen and (min-width: 990px) {
 
-  [id^="ProductInformation-"].product-details {
+ [id^="ProductInformation-"].product-details {
   width: 430px !important;
   max-width: 430px !important;
-  max-height: calc(100vh - 195px) !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
+  overflow: visible !important;
   top: 108px !important;
   margin-right: 22px !important;
   padding: 20px 18px 16px !important;
   border-radius: 24px !important;
-
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
 }
@@ -5229,38 +5226,38 @@ product-recommendations:has([data-has-recommendations='false']) {
     overflow: hidden !important;
   }
 
-  /* Size guide kutusu */
-  [id^="ProductInformation-"].product-details .size-guide-content {
-    max-height: 0 !important;
-    overflow: hidden !important;
-    transition: max-height 0.25s ease;
-  }
-
-  /* Açıkken sadece burası scroll olsun */
-  [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content {
-    max-height: 300px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    padding-right: 6px !important;
-    scrollbar-width: thin;
-  }
-
   /* İç beyaz kutu taşmasın */
   [id^="ProductInformation-"].product-details .size-guide-shell {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
+@media screen and (min-width: 990px) {
 
-  /* Scrollbar */
-  [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content::-webkit-scrollbar {
-    width: 6px;
+  /* Ana kart kendi içinde scroll almasın */
+  [id^="ProductInformation-"].product-details {
+    overflow: visible !important;
+    max-height: none !important;
   }
 
-  [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content::-webkit-scrollbar-thumb {
-    background: rgba(60, 45, 35, 0.22);
-    border-radius: 999px;
+  /* Size guide kapalıyken gizli kalsın */
+  [id^="ProductInformation-"].product-details .size-guide-content {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 0.28s ease;
+  }
+
+  /* Açılınca kutu aşağı doğru uzasın */
+  [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content {
+    max-height: 1200px !important;
+    overflow: visible !important;
+    padding-right: 0 !important;
+  }
+
+  /* İç beyaz alan tam açılsın */
+  [id^="ProductInformation-"].product-details .size-guide-shell {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
