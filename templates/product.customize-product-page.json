@@ -45,14 +45,14 @@
           "type": "_product-details",
           "static": true,
           "settings": {
-            "width": "fill",
+            "width": "fit-content",
             "custom_width": 100,
-            "width_mobile": "fill",
+            "width_mobile": "fit-content",
             "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
             "gap": 17,
-            "sticky_details_desktop": false,
+            "sticky_details_desktop": true,
             "inherit_color_scheme": true,
             "color_scheme": "scheme-3",
             "background_media": "none",
@@ -657,10 +657,17 @@
         "padding-block-start": 24,
         "padding-block-end": 24
       }
+    },
+    "product_lifestyle_grid_9rhcHw": {
+      "type": "product-lifestyle-grid",
+      "disabled": true,
+      "name": "Product lifestyle grid",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "product_lifestyle_grid_9rhcHw"
   ]
 }
