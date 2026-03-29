@@ -5222,4 +5222,21 @@ product-recommendations:has([data-has-recommendations='false']) {
   overflow: visible !important;
   padding: 0 !important;
 }
+@media screen and (min-width: 990px) {
+
+  /* NORMAL DURUM → scroll kapalı */
+  [id^="ProductInformation-"].product-details {
+    overflow: hidden !important;
+  }
+
+  /* SIZE GUIDE AÇILDIĞINDA → scroll aktif */
+  [id^="ProductInformation-"].product-details details[open] ~ * {
+    overflow: visible !important;
+  }
+
+  /* Asıl scroll sadece açıkken */
+  [id^="ProductInformation-"].product-details:has(details[open]) {
+    overflow-y: auto !important;
+  }
+
 }
