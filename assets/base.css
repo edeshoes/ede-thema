@@ -5189,4 +5189,65 @@ product-recommendations:has([data-has-recommendations='false']) {
     box-shadow: none !important;
     border: 0 !important;
   }
+}@media screen and (min-width: 990px) {
+
+  [data-testid="product-information-details"] {
+    position: sticky !important;
+    top: 110px !important;
+    margin-right: 28px !important;
+    max-width: 540px !important;
+    max-height: calc(100vh - 140px) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    background: rgba(244, 238, 231, 0.96) !important;
+    border-radius: 30px !important;
+    border: 1px solid rgba(60, 45, 35, 0.08) !important;
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.08),
+      0 6px 18px rgba(0, 0, 0, 0.04) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    z-index: 20 !important;
+    align-self: flex-start !important;
+  }
+
+  /* İçerik kartın içinde scroll alsın */
+  [data-testid="product-information-details"] > .group-block-content,
+  [data-testid="product-information-details"] .group-block-content {
+    overflow-y: auto !important;
+    max-height: calc(100vh - 140px) !important;
+    padding: 34px 30px 28px !important;
+    box-sizing: border-box !important;
+    scrollbar-width: thin;
+  }
+
+  /* İç içe eski kart etkilerini temizle */
+  .product__info-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Başlık ve fiyat üstte sıkışmasın */
+  .product__title,
+  .product__title h1 {
+    margin-top: 0 !important;
+  }
+
+  .price {
+    margin-top: 0 !important;
+  }
+
+  /* Size guide açıkken taşma hissi azalır */
+  details,
+  .accordion {
+    margin-bottom: 10px !important;
+  }
 }
