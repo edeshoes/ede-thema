@@ -5241,15 +5241,14 @@ product-recommendations:has([data-has-recommendations='false']) {
     transition: max-height 0.28s ease;
   }
 
-  /* Açılınca biraz büyüsün ama tamamen taşmasın */
-  [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content {
-    max-height: 360px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    padding-right: 6px !important;
-    scrollbar-width: thin;
+ [id^="ProductInformation-"].product-details .size-guide-trigger[aria-expanded="true"] + .size-guide-content {
+  max-height: 260px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding-right: 6px !important;
+  scrollbar-width: thin;
   }
 
   /* İç beyaz kutu tam genişlikte kalsın */
