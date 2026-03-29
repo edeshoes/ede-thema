@@ -5212,21 +5212,59 @@ product-recommendations:has([data-has-recommendations='false']) {
     z-index: 20 !important;
     align-self: flex-start !important;
   }
+@media screen and (min-width: 990px) {
 
-  /* İçerik kartın içinde scroll alsın */
+  /* ANA KART */
+  [data-testid="product-information-details"] {
+    position: sticky !important;
+    top: 110px !important;
+    margin-left: auto !important;
+    margin-right: 28px !important;
+    width: min(100%, 540px) !important;
+    max-width: 540px !important;
+    max-height: calc(100vh - 130px) !important;
+
+    padding: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+
+    background: rgba(244, 238, 231, 0.96) !important;
+    border: 1px solid rgba(60, 45, 35, 0.08) !important;
+    border-radius: 30px !important;
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.08),
+      0 6px 18px rgba(0, 0, 0, 0.04) !important;
+
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    z-index: 20 !important;
+    align-self: flex-start !important;
+  }
+
+  /* İÇ KAYAN ALAN */
   [data-testid="product-information-details"] > .group-block-content,
   [data-testid="product-information-details"] .group-block-content {
+    height: calc(100vh - 130px) !important;
+    max-height: calc(100vh - 130px) !important;
     overflow-y: auto !important;
-    max-height: calc(100vh - 140px) !important;
-    padding: 34px 30px 28px !important;
+    overflow-x: hidden !important;
+    padding: 30px 26px 24px !important;
     box-sizing: border-box !important;
     scrollbar-width: thin;
   }
 
-  /* İç içe eski kart etkilerini temizle */
+  /* İÇ BLOKLAR TAŞMASIN */
+  [data-testid="product-information-details"] *,
+  [data-testid="product-information-details"] *::before,
+  [data-testid="product-information-details"] *::after {
+    box-sizing: border-box !important;
+    max-width: 100%;
+  }
+
+  /* Shopify iç container temizliği */
   .product__info-container {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     background: transparent !important;
@@ -5235,19 +5273,47 @@ product-recommendations:has([data-has-recommendations='false']) {
     box-shadow: none !important;
   }
 
-  /* Başlık ve fiyat üstte sıkışmasın */
+  /* Başlık/fiyat nefesi */
   .product__title,
-  .product__title h1 {
-    margin-top: 0 !important;
-  }
-
+  .product__title h1,
   .price {
     margin-top: 0 !important;
   }
 
-  /* Size guide açıkken taşma hissi azalır */
+  /* Size guide / accordion yatay taşmasın */
   details,
-  .accordion {
-    margin-bottom: 10px !important;
+  .accordion,
+  .accordion__content,
+  .product__accordion,
+  .product__accordion .accordion__content {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* İçerikte tablo varsa kartı büyütmesin */
+  details table,
+  .accordion table,
+  .product__accordion table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  /* Medya varsa taşmasın */
+  details img,
+  details video,
+  details iframe,
+  .accordion img,
+  .accordion video,
+  .accordion iframe {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Alt buton alanı biraz daha kompakt */
+  .product-form__buttons,
+  .shopify-payment-button {
+    margin-top: 14px !important;
   }
 }
