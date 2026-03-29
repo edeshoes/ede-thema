@@ -5225,7 +5225,7 @@ product-recommendations:has([data-has-recommendations='false']) {
   [id^="ProductInformation-"].product-details {
     width: 430px !important;
     max-width: 430px !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     top: 108px !important;
     margin-right: 22px !important;
     padding: 20px 18px 16px !important;
