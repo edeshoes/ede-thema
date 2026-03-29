@@ -42,7 +42,7 @@
     "type_size_h6": "14",
     "type_letter_spacing_h6": "heading-normal",
     "type_case_h6": "none",
-    "page_width": "wide",
+    "page_width": "normal",
     "transition_to_main_product": false,
     "card_hover_effect": "subtle-zoom",
     "badge_position": "top-right",
@@ -73,7 +73,7 @@
     "variant_swatch_radius": 0,
     "variant_button_border_width": 2,
     "variant_button_radius": 0,
-    "variant_button_width": "default-width-buttons",
+    "variant_button_width": "equal-width-buttons",
     "content_for_index": [],
     "blocks": {
       "15683396631634586217": {
