@@ -332,9 +332,9 @@
         }
       },
       "settings": {
-        "content_width": "content-center-aligned",
+        "content_width": "content-full-width",
         "desktop_media_position": "left",
-        "equal_columns": false,
+        "equal_columns": true,
         "limit_details_width": true,
         "gap": 48,
         "enable_sticky_add_to_cart": true,
@@ -418,6 +418,7 @@
                 "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 4,
                 "content_position": "bottom",
+                "content_position_mobile": "bottom",
                 "width": "fill",
                 "custom_width": 35,
                 "width_mobile": "fill",
@@ -458,6 +459,7 @@
                     "vertical_alignment_flex_direction_column": "flex-start",
                     "gap": 4,
                     "content_position": "bottom",
+                    "content_position_mobile": "bottom",
                     "width": "fill",
                     "custom_width": 40,
                     "width_mobile": "fit-content",
