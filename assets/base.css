@@ -5224,18 +5224,17 @@ product-recommendations:has([data-has-recommendations='false']) {
 }
 @media screen and (min-width: 990px) {
 
-  /* NORMAL DURUM → scroll kapalı */
   [id^="ProductInformation-"].product-details {
     overflow: hidden !important;
   }
 
-  /* SIZE GUIDE AÇILDIĞINDA → scroll aktif */
-  [id^="ProductInformation-"].product-details details[open] ~ * {
-    overflow: visible !important;
+  /* details açıkken */
+  details[open] {
+    max-height: none !important;
   }
 
-  /* Asıl scroll sadece açıkken */
-  [id^="ProductInformation-"].product-details:has(details[open]) {
+  /* scroll sadece içerikte */
+  details[open] + * {
     overflow-y: auto !important;
   }
 
