@@ -45,7 +45,7 @@
           "type": "_product-details",
           "static": true,
           "settings": {
-            "width": "fill",
+            "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
