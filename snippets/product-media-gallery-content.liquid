@@ -353,7 +353,7 @@
     {{ block_shopify_attributes }}
   >
     {% capture slides %}
-      {% for media in sorted_media %}
+      {% for media in sorted_media limit: 6 %}
         {% capture children %}
           {%- liquid
               if needs_both_sizes and forloop.first
@@ -398,17 +398,18 @@
 
     {% if sorted_media.size > 1 %}
       {% capture controls %}
+        {% assign limited_thumbnails = sorted_media | slice: 0, 6 %}
         {% if render_slideshow_controls %}
-          {%- render 'slideshow-controls',
-            class: slideshow_controls_class,
-            style: slideshow_controls_style,
-            item_count: sorted_media.size,
-            thumbnails: sorted_media,
-            controls_on_media: controls_on_media,
-            pagination_position: pagination_position,
-            aspect_ratio: block_settings.aspect_ratio,
-            thumbnail_radius: block_settings.thumbnail_radius
-          -%}
+         {% render 'slideshow-controls',
+  class: slideshow_controls_class,
+  style: slideshow_controls_style,
+  item_count: 6,
+thumbnails: limited_thumbnails,
+  controls_on_media: controls_on_media,
+  pagination_position: pagination_position,
+  aspect_ratio: block_settings.aspect_ratio,
+  thumbnail_radius: block_settings.thumbnail_radius
+-%}
         {% endif %}
 
         {% if render_mobile_slideshow_controls %}
@@ -447,7 +448,7 @@
         class="media-gallery__grid list-unstyled"
         data-testid="media-gallery-grid"
       >
-        {% for media in sorted_media %}
+        {% for media in sorted_media limit: 6 %}
           <li
             ref="media[]"
             class="{{ product_media_container_class }} product-media-container--{{ media.media_type }}"
@@ -635,6 +636,25 @@
       </script>
     {%- endif -%}
   </media-gallery>
+  {% if sorted_media.size > 6 %}
+  <div class="custom-lifestyle-grid">
+  {    {% for media in sorted_media offset: 6 limit: 6 %}
+      {% if media.media_type == 'image' %}
+        <div class="custom-lifestyle-item">
+          {{
+            media.preview_image
+            | image_url: width: 1200
+            | image_tag:
+              widths: '400, 600, 800, 1200',
+              loading: 'lazy',
+              alt: media.alt,
+              class: 'custom-lifestyle-image'
+          }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
 {% endif %}
 
 {% stylesheet %}
@@ -775,7 +795,7 @@
     height: auto;
     aspect-ratio: var(--ratio);
   }
-
+  
   .dialog-zoomed-gallery .product-media-container--model .product-media__image {
     /* Make the height match the height of the model-viewer */
     height: 100vh;

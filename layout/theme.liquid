@@ -37,6 +37,9 @@
 
     {{ content_for_header }}
     {{ 'custom.css' | asset_url | stylesheet_tag }}
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400&display=swap" rel="stylesheet">
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
@@ -133,5 +136,109 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-  </body>
-</html>
+<style>
+@media (min-width: 990px) {
+  .product-details {
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .product-details::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
+  }
+
+  .product-details::-webkit-scrollbar-track {
+    display: none !important;
+    background: transparent !important;
+  }
+
+  .product-details::-webkit-scrollbar-thumb {
+    display: none !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function initPerfectScroll() {
+    if (window.innerWidth < 990) return;
+
+    const rightCol = document.querySelector('.product-details');
+    const leftCol = document.querySelector('.media-gallery__grid');
+
+    if (!rightCol || !leftCol) return;
+    if (document.documentElement.dataset.scrollBound === '1') return;
+
+    function updateHeight() {
+      const rect = rightCol.getBoundingClientRect();
+      const topOffset = Math.max(0, rect.top);
+      const maxHeight = window.innerHeight - topOffset - 16;
+
+      rightCol.style.height = maxHeight + 'px';
+      rightCol.style.maxHeight = maxHeight + 'px';
+    }
+
+    function canScroll(el, delta) {
+      if (delta > 0) {
+        return el.scrollTop + el.clientHeight < el.scrollHeight - 2;
+      }
+      return el.scrollTop > 2;
+    }
+
+    updateHeight();
+    document.documentElement.dataset.scrollBound = '1';
+
+    document.addEventListener('wheel', function (e) {
+      if (window.innerWidth < 990) return;
+
+      const inRight = e.target.closest('.product-details');
+
+      if (inRight) {
+        if (canScroll(rightCol, e.deltaY)) {
+          e.preventDefault();
+          e.stopPropagation();
+          rightCol.scrollTop += e.deltaY;
+        }
+      }
+    }, { passive: false });
+
+    window.addEventListener('resize', updateHeight);
+  }
+
+  document.addEventListener('DOMContentLoaded', initPerfectScroll);
+  window.addEventListener('load', initPerfectScroll);
+
+  const observer = new MutationObserver(initPerfectScroll);
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth < 990) {
+    return;
+  }
+
+  document.addEventListener('wheel', function(e) {
+    const right = document.querySelector('#ProductInformation-template--18452952907874__main');
+
+    if (!right) return;
+
+    const rect = right.getBoundingClientRect();
+    const isOnRight = e.clientX > rect.left;
+
+    if (isOnRight) {
+      e.stopPropagation();
+    }
+  }, { passive: true });
+});
+</script>
+   </body>

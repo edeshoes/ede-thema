@@ -1,1 +1,758 @@
-{"sections":{"main":{"type":"product-information","blocks":{"media-gallery":{"type":"_product-media-gallery","static":true,"settings":{"media_presentation":"grid","media_columns":"two","image_gap":10,"large_first_image":false,"icons_style":"chevron_large","slideshow_controls_style":"dots","slideshow_mobile_controls_style":"thumbnails","thumbnail_position":"bottom","thumbnail_width":48,"thumbnail_radius":0,"aspect_ratio":"adapt","constrain_to_viewport":true,"media_fit":"cover","media_radius":0,"extend_media":true,"zoom":true,"video_loop":true,"hide_variants":false,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product-details":{"type":"_product-details","static":true,"settings":{"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","details_position":"flex-start","gap":17,"sticky_details_desktop":true,"inherit_color_scheme":true,"color_scheme":"scheme-3","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":30,"padding-block-end":48,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"group":{"type":"group","name":"Header","settings":{"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":12,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","hover_transition_speed":0.4,"background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","link":"","open_in_new_tab":false,"placeholder":"","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"text_nXdFcd":{"type":"text","name":"t:names.title","settings":{"text":"<h1>{{ closest.product.title }}<\/h1>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"h1","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground-heading)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"group_8B3NLh":{"type":"group","name":"Price & Rating","settings":{"content_direction":"row","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":24,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","hover_transition_speed":0.4,"background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","link":"","open_in_new_tab":false,"placeholder":"","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"price_97GqNF":{"type":"price","settings":{"show_sale_price_first":true,"show_installments":true,"show_tax_info":true,"type_preset":"paragraph","width":"100%","alignment":"left","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","color":"var(--color-foreground)","padding-block-start":4,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"review_QhdEwM":{"type":"review","settings":{"stars_style":"shaded","show_number":true,"rating_color":"primary","type_preset":"paragraph","width":"100%","alignment":"left"},"blocks":{}}},"block_order":["price_97GqNF","review_QhdEwM"]}},"block_order":["text_nXdFcd","group_8B3NLh"]},"variant_picker":{"type":"variant-picker","settings":{"variant_style":"buttons","show_swatches":true,"alignment":"left","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"buy_buttons":{"type":"buy-buttons","settings":{"stacking":false,"show_pickup_availability":false,"gift_card_form":true,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"quantity":{"type":"quantity","static":true,"settings":{},"blocks":{}},"add-to-cart":{"type":"add-to-cart","static":true,"settings":{"style_class":"button"},"blocks":{}},"accelerated-checkout":{"type":"accelerated-checkout","static":true,"settings":{},"blocks":{}}},"block_order":[]},"divider":{"type":"_divider","name":"t:names.divider","disabled":true,"settings":{"thickness":1.5,"corner_radius":"square","width_percent":100,"padding-block-start":0,"padding-block-end":0},"blocks":{}},"text":{"type":"product-description","name":"Product description","disabled":true,"settings":{"text":"{{ closest.product.description }}","enable_read_more":false,"read_more_limit":200,"read_more_label":"Daha fazla oku","read_less_label":"Daha az oku","width":"100%","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-primary--family)","font_size":"","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["group","variant_picker","buy_buttons","divider","text"]}},"settings":{"content_width":"content-center-aligned","desktop_media_position":"left","equal_columns":false,"limit_details_width":true,"gap":48,"enable_sticky_add_to_cart":true,"color_scheme":"scheme-3","padding-block-start":0,"padding-block-end":0}},"section_QfrbET":{"type":"section","blocks":{"text_dhaaQw":{"type":"text","name":"t:names.heading","settings":{"text":"<h2>Description<\/h2>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_description_treTxz":{"type":"product-description","name":"t:names.product_description","settings":{"text":"{{ closest.product.description }}","enable_read_more":true,"read_more_limit":200,"read_more_label":"Read More","read_less_label":"Read Less","width":"100%","max_width":"none","alignment":"left","type_preset":"paragraph","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_dhaaQw","product_description_treTxz"],"name":"t:names.custom_section","settings":{"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":12,"section_width":"page-width","section_height":"small","section_height_custom":50,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","padding-block-start":50,"padding-block-end":50}},"product-recommendations":{"type":"product-recommendations","blocks":{"header":{"type":"text","name":"t:names.header","settings":{"text":"<h3>Goes well with...<\/h3>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"h2","font":"var(--font-primary--family)","font_size":"","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"static-product-card":{"type":"_product-card","name":"t:names.product_card","static":true,"settings":{"product_card_gap":2,"inherit_color_scheme":true,"color_scheme":"","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"card-gallery":{"type":"_product-card-gallery","name":"t:names.product_card_media","settings":{"image_ratio":"portrait","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"group":{"type":"_product-card-group","settings":{"content_direction":"column","vertical_on_mobile":false,"horizontal_alignment":"space-between","vertical_alignment":"flex-start","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"flex-start","gap":4,"width":"fill","custom_width":35,"width_mobile":"fill","custom_width_mobile":43,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","link":"","open_in_new_tab":false,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"group_jUd9Ly":{"type":"_product-card-group","name":"t:names.group","settings":{"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"flex-start","gap":4,"width":"fill","custom_width":40,"width_mobile":"fit-content","custom_width_mobile":20,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","link":"","open_in_new_tab":false,"padding-block-start":8,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_title_d368TL":{"type":"product-title","name":"t:names.product_title","settings":{"width":"fit-content","max_width":"normal","alignment":"left","type_preset":"h5","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"price_jKmnBC":{"type":"price","settings":{"show_sale_price_first":true,"show_installments":false,"show_tax_info":false,"type_preset":"h6","width":"100%","alignment":"left","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","color":"var(--color-foreground)","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["product_title_d368TL","price_jKmnBC"]},"swatches":{"type":"swatches","settings":{"product_swatches_alignment":"flex-start","product_swatches_alignment_mobile":"flex-start","hide_padding":false,"product_swatches_padding_top":4,"product_swatches_padding_bottom":10,"product_swatches_padding_left":0,"product_swatches_padding_right":0},"blocks":{}}},"block_order":["group_jUd9Ly","swatches"]}},"block_order":["card-gallery","group"]}},"block_order":["header"],"settings":{"product":"{{ closest.product }}","recommendation_type":"related","layout_type":"grid","carousel_on_mobile":false,"max_products":4,"columns":4,"mobile_columns":"2","columns_gap":12,"rows_gap":12,"icons_style":"arrow","icons_shape":"none","section_width":"page-width","gap":24,"color_scheme":"scheme-1","padding-block-start":24,"padding-block-end":24}}},"order":["main","section_QfrbET","product-recommendations"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "media_columns": "two",
+            "image_gap": 10,
+            "large_first_image": false,
+            "icons_style": "chevron_large",
+            "slideshow_controls_style": "dots",
+            "slideshow_mobile_controls_style": "thumbnails",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 48,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "cover",
+            "media_radius": 0,
+            "extend_media": true,
+            "zoom": true,
+            "video_loop": true,
+            "hide_variants": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 17,
+            "sticky_details_desktop": true,
+            "inherit_color_scheme": true,
+            "color_scheme": "scheme-3",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 30,
+            "padding-block-end": 48,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "custom_liquid_ckUUzR": {
+              "type": "custom-liquid",
+              "name": "SERIES liquid",
+              "settings": {
+                "custom_liquid": "{% if product.metafields.custom.series != blank or product.metafields.custom.gender != blank %}\n  <div style=\"width: 100%; text-align: right; margin: 0 0 8px 0; padding-right: 8px;\">\n    \n    {% if product.metafields.custom.series != blank %}\n      <div style=\"\n        display: inline-block;\n        text-align: center;\n      \">\n        <div style=\"\n          font-size: 12px;\n          letter-spacing: 0.25em;\n          text-transform: uppercase;\n          opacity: 0.5;\n          font-weight: 700;\n          margin: 0 0 4px 0;\n          white-space: nowrap;\n        \">\n          {{ product.metafields.custom.series }}\n        </div>\n\n        {% if product.metafields.custom.gender != blank %}\n          <div style=\"\n            font-size: 13px;\n            opacity: 0.42;\n            line-height: 1.1;\n            margin: 0;\n          \">\n            {{ product.metafields.custom.gender }}\n          </div>\n        {% endif %}\n      </div>\n\n    {% elsif product.metafields.custom.gender != blank %}\n      <div style=\"\n        font-size: 13px;\n        opacity: 0.42;\n        line-height: 1.1;\n        margin: 0;\n      \">\n        {{ product.metafields.custom.gender }}\n      </div>\n    {% endif %}\n\n  </div>\n{% endif %}"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_mXq6A8": {
+              "type": "custom-liquid",
+              "name": "Fiyat Liquid",
+              "settings": {
+                "custom_liquid": "<div style=\"margin-bottom: 28px;\">\n  <span style=\"\n    font-family: 'Albert Sans', sans-serif;\n    font-size: 48px;\n    font-weight: 400;\n    line-height: 1;\n    letter-spacing: 0.015em;\n    color: #2f2923;\n  \">\n    {{ product.price | money_without_trailing_zeros }}\n  </span>\n</div>"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_NPr8F3": {
+              "type": "custom-liquid",
+              "name": "BASLIK Liquid",
+              "settings": {
+                "custom_liquid": "<div style=\"padding-top: 10px; padding-bottom: 34px;\">\n\n  <div style=\"\n    font-family: 'Cormorant Garamond', serif;\n    font-size: 56px;\n    font-weight: 500;\n    line-height: 0.95;\n    letter-spacing: -0.02em;\n    color: #151515;\n    margin: 0;\n  \">\n    {{ product.title }}\n  </div>\n\n  <div style=\"\n    font-family: Inter, sans-serif;\n    font-size: 11px;\n    font-weight: 400;\n    line-height: 1.45;\n    letter-spacing: 0.14em;\n    text-transform: uppercase;\n    color: #7a736b;\n    margin-top: 6px;\n    max-width: 440px;\n  \">\n    {{ product.metafields.custom.short_desc | default: \"BUFFALO SOLE • COPPER RIVETS • GAZIANTEP CRAFT\" }}\n  </div>\n\n</div>"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_9FaAia": {
+              "type": "custom-liquid",
+              "name": "bosluk",
+              "disabled": true,
+              "settings": {
+                "custom_liquid": "<div style=\"height: 22px;\"></div>"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_gzbzCa": {
+              "type": "custom-liquid",
+              "name": "bosluk",
+              "disabled": true,
+              "settings": {
+                "custom_liquid": "<div style=\"height: 22px;\"></div>"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_bAtXme": {
+              "type": "custom-liquid",
+              "name": "kisa aciklama Liquid",
+              "disabled": true,
+              "settings": {
+                "custom_liquid": "<div style=\"\n  font-family: Inter, sans-serif;\n  font-size: 11px;\n  font-weight: 400;\n  line-height: 1.45;\n  letter-spacing: 0.14em;\n  text-transform: uppercase;\n  color: #7c746b;\n  margin: 0 0 34px 0;\n  max-width: 460px;\n\">\n  {{ product.metafields.custom.short_desc | default: \"BUFFALO SOLE • COPPER RIVETS • GAZIANTEP CRAFT\" }}\n</div>"
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "group",
+              "name": "Header",
+              "disabled": true,
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "hover_transition_speed": 0.4,
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_nXdFcd": {
+                  "type": "text",
+                  "name": "t:names.title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h1",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground-heading)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "group_8B3NLh": {
+                  "type": "group",
+                  "name": "Price & Rating",
+                  "disabled": true,
+                  "settings": {
+                    "content_direction": "row",
+                    "vertical_on_mobile": true,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "align_baseline": false,
+                    "horizontal_alignment_flex_direction_column": "flex-start",
+                    "vertical_alignment_flex_direction_column": "center",
+                    "gap": 24,
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "custom_height": 100,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "background_media": "none",
+                    "video_position": "cover",
+                    "hover_transition_speed": 0.4,
+                    "background_image_position": "cover",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "toggle_overlay": false,
+                    "overlay_color": "#00000026",
+                    "overlay_style": "solid",
+                    "gradient_direction": "to top",
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "placeholder": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "price_97GqNF": {
+                      "type": "price",
+                      "settings": {
+                        "show_sale_price_first": true,
+                        "show_installments": true,
+                        "show_tax_info": true,
+                        "type_preset": "paragraph",
+                        "width": "100%",
+                        "alignment": "left",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)",
+                        "padding-block-start": 4,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "review_QhdEwM": {
+                      "type": "review",
+                      "settings": {
+                        "stars_style": "shaded",
+                        "show_number": true,
+                        "rating_color": "primary",
+                        "type_preset": "paragraph",
+                        "width": "100%",
+                        "alignment": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "price_97GqNF",
+                    "review_QhdEwM"
+                  ]
+                }
+              },
+              "block_order": [
+                "text_nXdFcd",
+                "group_8B3NLh"
+              ]
+            },
+            "variant_picker": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": true,
+                "alignment": "right",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "custom_liquid_UjW8L8": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<style>\n/* =========================================\n   EDE – SIZE PICKER FINAL\n   Bu blok size-picker Custom Liquid'inin TAMAMI olsun\n   ========================================= */\n\n/* Native başlıkları gizle */\n.variant-picker__option-info,\n.variant-option__label,\n.variant-picker__label,\n.product-info__block-item legend,\n.product-info__block-item .form__label {\n  display: none !important;\n}\n\n/* Seçenek alanı */\n.product-info__block-item .variant-option--equal-width-buttons,\n.variant-option--equal-width-buttons {\n  position: relative !important;\n  display: grid !important;\n  grid-template-columns: repeat(7, minmax(0, 1fr)) !important;\n  gap: 10px !important;\n  width: 100% !important;\n  max-width: 100% !important;\n  margin: 0 0 10px 0 !important;\n  padding-top: 24px !important;\n  justify-items: stretch !important;\n  align-items: start !important;\n}\n\n/* Kendi başlığımız */\n.product-info__block-item .variant-option--equal-width-buttons::before,\n.variant-option--equal-width-buttons::before {\n  content: \"US Women Size\" !important;\n  position: absolute !important;\n  top: 0 !important;\n  right: 0 !important;\n  display: block !important;\n  font-size: 11px !important;\n  line-height: 1.1 !important;\n  letter-spacing: .10em !important;\n  text-transform: uppercase !important;\n  color: #7b7368 !important;\n  font-weight: 600 !important;\n  text-align: right !important;\n}\n\n/* Input görünmesin ama çalışsın */\n.product-info__block-item .variant-option--equal-width-buttons label.variant-option__button-label input[type=\"radio\"],\n.variant-option--equal-width-buttons label.variant-option__button-label input[type=\"radio\"] {\n  position: absolute !important;\n  opacity: 0 !important;\n  pointer-events: none !important;\n}\n\n/* Kutular */\n.product-info__block-item .variant-option--equal-width-buttons label.variant-option__button-label,\n.variant-option--equal-width-buttons label.variant-option__button-label {\n  width: 100% !important;\n  min-width: 0 !important;\n  height: 50px !important;\n  padding: 0 10px !important;\n  border-radius: 12px !important;\n  border: 1px solid rgba(43, 37, 31, 0.16) !important;\n  background: linear-gradient(180deg, #fcfaf6 0%, #f3ece2 100%) !important;\n  color: #2b251f !important;\n  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif !important;\n  font-size: 16px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.02em !important;\n  line-height: 1 !important;\n  display: inline-flex !important;\n  align-items: center !important;\n  justify-content: center !important;\n  text-align: center !important;\n  cursor: pointer !important;\n  box-shadow:\n    0 1px 0 rgba(255,255,255,.72) inset,\n    0 1px 2px rgba(43,37,31,.03) !important;\n  transition:\n    transform .16s ease,\n    background-color .18s ease,\n    border-color .18s ease,\n    color .18s ease,\n    box-shadow .18s ease !important;\n  overflow: hidden !important;\n}\n\n/* Tema pseudo katmanları kapansın */\n.product-info__block-item .variant-option--equal-width-buttons label.variant-option__button-label::before,\n.product-info__block-item .variant-option--equal-width-buttons label.variant-option__button-label::after,\n.variant-option--equal-width-buttons label.variant-option__button-label::before,\n.variant-option--equal-width-buttons label.variant-option__button-label::after {\n  content: none !important;\n  display: none !important;\n}\n\n/* Hover */\n.product-info__block-item .variant-option--equal-width-buttons label.variant-option__button-label:not(:has(input:checked)):hover,\n.variant-option--equal-width-buttons label.variant-option__button-label:not(:has(input:checked)):hover {\n  background: linear-gradient(180deg, #faf5ed 0%, #eee4d8 100%) !important;\n  border-color: rgba(43, 37, 31, 0.24) !important;\n  color: #241f1a !important;\n  transform: translateY(-1px) !important;\n  box-shadow: 0 6px 16px rgba(43,37,31,0.06) !important;\n}\n\n/* Seçili durum */\n.product-info__block-item .variant-option--equal-width-buttons label.variant-option__button-label:has(input:checked),\n.variant-option--equal-width-buttons label.variant-option__button-label:has(input:checked) {\n  background: linear-gradient(180deg, #2a241f 0%, #171310 100%) !important;\n  color: #fffaf3 !important;\n  border-color: #1c1713 !important;\n  transform: translateY(-1px) !important;\n  box-shadow:\n    0 1px 0 rgba(255,255,255,0.06) inset,\n    0 8px 18px rgba(23,19,16,0.16) !important;\n}\n\n/* İçerideki text rengi miras alsın */\n.product-info__block-item .variant-option--equal-width-buttons label.variant-option__button-label *,\n.variant-option--equal-width-buttons label.variant-option__button-label * {\n  color: inherit !important;\n  background: transparent !important;\n}\n\n/* Add to cart gizle */\nbutton[name=\"add\"],\n.product-form__submit,\n.product-form__buttons button[name=\"add\"] {\n  display: none !important;\n}\n\n/* Quantity + Buy now */\n.product-form__buttons {\n  display: flex !important;\n  flex-direction: row !important;\n  align-items: center !important;\n  justify-content: flex-start !important;\n  gap: 8px !important;\n  margin-top: 10px !important;\n}\n\nquantity-selector,\n.quantity,\n.product-form__quantity,\n.quantity-input {\n  width: 104px !important;\n  min-width: 104px !important;\n  max-width: 104px !important;\n  flex: 0 0 104px !important;\n  margin: 0 !important;\n}\n\n.shopify-payment-button {\n  width: auto !important;\n  flex: 0 1 170px !important;\n  margin: 0 !important;\n}\n\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  min-height: 46px !important;\n  border-radius: 12px !important;\n  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif !important;\n  font-size: 14px !important;\n  font-weight: 600 !important;\n}\n\n/* Mobil */\n@media (max-width: 749px) {\n  .product-info__block-item .variant-option--equal-width-buttons,\n  .variant-option--equal-width-buttons {\n    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;\n    gap: 8px !important;\n    padding-top: 22px !important;\n  }\n\n  .product-info__block-item .variant-option--equal-width-buttons::before,\n  .variant-option--equal-width-buttons::before {\n    right: auto !important;\n    left: 0 !important;\n    text-align: left !important;\n  }\n\n  .product-info__block-item .variant-option--equal-width-buttons label.variant-option__button-label,\n  .variant-option--equal-width-buttons label.variant-option__button-label {\n    height: 46px !important;\n    font-size: 15px !important;\n    border-radius: 11px !important;\n  }\n\n  .product-form__buttons {\n    flex-direction: column !important;\n    align-items: stretch !important;\n    gap: 10px !important;\n  }\n\n  quantity-selector,\n  .quantity,\n  .product-form__quantity,\n  .quantity-input,\n  .shopify-payment-button {\n    width: 100% !important;\n    max-width: 100% !important;\n    min-width: 0 !important;\n    flex: 1 1 auto !important;\n  }\n}\n</style>\n<style>\n/* =========================================\n   EDE – MICRO CLEANUP PATCH\n   sadece ince ayar\n   ========================================= */\n\n/* Size alanı üst boşluğu biraz toparla */\n.variant-option--equal-width-buttons {\n  margin-bottom: 6px !important;\n}\n\n/* Kendi küçük başlığımızı kutulara biraz yaklaştır */\n.variant-option--equal-width-buttons::before {\n  margin-bottom: 8px !important;\n}\n\n/* Size guide üst-alt boşluklarını sıkılaştır */\n#size-guide-{{ section.id }} {\n  margin-top: 8px !important;\n  margin-bottom: 8px !important;\n  padding-top: 8px !important;\n}\n\n/* Quantity + Buy now sola ve birbirine yakın */\n.product-form__buttons {\n  display: flex !important;\n  flex-direction: row !important;\n  justify-content: flex-start !important;\n  align-items: center !important;\n  gap: 6px !important;\n  margin-top: 8px !important;\n}\n\n/* Adet kutusu kompakt */\nquantity-selector,\n.quantity,\n.product-form__quantity,\n.quantity-input {\n  width: 84px !important;\n  min-width: 84px !important;\n  max-width: 84px !important;\n  flex: 0 0 84px !important;\n  margin: 0 !important;\n}\n\n/* Buy now kutuya yaklaşsın */\n.shopify-payment-button {\n  width: auto !important;\n  flex: 0 1 148px !important;\n  margin: 0 !important;\n}\n\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  min-height: 42px !important;\n  border-radius: 10px !important;\n}\n\n/* Mobilde yine alt alta kalsın */\n@media (max-width: 749px) {\n  .product-form__buttons {\n    flex-direction: column !important;\n    align-items: stretch !important;\n    gap: 8px !important;\n  }\n\n  quantity-selector,\n  .quantity,\n  .product-form__quantity,\n  .quantity-input,\n  .shopify-payment-button {\n    width: 100% !important;\n    max-width: 100% !important;\n    min-width: 0 !important;\n    flex: 1 1 auto !important;\n  }\n}\n</style>\n\n<script>\n/* \"Shoe size\" yazısını metne göre kaldır */\n(function () {\n  function hideExactShoeSizeText() {\n    const els = Array.from(document.querySelectorAll('div, span, label, legend, p'));\n    els.forEach(el => {\n      const txt = (el.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();\n      if (txt === 'shoe size') {\n        el.style.display = 'none';\n      }\n    });\n  }\n\n  document.addEventListener('DOMContentLoaded', hideExactShoeSizeText);\n\n  const observer = new MutationObserver(hideExactShoeSizeText);\n  observer.observe(document.body, { childList: true, subtree: true });\n})();\n</script>\n\n<style>\n/* Buy now'ı quantity kutusuna yaklaştır */\n.product-form__buttons {\n  display: flex !important;\n  flex-direction: row !important;\n  justify-content: flex-start !important;\n  align-items: center !important;\n  gap: 6px !important;\n}\n\n.shopify-payment-button {\n  width: auto !important;\n  flex: 0 0 auto !important;\n  margin: 0 !important;\n}\n\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  width: 150px !important;\n  min-width: 150px !important;\n  max-width: 150px !important;\n}\n</style>\n\n<style>\n/* Quantity kutusunu Buy now'a yaklaştır */\n.product-form__buttons {\n  display: flex !important;\n  flex-direction: row !important;\n  align-items: center !important;\n  justify-content: flex-start !important;\n}\n\nquantity-selector,\n.quantity,\n.product-form__quantity,\n.quantity-input {\n  width: 84px !important;\n  min-width: 84px !important;\n  max-width: 84px !important;\n  flex: 0 0 84px !important;\n  margin-left: 220px !important;\n  margin-right: 6px !important;\n}\n\n.shopify-payment-button {\n  width: auto !important;\n  flex: 0 0 auto !important;\n  margin: 0 !important;\n}\n\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  width: 150px !important;\n  min-width: 150px !important;\n  max-width: 150px !important;\n}\n\n@media (max-width: 749px) {\n  quantity-selector,\n  .quantity,\n  .product-form__quantity,\n  .quantity-input {\n    margin-left: 0 !important;\n    margin-right: 0 !important;\n  }\n}\n</style>\n\n<style>\n/* Buy now yanındaki ilk bloğu yaklaştır */\n.product-form__buttons {\n  display: flex !important;\n  flex-direction: row !important;\n  align-items: center !important;\n  justify-content: flex-start !important;\n  gap: 6px !important;\n}\n\n/* Buy now'dan önce gelen ilk eleman = adet alanı */\n.product-form__buttons > *:first-child {\n  margin-right: 6px !important;\n}\n\n/* Buy now biraz sabit kalsın */\n.product-form__buttons > *:last-child,\n.shopify-payment-button {\n  flex: 0 0 auto !important;\n}\n\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  width: 150px !important;\n  min-width: 150px !important;\n  max-width: 150px !important;\n}\n</style>\n\n<style>\n/* Mobile dahil quantity + Buy now yan yana */\n.product-form__buttons {\n  display: flex !important;\n  flex-direction: row !important;\n  align-items: center !important;\n  justify-content: flex-start !important;\n  gap: 6px !important;\n}\n\n/* Quantity'nin gerçek elementi */\nquantity-selector-component.quantity-selector {\n  width: 84px !important;\n  min-width: 84px !important;\n  max-width: 84px !important;\n  flex: 0 0 84px !important;\n  margin: 0 !important;\n}\n\n/* Buy now sabit ve quantity'ye yakın */\n.shopify-payment-button {\n  width: auto !important;\n  flex: 0 0 auto !important;\n  margin: 0 !important;\n}\n\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  width: 150px !important;\n  min-width: 150px !important;\n  max-width: 150px !important;\n  margin: 0 !important;\n}\n\n/* Daha önce yazılmış mobilde alt alta dizen kuralı ez */\n@media (max-width: 749px) {\n  .product-form__buttons {\n    flex-direction: row !important;\n    align-items: center !important;\n    justify-content: flex-start !important;\n    gap: 6px !important;\n  }\n\n  quantity-selector-component.quantity-selector {\n    width: 84px !important;\n    min-width: 84px !important;\n    max-width: 84px !important;\n    flex: 0 0 84px !important;\n  }\n\n  .shopify-payment-button {\n    width: auto !important;\n    flex: 0 0 auto !important;\n  }\n\n  .shopify-payment-button__button,\n  .shopify-payment-button__button--unbranded {\n    width: 150px !important;\n    min-width: 150px !important;\n    max-width: 150px !important;\n  }\n}\n</style>\n\n<style>\n/* STEP 1 — quantity kutusunu düzelt ve buy now'a yaklaştır */\n\n.product-form__buttons {\n  display: flex !important;\n  flex-direction: row !important;\n  align-items: center !important;\n  justify-content: flex-start !important;\n  gap: 8px !important;\n}\n\n.product-form__buttons > * {\n  flex: 0 0 auto !important;\n  margin: 0 !important;\n}\n\n/* Gerçek quantity bileşeni */\nquantity-selector-component.quantity-selector {\n  display: inline-flex !important;\n  align-items: center !important;\n  justify-content: center !important;\n  width: 96px !important;\n  min-width: 96px !important;\n  max-width: 96px !important;\n  overflow: hidden !important;\n}\n\n/* İçindeki - sayı + düzeni */\nquantity-selector-component.quantity-selector button {\n  width: 28px !important;\n  min-width: 28px !important;\n  max-width: 28px !important;\n  padding: 0 !important;\n}\n\nquantity-selector-component.quantity-selector input {\n  width: 40px !important;\n  min-width: 40px !important;\n  max-width: 40px !important;\n  text-align: center !important;\n  padding: 0 !important;\n}\n\n/* Buy now sabit kalsın */\n.shopify-payment-button {\n  width: auto !important;\n  flex: 0 0 auto !important;\n  margin: 0 !important;\n}\n\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  width: 146px !important;\n  min-width: 146px !important;\n  max-width: 146px !important;\n}\n</style>\n\n<style>\n/* Buy now wrapper genişliğini kır */\n.accelerated-checkout-block {\n  width: auto !important;\n  max-width: max-content !important;\n  display: inline-flex !important;\n}\n\n/* Buton grubu sola toplansın */\n.product-form__buttons {\n  display: flex !important;\n  align-items: center !important;\n  justify-content: flex-start !important;\n  gap: 6px !important;\n}\n\n/* Quantity */\nquantity-selector-component.quantity-selector {\n  flex: 0 0 auto !important;\n}\n\n/* Buy now iç buton */\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  width: 150px !important;\n}\n</style>\n\n<style>\n/* ANA WRAPPER'I KONTROL ET */\n.product-form-buttons {\n  display: flex !important;\n  flex-direction: row !important;\n  justify-content: flex-start !important; /* Sola topla */\n  align-items: center !important;\n  gap: px !important;\n  width: auto !important; /* full width kır */\n}\n\n/* TÜM ÇOCUKLARI YAYILMAKTAN KURTAR */\n.product-form-buttons > * {\n  flex: 0 0 auto !important;\n  width: auto !important;\n  max-width: none !important;\n}\n\n/* BUY NOW BLOCK YAYILMASIN */\n.accelerated-checkout-block {\n  width: auto !important;\n  flex: 0 0 auto !important;\n  margin: 0 !important;\n}\n\n/* SHOPIFY PAYMENT WRAPPER */\n.shopify-payment-button {\n  width: auto !important;\n  display: inline-block !important;\n}\n\n/* BUTON */\n.shopify-payment-button__button {\n  width: 150px !important;\n}\n</style>\n\n<style>\n/* Quantity kutusu – temiz premium görünüm */\n.quantity-selector {\n  border-radius: 10px !important;\n  border: 1px solid rgba(0,0,0,0.12) !important;\n  background: #ffffff !important;\n  overflow: hidden !important;\n  box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;\n}\n\n.quantity-selector button {\n  background: transparent !important;\n  border: 0 !important;\n}\n\n.quantity-selector input {\n  background: transparent !important;\n  border: 0 !important;\n  text-align: center !important;\n}\n</style>\n\n<style>\n/* Quantity kutusu – premium refinement */\n.quantity-selector {\n  border-radius: 12px !important;\n  border: 1px solid rgba(43, 37, 31, 0.14) !important;\n  background: linear-gradient(180deg, #fffdf9 0%, #f4ede3 100%) !important;\n  box-shadow:\n    0 1px 0 rgba(255,255,255,0.75) inset,\n    0 2px 6px rgba(43,37,31,0.05) !important;\n  overflow: hidden !important;\n}\n\n.quantity-selector button {\n  width: 30px !important;\n  min-width: 30px !important;\n  max-width: 30px !important;\n  color: #2b251f !important;\n  opacity: 0.82 !important;\n  transition: background-color .18s ease, opacity .18s ease, transform .12s ease !important;\n}\n\n.quantity-selector button:hover {\n  background: rgba(43, 37, 31, 0.05) !important;\n  opacity: 1 !important;\n}\n\n.quantity-selector input {\n  font-size: 14px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.01em !important;\n  color: #2b251f !important;\n}\n\n/* Buy now da quantity ile aynı aileden görünsün */\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  border-radius: 12px !important;\n  box-shadow:\n    0 1px 0 rgba(255,255,255,0.05) inset,\n    0 4px 10px rgba(0,0,0,0.10) !important;\n  transition: transform .18s ease, box-shadow .18s ease !important;\n}\n\n.shopify-payment-button__button:hover,\n.shopify-payment-button__button--unbranded:hover {\n  transform: translateY(-1px) !important;\n  box-shadow:\n    0 1px 0 rgba(255,255,255,0.05) inset,\n    0 8px 16px rgba(0,0,0,0.14) !important;\n}\n</style>\n\n<style>\n/* Quantity daha ferah */\n.quantity-selector {\n  height: 48px !important;\n  padding: 0 6px !important;\n}\n\n/* + - butonları */\n.quantity-selector button {\n  width: 36px !important;\n  min-width: 36px !important;\n  max-width: 36px !important;\n  height: 36px !important;\n  border-radius: 8px !important;\n}\n\n/* ortadaki sayı */\n.quantity-selector input {\n  font-size: 15px !important;\n  font-weight: 600 !important;\n  height: 36px !important;\n  padding: 0 6px !important;\n}\n\n/* iç spacing dengesi */\n.quantity-selector {\n  display: flex !important;\n  align-items: center !important;\n  gap: 4px !important;\n}\n</style>\n\n<style>\n/* Quantity + Buy now aynı aileden, daha ferah */\n\n.quantity-selector {\n  height: 50px !important;\n  min-height: 50px !important;\n  border-radius: 14px !important;\n  border: 1px solid rgba(43, 37, 31, 0.12) !important;\n  background: linear-gradient(180deg, #fcfaf6 0%, #f3ece2 100%) !important;\n  box-shadow:\n    0 1px 0 rgba(255,255,255,0.72) inset,\n    0 2px 6px rgba(43,37,31,0.05) !important;\n  overflow: hidden !important;\n  display: flex !important;\n  align-items: center !important;\n  gap: 8px !important;\n  padding: 0 10px !important;\n}\n\n/* Quantity genişlesin */\nquantity-selector-component.quantity-selector {\n  width: 128px !important;\n  min-width: 128px !important;\n  max-width: 128px !important;\n  flex: 0 0 128px !important;\n}\n\n/* + / - daha içeride ve daha dengeli */\n.quantity-selector button {\n  width: 30px !important;\n  min-width: 30px !important;\n  max-width: 30px !important;\n  height: 30px !important;\n  min-height: 30px !important;\n  border-radius: 8px !important;\n  border: 0 !important;\n  background: transparent !important;\n  color: #2b251f !important;\n  opacity: 0.82 !important;\n  transition: background-color .18s ease, opacity .18s ease, transform .12s ease !important;\n}\n\n.quantity-selector button:hover {\n  background: rgba(43, 37, 31, 0.05) !important;\n  opacity: 1 !important;\n}\n\n/* Sayı alanı daha ferah */\n.quantity-selector input {\n  height: 34px !important;\n  font-size: 15px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.01em !important;\n  color: #2b251f !important;\n  background: transparent !important;\n  border: 0 !important;\n  text-align: center !important;\n  padding: 0 4px !important;\n}\n\n/* Buy now aynı yükseklik ve aynı tasarım ailesi */\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  height: 50px !important;\n  min-height: 50px !important;\n  border-radius: 14px !important;\n  background: linear-gradient(180deg, #2a241f 0%, #171310 100%) !important;\n  box-shadow:\n    0 1px 0 rgba(255,255,255,0.05) inset,\n    0 6px 14px rgba(0,0,0,0.12) !important;\n  transition: transform .18s ease, box-shadow .18s ease !important;\n}\n\n/* Buy now biraz daha geniş ve rahat */\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  width: 164px !important;\n  min-width: 164px !important;\n  max-width: 164px !important;\n}\n\n.shopify-payment-button__button:hover,\n.shopify-payment-button__button--unbranded:hover {\n  transform: translateY(-1px) !important;\n  box-shadow:\n    0 1px 0 rgba(255,255,255,0.05) inset,\n    0 10px 18px rgba(0,0,0,0.14) !important;\n}\n</style>\n\n<style>\n.variant-option--equal-width-buttons::before,\n.product-info__block-item .variant-option--equal-width-buttons::before {\n  content: \"WOMEN / US SIZE\" !important;\n}\n</style>\n\n<style>\n@media (min-width: 990px) {\n  #product-information-grid-content {\n    display: grid !important;\n    grid-template-columns: minmax(0, 1fr) 401px !important;\n    align-items: start !important;\n  }\n\n  #ProductInformation-template--18452952097874__main {\n    max-height: 100vh !important;\n    overflow-y: auto !important;\n    position: sticky !important;\n    top: 0 !important;\n    overscroll-behavior: contain !important;\n  }\n}\n</style>\n\n<script>\n(function () {\n  function initRightColumnScrollPriority() {\n    if (window.innerWidth < 990) return;\n\n    const rightCol = document.querySelector('#ProductInformation-template--18452952097874__main');\n    const leftCol =\n      document.querySelector('.product-information__media') ||\n      document.querySelector('.product-information__media-left') ||\n      document.querySelector('[data-testid=\"product-information-media\"]');\n\n    if (!rightCol || !leftCol) return;\n    if (leftCol.dataset.edbWheelBound === '1') return;\n\n    leftCol.dataset.edbWheelBound = '1';\n\n    leftCol.addEventListener('wheel', function (e) {\n      const delta = e.deltaY;\n      const canDown = rightCol.scrollTop + rightCol.clientHeight < rightCol.scrollHeight - 2;\n      const canUp = rightCol.scrollTop > 2;\n\n      if ((delta > 0 && canDown) || (delta < 0 && canUp)) {\n        e.preventDefault();\n        rightCol.scrollTop += delta;\n      }\n    }, { passive: false });\n  }\n\n  document.addEventListener('DOMContentLoaded', initRightColumnScrollPriority);\n  window.addEventListener('load', initRightColumnScrollPriority);\n  window.addEventListener('resize', initRightColumnScrollPriority);\n\n  const observer = new MutationObserver(initRightColumnScrollPriority);\n  observer.observe(document.body, { childList: true, subtree: true });\n})();\n</script>\n\n<style>\n@media (min-width: 990px) {\n  #ProductInformation-template--18452952097874__main {\n    position: sticky !important;\n    top: 0 !important;\n    overflow-y: auto !important;\n    overscroll-behavior: contain !important;\n  }\n}\n</style>\n\n<script>\n(function () {\n  function initRightColumnPriorityScroll() {\n    if (window.innerWidth < 990) return;\n\n    const grid = document.querySelector('#product-information-grid-content');\n    const rightCol = document.querySelector('#ProductInformation-template--18452952097874__main');\n\n    if (!grid || !rightCol) return;\n\n    const topOffset = Math.max(0, rightCol.getBoundingClientRect().top);\n    const maxH = window.innerHeight - topOffset - 16;\n\n    rightCol.style.maxHeight = maxH + 'px';\n    rightCol.style.height = maxH + 'px';\n    rightCol.style.overflowY = 'auto';\n    rightCol.style.overscrollBehavior = 'contain';\n\n    if (document.documentElement.dataset.edbWheelBound === '1') return;\n    document.documentElement.dataset.edbWheelBound = '1';\n\n    document.addEventListener('wheel', function (e) {\n      if (window.innerWidth < 990) return;\n\n      const insideProductArea = e.target.closest('#product-information-grid-content');\n      if (!insideProductArea) return;\n\n      const insideRight = e.target.closest('#ProductInformation-template--18452952097874__main');\n      if (insideRight) return;\n\n      const delta = e.deltaY;\n      const canDown = rightCol.scrollTop + rightCol.clientHeight < rightCol.scrollHeight - 2;\n      const canUp = rightCol.scrollTop > 2;\n\n      if ((delta > 0 && canDown) || (delta < 0 && canUp)) {\n        e.preventDefault();\n        rightCol.scrollTop += delta;\n      }\n    }, { passive: false, capture: true });\n  }\n\n  document.addEventListener('DOMContentLoaded', initRightColumnPriorityScroll);\n  window.addEventListener('load', initRightColumnPriorityScroll);\n  window.addEventListener('resize', initRightColumnPriorityScroll);\n\n  const observer = new MutationObserver(initRightColumnPriorityScroll);\n  observer.observe(document.body, { childList: true, subtree: true });\n})();\n</script>"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_gPDVhU": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<div class=\"size-guide-block\" id=\"size-guide-{{ section.id }}\">\n  <button\n    type=\"button\"\n    class=\"size-guide-trigger\"\n    aria-expanded=\"false\"\n    aria-controls=\"size-guide-content-{{ section.id }}\"\n  >\n    <span class=\"size-guide-trigger__label\">Size Guide</span>\n    <svg class=\"size-guide-trigger__icon\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\">\n      <path d=\"M5 8L10 13L15 8\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n    </svg>\n  </button>\n\n  <div class=\"size-guide-content\" id=\"size-guide-content-{{ section.id }}\" hidden>\n    <div class=\"size-guide-shell\">\n      <div class=\"size-guide-head\">\n        <h3 class=\"size-guide-title\">Find Your Best Fit</h3>\n\n        <div class=\"size-guide-unit-toggle\" role=\"tablist\" aria-label=\"Measurement units\">\n          <button type=\"button\" class=\"is-active\" data-unit=\"mm\">MM</button>\n          <button type=\"button\" data-unit=\"cm\">CM</button>\n          <button type=\"button\" data-unit=\"inch\">INCH</button>\n        </div>\n      </div>\n\n      <div class=\"size-guide-table-wrap\">\n        <table class=\"size-guide-table\">\n          <thead>\n            <tr>\n              <th>US</th>\n              <th>EU</th>\n              <th>Foot Length</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr data-mm=\"230\" data-cm=\"23.0\" data-inch=\"9.06\">\n              <td>6</td><td>36</td><td class=\"size-unit-cell\">230 mm</td>\n            </tr>\n            <tr data-mm=\"236\" data-cm=\"23.6\" data-inch=\"9.29\">\n              <td>6.5</td><td>37</td><td class=\"size-unit-cell\">236 mm</td>\n            </tr>\n            <tr data-mm=\"243\" data-cm=\"24.3\" data-inch=\"9.57\">\n              <td>7.5</td><td>38</td><td class=\"size-unit-cell\">243 mm</td>\n            </tr>\n            <tr data-mm=\"250\" data-cm=\"25.0\" data-inch=\"9.84\">\n              <td>8.5</td><td>39</td><td class=\"size-unit-cell\">250 mm</td>\n            </tr>\n            <tr data-mm=\"256\" data-cm=\"25.6\" data-inch=\"10.08\">\n              <td>9</td><td>40</td><td class=\"size-unit-cell\">256 mm</td>\n            </tr>\n            <tr data-mm=\"263\" data-cm=\"26.3\" data-inch=\"10.35\">\n              <td>10</td><td>41</td><td class=\"size-unit-cell\">263 mm</td>\n            </tr>\n            <tr data-mm=\"270\" data-cm=\"27.0\" data-inch=\"10.63\">\n              <td>11</td><td>42</td><td class=\"size-unit-cell\">270 mm</td>\n            </tr>\n            <tr data-mm=\"276\" data-cm=\"27.6\" data-inch=\"10.87\">\n              <td>11.5</td><td>43</td><td class=\"size-unit-cell\">276 mm</td>\n            </tr>\n            <tr data-mm=\"283\" data-cm=\"28.3\" data-inch=\"11.14\">\n              <td>12</td><td>44</td><td class=\"size-unit-cell\">283 mm</td>\n            </tr>\n            <tr data-mm=\"290\" data-cm=\"29.0\" data-inch=\"11.42\">\n              <td>13</td><td>45</td><td class=\"size-unit-cell\">290 mm</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div class=\"size-guide-accordions\">\n        <details class=\"size-guide-accordion\">\n          <summary>How to measure your foot</summary>\n          <div class=\"size-guide-accordion__content\">\n            <p>Stand on a sheet of paper, mark the heel and the tip of your longest toe, then measure the straight-line distance.</p>\n          </div>\n        </details>\n\n        <details class=\"size-guide-accordion\">\n          <summary>Watch how to measure</summary>\n          <div class=\"size-guide-accordion__content\">\n            <div class=\"size-guide-video\">\n              <!-- Buraya video embed kodunu yapıştır -->\n              <!-- Örnek YouTube iframe:\n              <iframe\n                src=\"https://www.youtube.com/embed/VIDEO_ID\"\n                title=\"How to measure your foot\"\n                loading=\"lazy\"\n                allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"\n                allowfullscreen>\n              </iframe>\n              -->\n\n              <div class=\"size-guide-video__placeholder\">\n                Add your measuring video here\n              </div>\n            </div>\n          </div>\n        </details>\n\n        <details class=\"size-guide-accordion\">\n          <summary>Fit note</summary>\n          <div class=\"size-guide-accordion__content\">\n            <p>If you are between sizes, choose the larger size for a more relaxed fit. For best accuracy, use foot length.</p>\n          </div>\n        </details>\n      </div>\n    </div>\n  </div>\n</div>\n\n<style>\n  #size-guide-{{ section.id }}{\n    margin-top: 12px;\n    margin-bottom: 8px;\n    padding-top: 10px;\n    border-top: 1px solid rgba(0,0,0,0.08);\n  }\n\n  #size-guide-{{ section.id }},\n  #size-guide-{{ section.id }} *{\n    box-sizing: border-box;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-trigger{\n    width: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 10px;\n    padding: 2px 0 0;\n    margin: 0;\n    border: 0;\n    background: transparent;\n    color: #23201b;\n    font: inherit;\n    text-align: left;\n    cursor: pointer;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-trigger__label{\n    font-size: 13px;\n    line-height: 1.35;\n    letter-spacing: 0.02em;\n    font-weight: 500;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-trigger__icon{\n    width: 16px;\n    height: 16px;\n    flex: 0 0 16px;\n    opacity: 0.72;\n    transition: transform .22s ease;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-trigger[aria-expanded=\"true\"] .size-guide-trigger__icon{\n    transform: rotate(180deg);\n  }\n\n  #size-guide-{{ section.id }} .size-guide-content{\n    padding-top: 14px;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-shell{\n    background: #f8f5ef;\n    border: 1px solid rgba(35,32,27,0.08);\n    border-radius: 18px;\n    padding: 16px;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-head{\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: 12px;\n    margin-bottom: 12px;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-title{\n    margin: 0;\n    font-size: 18px;\n    line-height: 1.2;\n    letter-spacing: -0.01em;\n    color: #23201b;\n    font-weight: 600;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-unit-toggle{\n    display: inline-flex;\n    align-items: center;\n    gap: 4px;\n    padding: 3px;\n    background: #ece6dc;\n    border-radius: 999px;\n    flex-shrink: 0;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-unit-toggle button{\n    appearance: none;\n    border: 0;\n    background: transparent;\n    color: #6f675d;\n    border-radius: 999px;\n    padding: 7px 10px;\n    font-size: 10px;\n    line-height: 1;\n    letter-spacing: 0.08em;\n    cursor: pointer;\n    min-width: 48px;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-unit-toggle button.is-active{\n    background: #2b251f;\n    color: #fffaf3;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table-wrap{\n    width: 100%;\n    overflow-x: auto;\n    background: #fffdf9;\n    border: 1px solid rgba(35,32,27,0.08);\n    border-radius: 14px;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table{\n    width: 100%;\n    border-collapse: collapse;\n    table-layout: fixed;\n    font-size: 12.5px;\n    line-height: 1.32;\n    color: #2b251f;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table th,\n  #size-guide-{{ section.id }} .size-guide-table td{\n    padding: 9px 10px;\n    border-bottom: 1px solid rgba(35,32,27,0.06);\n    text-align: left;\n    vertical-align: middle;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table th{\n    font-size: 10px;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: #7b7368;\n    background: #f3ede3;\n    font-weight: 600;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table tbody tr:last-child td{\n    border-bottom: 0;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table th:nth-child(1),\n  #size-guide-{{ section.id }} .size-guide-table td:nth-child(1){\n    width: 22%;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table th:nth-child(2),\n  #size-guide-{{ section.id }} .size-guide-table td:nth-child(2){\n    width: 22%;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table th:nth-child(3),\n  #size-guide-{{ section.id }} .size-guide-table td:nth-child(3){\n    width: 56%;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-accordions{\n    display: grid;\n    gap: 8px;\n    margin-top: 12px;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-accordion{\n    background: #fffdf9;\n    border: 1px solid rgba(35,32,27,0.08);\n    border-radius: 14px;\n    overflow: hidden;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-accordion summary{\n    list-style: none;\n    position: relative;\n    cursor: pointer;\n    padding: 12px 42px 12px 14px;\n    color: #2b251f;\n    font-size: 12.5px;\n    line-height: 1.35;\n    font-weight: 500;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-accordion summary::-webkit-details-marker{\n    display: none;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-accordion summary::after{\n    content: \"+\";\n    position: absolute;\n    right: 14px;\n    top: 50%;\n    transform: translateY(-50%);\n    font-size: 16px;\n    line-height: 1;\n    color: #7a7065;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-accordion[open] summary::after{\n    content: \"–\";\n  }\n\n  #size-guide-{{ section.id }} .size-guide-accordion__content{\n    padding: 0 14px 14px;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-accordion__content p{\n    margin: 0;\n    font-size: 12px;\n    line-height: 1.55;\n    color: #5d554c;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-video{\n    margin-top: 2px;\n    border-radius: 12px;\n    overflow: hidden;\n    background: #efe8dd;\n    border: 1px solid rgba(35,32,27,0.08);\n  }\n\n  #size-guide-{{ section.id }} .size-guide-video iframe{\n    display: block;\n    width: 100%;\n    aspect-ratio: 9 / 16;\n    min-height: 380px;\n    border: 0;\n    background: #000;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-video__placeholder{\n    width: 100%;\n    aspect-ratio: 9 / 16;\n    min-height: 380px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n    padding: 20px;\n    font-size: 12px;\n    line-height: 1.5;\n    color: #7a7065;\n    background:\n      linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.04)),\n      #efe8dd;\n  }\n\n  @media (max-width: 749px){\n    #size-guide-{{ section.id }}{\n      margin-top: 10px;\n      padding-top: 9px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-content{\n      padding-top: 12px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-shell{\n      padding: 14px;\n      border-radius: 16px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-head{\n      flex-direction: column;\n      align-items: stretch;\n      gap: 10px;\n      margin-bottom: 11px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-title{\n      font-size: 17px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-unit-toggle{\n      align-self: flex-start;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-table{\n      font-size: 12px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-table th,\n    #size-guide-{{ section.id }} .size-guide-table td{\n      padding: 8px 9px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-accordion summary{\n      padding: 11px 40px 11px 13px;\n      font-size: 12px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-accordion__content{\n      padding: 0 13px 13px;\n    }\n\n    #size-guide-{{ section.id }} .size-guide-video iframe,\n    #size-guide-{{ section.id }} .size-guide-video__placeholder{\n      min-height: 340px;\n    }\n  }\n/* === Size Guide Fine-Tuning Patch === */\n#size-guide-{{ section.id }} .size-guide-shell{\n  border-radius: 15px;\n  border-color: rgba(35,32,27,0.09);\n}\n\n#size-guide-{{ section.id }} .size-guide-table-wrap{\n  border-radius: 10px;\n  border-color: rgba(35,32,27,0.09);\n}\n\n#size-guide-{{ section.id }} .size-guide-accordion{\n  border-radius: 10px;\n  border-color: rgba(35,32,27,0.09);\n}\n\n#size-guide-{{ section.id }} .size-guide-video{\n  border-radius: 10px;\n  border-color: rgba(35,32,27,0.09);\n}\n\n#size-guide-{{ section.id }} .size-guide-title{\n  letter-spacing: -0.015em;\n}\n\n#size-guide-{{ section.id }} .size-guide-table th{\n  letter-spacing: 0.07em;\n}\n\n#size-guide-{{ section.id }} .size-guide-table th,\n#size-guide-{{ section.id }} .size-guide-table td{\n  padding-top: 8px;\n  padding-bottom: 8px;\n}\n\n#size-guide-{{ section.id }} .size-guide-accordion summary{\n  padding-top: 11px;\n  padding-bottom: 11px;\n}\n\n#size-guide-{{ section.id }} .size-guide-accordion summary::after{\n  font-size: 15px;\n  color: #6f665b;\n}\n\n#size-guide-{{ section.id }} .size-guide-accordion__content p{\n  color: #564e45;\n}\n\n@media (max-width: 749px){\n  #size-guide-{{ section.id }} .size-guide-shell{\n    border-radius: 14px;\n  }\n\n  #size-guide-{{ section.id }} .size-guide-table-wrap,\n  #size-guide-{{ section.id }} .size-guide-accordion,\n  #size-guide-{{ section.id }} .size-guide-video{\n    border-radius: 9px;\n  }\n}\n</style>\n\n<script>\n  (function() {\n    const root = document.getElementById('size-guide-{{ section.id }}');\n    if (!root) return;\n\n    const trigger = root.querySelector('.size-guide-trigger');\n    const content = root.querySelector('.size-guide-content');\n    const unitButtons = root.querySelectorAll('.size-guide-unit-toggle button');\n    const rows = root.querySelectorAll('.size-guide-table tbody tr');\n\n    function setOpen(open) {\n      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');\n      content.hidden = !open;\n    }\n\n    trigger.addEventListener('click', function() {\n      const isOpen = trigger.getAttribute('aria-expanded') === 'true';\n      setOpen(!isOpen);\n    });\n\n    unitButtons.forEach(function(button) {\n      button.addEventListener('click', function() {\n        const unit = this.dataset.unit;\n\n        unitButtons.forEach(function(btn) {\n          btn.classList.remove('is-active');\n        });\n        this.classList.add('is-active');\n\n        rows.forEach(function(row) {\n          const cell = row.querySelector('.size-unit-cell');\n          const value = row.dataset[unit];\n          if (!cell || !value) return;\n\n          if (unit === 'mm') cell.textContent = value + ' mm';\n          if (unit === 'cm') cell.textContent = value + ' cm';\n          if (unit === 'inch') cell.textContent = value + ' in';\n        });\n      });\n    });\n\n    setOpen(false);\n  })();\n</script>\n\n<style>\n/* =========================================\n   PRODUCT PAGE – PREMIUM SIZE PICKER PATCH\n   ========================================= */\n\n/* 1) \"Size\" başlığını gizle */\n.product-form__input legend,\n.product-form__input .form__label,\n.variant-picker__legend,\n.variant-picker__label,\n.product__info-container .product-form__input legend,\n.product__info-container .product-form__input .form__label {\n  display: none !important;\n}\n\n/* 2) İstersen yukarıdaki gizleme yerine özel küçük başlık eklemek için\n   aşağıdaki bölümü AÇABİLİRSİN.\n   Şimdilik kapalı bıraktım.\n\n.product-form__input--pill::before,\n.product-form__input--button::before,\n.product-form__input[data-option-name*=\"Size\"]::before,\n.product-form__input[data-option-name*=\"size\"]::before {\n  content: \"US Women Size\";\n  display: block;\n  margin: 0 0 10px 0;\n  font-size: 11px;\n  letter-spacing: .08em;\n  text-transform: uppercase;\n  color: #7b7368;\n  font-weight: 600;\n}\n*/\n\n/* 3) Size seçenek grubu genel boşluk */\n.product-form__input,\n.product__info-container .product-form__input {\n  margin-bottom: 14px !important;\n}\n\n/* 4) Kutuların bulunduğu alanı daha düzgün hizala */\n.product-form__input .block-swatch-list,\n.product-form__input .swatch-input__input + .swatch-input__label,\n.product-form__input .variant-picker__option-values,\n.product-form__input .variant-input-wrap,\n.product-form__input fieldset {\n  gap: 8px !important;\n}\n\n/* 5) Radio/pill label'ları premium hale getir */\n.product-form__input input[type=\"radio\"] + label,\n.product-form__input .swatch-input__label,\n.product-form__input .block-swatch,\n.product-form__input .variant-picker__option-values label,\n.product__info-container .product-form__input input[type=\"radio\"] + label {\n  min-width: 48px !important;\n  min-height: 40px !important;\n  padding: 10px 12px !important;\n  border-radius: 10px !important;\n  border: 1px solid rgba(43, 37, 31, 0.18) !important;\n  background: #fdfaf4 !important;\n  color: #2b251f !important;\n  box-shadow: none !important;\n  font-size: 13px !important;\n  line-height: 1 !important;\n  font-weight: 500 !important;\n  letter-spacing: -0.01em !important;\n  display: inline-flex !important;\n  align-items: center !important;\n  justify-content: center !important;\n  text-align: center !important;\n  transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .12s ease, box-shadow .18s ease !important;\n}\n\n/* 6) Hover hali */\n.product-form__input input[type=\"radio\"] + label:hover,\n.product-form__input .swatch-input__label:hover,\n.product-form__input .block-swatch:hover,\n.product-form__input .variant-picker__option-values label:hover,\n.product__info-container .product-form__input input[type=\"radio\"] + label:hover {\n  border-color: rgba(43, 37, 31, 0.34) !important;\n  background: #fffdf9 !important;\n  transform: translateY(-1px);\n}\n\n/* 7) Seçili kutu – daha premium, daha sessiz */\n.product-form__input input[type=\"radio\"]:checked + label,\n.product-form__input .swatch-input__input:checked + .swatch-input__label,\n.product-form__input .variant-picker__option-values input[type=\"radio\"]:checked + label,\n.product__info-container .product-form__input input[type=\"radio\"]:checked + label {\n  background: #2b251f !important;\n  color: #fffaf3 !important;\n  border-color: #2b251f !important;\n  box-shadow: 0 1px 0 rgba(43, 37, 31, 0.08), 0 4px 14px rgba(43, 37, 31, 0.10) !important;\n}\n\n/* 8) Klavye ile seçimde net focus */\n.product-form__input input[type=\"radio\"]:focus-visible + label,\n.product-form__input .swatch-input__input:focus-visible + .swatch-input__label,\n.product__info-container .product-form__input input[type=\"radio\"]:focus-visible + label {\n  outline: 2px solid rgba(43, 37, 31, 0.28) !important;\n  outline-offset: 2px !important;\n}\n\n/* 9) Kullanılamayan varyantlar */\n.product-form__input input[type=\"radio\"]:disabled + label,\n.product-form__input .swatch-input__input:disabled + .swatch-input__label,\n.product__info-container .product-form__input input[type=\"radio\"]:disabled + label {\n  opacity: 0.38 !important;\n  cursor: not-allowed !important;\n  text-decoration: none !important;\n  background: #f3eee6 !important;\n}\n\n/* 10) Add to cart butonunu gizle */\n.product-form__buttons button[name=\"add\"],\n.product-form__buttons .product-form__submit,\n.product-form__submit,\nbutton.product-form__submit {\n  display: none !important;\n}\n\n/* 11) Buy it now butonu daha iyi hizalansın */\n.product-form__buttons,\n.shopify-payment-button {\n  margin-top: 10px !important;\n}\n\n.shopify-payment-button,\n.shopify-payment-button__button,\n.shopify-payment-button__button--unbranded {\n  width: 100% !important;\n  min-height: 44px !important;\n  border-radius: 10px !important;\n}\n\n/* 12) Quantity + buy button arası daha temiz dursun */\n.product-form__buttons {\n  display: flex !important;\n  align-items: stretch !important;\n  gap: 10px !important;\n  flex-wrap: wrap !important;\n}\n\n/* 13) Mobil ince ayar */\n@media (max-width: 749px) {\n  .product-form__input input[type=\"radio\"] + label,\n  .product-form__input .swatch-input__label,\n  .product-form__input .block-swatch,\n  .product-form__input .variant-picker__option-values label,\n  .product__info-container .product-form__input input[type=\"radio\"] + label {\n    min-width: 44px !important;\n    min-height: 38px !important;\n    padding: 9px 10px !important;\n    border-radius: 9px !important;\n    font-size: 12.5px !important;\n  }\n\n  .product-form__buttons {\n    gap: 8px !important;\n  }\n\n  .shopify-payment-button,\n  .shopify-payment-button__button,\n  .shopify-payment-button__button--unbranded {\n    min-height: 42px !important;\n    border-radius: 9px !important;\n  }\n}\n</style>\n\n<style>\n/* Size Guide yazısını oka doğru sağa yaklaştır */\n#size-guide-template--18452952907874__main .size-guide-trigger {\n  display: flex !important;\n  justify-content: flex-end !important;\n  align-items: center !important;\n  gap: 8px !important;\n}\n\n#size-guide-template--18452952907874__main .size-guide-trigger__label,\n#size-guide-template--18452952907874__main .size-guide-trigger span {\n  margin-left: auto !important;\n}\n</style>"
+              },
+              "blocks": {}
+            },
+            "buy_buttons": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "divider": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "disabled": true,
+              "settings": {
+                "thickness": 1.5,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "text": {
+              "type": "product-description",
+              "name": "Product description",
+              "disabled": true,
+              "settings": {
+                "text": "{{ closest.product.description }}",
+                "enable_read_more": false,
+                "read_more_limit": 200,
+                "read_more_label": "Daha fazla oku",
+                "read_less_label": "Daha az oku",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-primary--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_ckUUzR",
+            "custom_liquid_mXq6A8",
+            "custom_liquid_NPr8F3",
+            "custom_liquid_9FaAia",
+            "custom_liquid_gzbzCa",
+            "custom_liquid_bAtXme",
+            "group",
+            "variant_picker",
+            "custom_liquid_UjW8L8",
+            "custom_liquid_gPDVhU",
+            "buy_buttons",
+            "divider",
+            "text"
+          ]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": true,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "color_scheme": "scheme-3",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_QfrbET": {
+      "type": "section",
+      "blocks": {
+        "text_dhaaQw": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Description</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product_description_treTxz": {
+          "type": "product-description",
+          "name": "t:names.product_description",
+          "settings": {
+            "text": "{{ closest.product.description }}",
+            "enable_read_more": true,
+            "read_more_limit": 200,
+            "read_more_label": "Read More",
+            "read_less_label": "Read Less",
+            "width": "100%",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_dhaaQw",
+        "product_description_treTxz"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 50,
+        "padding-block-end": 50
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "blocks": {
+        "header": {
+          "type": "text",
+          "name": "t:names.header",
+          "settings": {
+            "text": "<h3>Goes well with...</h3>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 2,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "card-gallery": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "portrait",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "_product-card-group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "space-between",
+                "vertical_alignment": "flex-start",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 4,
+                "content_position": "bottom",
+                "width": "fill",
+                "custom_width": 35,
+                "width_mobile": "fill",
+                "custom_width_mobile": 43,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "group_jUd9Ly": {
+                  "type": "_product-card-group",
+                  "name": "t:names.group",
+                  "settings": {
+                    "content_direction": "column",
+                    "vertical_on_mobile": true,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "align_baseline": false,
+                    "horizontal_alignment_flex_direction_column": "flex-start",
+                    "vertical_alignment_flex_direction_column": "flex-start",
+                    "gap": 4,
+                    "content_position": "bottom",
+                    "width": "fill",
+                    "custom_width": 40,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 20,
+                    "height": "fit",
+                    "custom_height": 100,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "background_media": "none",
+                    "video_position": "cover",
+                    "background_image_position": "cover",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "toggle_overlay": false,
+                    "overlay_color": "#00000026",
+                    "overlay_style": "solid",
+                    "gradient_direction": "to top",
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "padding-block-start": 8,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "product_title_d368TL": {
+                      "type": "product-title",
+                      "name": "t:names.product_title",
+                      "settings": {
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "h5",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "price_jKmnBC": {
+                      "type": "price",
+                      "settings": {
+                        "show_sale_price_first": true,
+                        "show_installments": false,
+                        "show_tax_info": false,
+                        "type_preset": "h6",
+                        "width": "100%",
+                        "alignment": "left",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_title_d368TL",
+                    "price_jKmnBC"
+                  ]
+                },
+                "swatches": {
+                  "type": "swatches",
+                  "settings": {
+                    "product_swatches_alignment": "flex-start",
+                    "product_swatches_alignment_mobile": "flex-start",
+                    "hide_padding": false,
+                    "product_swatches_padding_top": 4,
+                    "product_swatches_padding_bottom": 10,
+                    "product_swatches_padding_left": 0,
+                    "product_swatches_padding_right": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "group_jUd9Ly",
+                "swatches"
+              ]
+            }
+          },
+          "block_order": [
+            "card-gallery",
+            "group"
+          ]
+        }
+      },
+      "block_order": [
+        "header"
+      ],
+      "settings": {
+        "product": "{{ closest.product }}",
+        "recommendation_type": "related",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 4,
+        "columns": 4,
+        "mobile_columns": "2",
+        "columns_gap": 12,
+        "rows_gap": 12,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 24,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_QfrbET",
+    "product-recommendations"
+  ]
+}
