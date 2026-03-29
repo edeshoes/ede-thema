@@ -5199,8 +5199,8 @@ product-recommendations:has([data-has-recommendations='false']) {
   [data-testid="product-information-details"] {
     top: 105px !important;
     width: min(100%, 500px) !important;
-    max-width: 500px !important;
-    max-height: calc(100vh - 155px) !important;
+    max-width: 480px !important;
+    max-height: calc(100vh - 170px) !important;
     margin-right: 22px !important;
     border-radius: 26px !important;
   }
@@ -5208,7 +5208,7 @@ product-recommendations:has([data-has-recommendations='false']) {
   /* İç kaydırma alanı */
   [data-testid="product-information-details"] > .group-block-content,
   [data-testid="product-information-details"] .group-block-content {
-    height: calc(100vh - 155px) !important;
+    height: calc(100vh - 170px) !important;
     max-height: calc(100vh - 155px) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
