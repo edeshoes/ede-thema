@@ -5193,65 +5193,33 @@ product-recommendations:has([data-has-recommendations='false']) {
   .shopify-payment-button {
     margin-top: 14px !important;
   }
-}@media screen and (min-width: 990px) {
+@media screen and (min-width: 990px) {
 
-  /* Popup kutuyu küçült */
-  [data-testid="product-information-details"] {
-    top: 105px !important;
-    width: min(100%, 500px) !important;
-    max-width: 480px !important;
+  [id^="ProductInformation-"].product-details {
+    width: 380px !important;
+    max-width: 380px !important;
     max-height: calc(100vh - 170px) !important;
-    margin-right: 22px !important;
-    border-radius: 26px !important;
-  }
-
-  /* İç kaydırma alanı */
-  [data-testid="product-information-details"] > .group-block-content,
-  [data-testid="product-information-details"] .group-block-content {
-    height: calc(100vh - 170px) !important;
-    max-height: calc(100vh - 155px) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    padding: 24px 22px 20px !important;
+    top: 100px !important;
+    margin-right: 20px !important;
+    padding: 22px 20px 18px !important;
+    border-radius: 24px !important;
 
-    /* scrollbar gizle */
-    scrollbar-width: none !important;      /* Firefox */
-    -ms-overflow-style: none !important;   /* eski Edge/IE */
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
 
-  [data-testid="product-information-details"] > .group-block-content::-webkit-scrollbar,
-  [data-testid="product-information-details"] .group-block-content::-webkit-scrollbar {
+  [id^="ProductInformation-"].product-details::-webkit-scrollbar {
+    display: none !important;
     width: 0 !important;
     height: 0 !important;
-    display: none !important;              /* Chrome/Safari */
   }
 
-  /* Size kutuları biraz kompakt olsun */
-  .product-form__input input[type='radio'] + label {
-    min-width: 54px !important;
-    min-height: 48px !important;
-    padding: 10px 12px !important;
-    border-radius: 14px !important;
-    font-size: 15px !important;
-  }
-
-  /* Alt bölüm biraz daha sıkı olsun */
-  .product-form__buttons,
-  .shopify-payment-button {
-    margin-top: 10px !important;
-  }
-
-  /* Quantity ve button hafif küçülsün */
-  quantity-input.quantity,
-  .quantity {
-    transform: scale(0.96);
-    transform-origin: left center;
-  }
-
-  .product-form__submit,
-  .shopify-payment-button__button,
-  .button {
-    min-height: 54px !important;
-    border-radius: 16px !important;
+  [id^="ProductInformation-"].product-details .group-block-content {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
   }
 }
