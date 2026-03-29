@@ -276,8 +276,10 @@
   }
 
   .sg-item {
-    border-top: var(--style-border-width) solid var(--color-border);
-    padding-top: var(--padding-md);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-popover);
+    background: rgb(var(--color-background-rgb));
+    overflow: hidden;
     margin-top: var(--margin-md);
   }
 
@@ -287,11 +289,21 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--gap-sm);
-    padding: 0;
+    padding: var(--padding-md) var(--padding-lg);
     border: 0;
-    background: transparent;
+    background: rgb(var(--color-background-rgb));
     cursor: pointer;
     font: inherit;
+    font-weight: var(--font-paragraph--weight-bold);
+  }
+
+  .sg-btn:hover {
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+  }
+
+  .sg-btn:focus-visible {
+    outline: var(--focus-outline-width) solid currentcolor;
+    outline-offset: -2px;
   }
 
   .sg-btn span {
@@ -306,7 +318,8 @@
   }
 
   .sg-content {
-    padding: var(--padding-md) 0 var(--padding-sm);
+    border-top: var(--style-border-width) solid var(--color-border);
+    padding: var(--padding-md) var(--padding-lg) var(--padding-lg);
   }
 
   .toggle-container {
