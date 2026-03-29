@@ -4967,3 +4967,25 @@ product-recommendations:has([data-has-recommendations='false']) {
   color: #1c1c1c;
   font-weight: 500;
 }
+/* ===== SPLIT SCROLL FIX (LEFT / RIGHT INDEPENDENT) ===== */
+
+@media screen and (min-width: 990px) {
+
+  .product__info-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  .product__media-wrapper {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .product {
+    align-items: flex-start;
+  }
+
+}
