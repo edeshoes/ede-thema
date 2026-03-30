@@ -424,30 +424,61 @@ export default class VariantPicker extends Component {
   }
 
   #applySizeUnitUI() {
+    const injected = document.getElementById('variant-size-heading-style');
+    if (injected && injected.parentNode) injected.parentNode.removeChild(injected);
     const sizeFieldset = this.#findSizeFieldset();
     const sizeSelect = this.#findSizeSelect();
 
     if (!sizeFieldset && !sizeSelect) return;
     this.dataset.sizeUnit = this.#sizeUnit;
     this.dataset.sizeUnitEnabled = 'true';
-    this.#applySizeHeading(sizeFieldset, sizeSelect);
+    // size heading is managed in markup/CSS; skip dynamic ::before injection
 
     this.#sizeUnitController?.abort();
     this.#sizeUnitController = new AbortController();
     const { signal } = this.#sizeUnitController;
 
-    const legend = sizeFieldset?.querySelector('legend') ?? sizeSelect?.closest('.variant-option')?.querySelector('label');
-    if (legend instanceof HTMLElement) {
-      let toggle = legend.querySelector('.variant-size-unit-toggle');
-      if (!(toggle instanceof HTMLElement)) {
+    const legend =
+      sizeFieldset?.querySelector('legend') ??
+      sizeSelect?.closest('.variant-option')?.querySelector('label');
+    const wrapper = sizeFieldset ?? sizeSelect?.closest('.variant-option');
+    if (legend instanceof HTMLElement || wrapper instanceof HTMLElement) {
+      let toggle = null;
+      // 1) If header is placed BEFORE the fieldset (current markup), bind to that header's toggle
+      if (sizeFieldset) {
+        const prev = sizeFieldset.previousElementSibling;
+        if (prev instanceof HTMLElement && prev.classList.contains('variant-option__header')) {
+          const t = prev.querySelector('.variant-size-unit-toggle');
+          if (t instanceof HTMLElement) toggle = t;
+        }
+      }
+      // 2) Fallbacks: header inside wrapper or legend (older markup)
+      if (!toggle) {
+        toggle =
+          wrapper?.querySelector('.variant-option__header .variant-size-unit-toggle') ||
+          legend?.querySelector('.variant-size-unit-toggle') ||
+          wrapper?.querySelector('.variant-size-unit-toggle');
+      }
+      if (!(toggle instanceof HTMLElement) && legend instanceof HTMLElement) {
         toggle = document.createElement('div');
         toggle.className = 'variant-size-unit-toggle';
         toggle.innerHTML =
           '<button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="false">US</button><button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>';
-        legend.append(toggle);
+        // If header exists, prioritize placing toggle there, else append to legend
+        const header =
+          (sizeFieldset?.previousElementSibling instanceof HTMLElement &&
+            sizeFieldset.previousElementSibling.classList.contains('variant-option__header')) ?
+            sizeFieldset.previousElementSibling :
+            null;
+        if (header) {
+          header.appendChild(toggle);
+        } else {
+          legend.append(toggle);
+        }
       }
-      legend.classList.add('variant-option__legend--with-size-toggle');
+      legend?.classList.add('variant-option__legend--with-size-toggle');
 
+      if (!(toggle instanceof HTMLElement)) return;
       toggle.addEventListener(
         'click',
         (event) => {
@@ -481,36 +512,11 @@ export default class VariantPicker extends Component {
    * @param {HTMLSelectElement | null} select
    */
   #applySizeHeading(fieldset, select) {
-    this.#ensureDynamicSizeHeadingStyle();
-    const label = this.#sizeUnit === 'EU' ? 'WOMEN / EU SIZE' : 'WOMEN / US SIZE';
-    const quoted = `"${label}"`;
-
-    if (fieldset) {
-      fieldset.style.setProperty('--variant-size-heading', quoted);
-      fieldset.setAttribute('data-size-option', '');
-      return;
-    }
-
-    if (select) {
-      const wrap = select.closest('.variant-option');
-      if (wrap instanceof HTMLElement) {
-        wrap.style.setProperty('--variant-size-heading', quoted);
-        wrap.setAttribute('data-size-option', '');
-      }
-    }
+    // no-op: we no longer inject dynamic pseudo heading
   }
 
   #ensureDynamicSizeHeadingStyle() {
-    if (document.getElementById('variant-size-heading-style')) return;
-    const style = document.createElement('style');
-    style.id = 'variant-size-heading-style';
-    style.textContent = `
-[data-size-option].variant-option--equal-width-buttons::before,
-.product-info__block-item [data-size-option].variant-option--equal-width-buttons::before {
-  content: var(--variant-size-heading, "WOMEN / US SIZE") !important;
-}
-`;
-    document.head.append(style);
+    // no-op
   }
 
   /** @returns {HTMLFieldSetElement | null} */

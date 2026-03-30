@@ -73,6 +73,18 @@
           </div>
         {%- elsif variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
           {%- assign fieldset_index = forloop.index0 -%}
+
+            {%- if is_size_option -%}
+              <div class="variant-option__header">
+                <button type="button" class="variant-option__size-guide-trigger" data-open-size-guide>
+                  Size Guide
+                </button>
+                <div class="variant-size-unit-toggle" data-size-unit-toggle>
+                  <button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="true">US</button>
+                  <button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>
+                </div>
+              </div>
+            {%- endif -%}
           <fieldset
             class="variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}"
             data-fieldset-index="{{ fieldset_index }}"
@@ -82,23 +94,8 @@
               data-size-option
             {% endif %}
           >
-            {%- if is_size_option -%}
-              <button type="button" class="variant-option__size-guide-trigger" data-open-size-guide>
-                Size Guide
-              </button>
-            {%- endif -%}
-            <legend{% if is_size_option %} class="variant-option__legend--with-size-toggle"{% endif %}>
+            <legend{% if is_size_option %} class="variant-option__legend--with-size-toggle"{% endif %}{% if is_size_option %} style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;"{% endif %}>
               {{ product_option.name | escape -}}
-              {%- if variant_style == 'swatch' -%}
-                <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
-              {%- endif %}
-              
-              {%- if is_size_option -%}
-                <div class="variant-size-unit-toggle" data-size-unit-toggle>
-                  <button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="true">US</button>
-                  <button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>
-                </div>
-              {%- endif -%}
             </legend>
             {%- for product_option_value in product_option.values -%}
               {% if product_option_value.size > longest_value and option_id_attribute %}
@@ -190,18 +187,18 @@
 
           <div class="variant-option variant-option--dropdowns"{% if is_size_option %} data-size-option{% endif %}>
             {%- if is_size_option -%}
-              <button type="button" class="variant-option__size-guide-trigger" data-open-size-guide>
-                Size Guide
-              </button>
-            {%- endif -%}
-            <label for="Option-{{ block.id }}-{{ forloop.index0 }}"{% if is_size_option %} class="variant-option__legend--with-size-toggle"{% endif %}>
-              {{ product_option.name | escape }}
-              {%- if is_size_option -%}
-                <span class="variant-size-unit-toggle" data-size-unit-toggle>
+              <div class="variant-option__header">
+                <button type="button" class="variant-option__size-guide-trigger" data-open-size-guide>
+                  Size Guide
+                </button>
+                <div class="variant-size-unit-toggle" data-size-unit-toggle>
                   <button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="true">US</button>
                   <button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>
-                </span>
-              {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+            <label for="Option-{{ block.id }}-{{ forloop.index0 }}"{% if is_size_option %} class="variant-option__legend--with-size-toggle"{% endif %}{% if is_size_option %} style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;"{% endif %}>
+              {{ product_option.name | escape }}
             </label>
             <div
               class="variant-option__select-wrapper"

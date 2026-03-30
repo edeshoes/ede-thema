@@ -237,6 +237,20 @@
     padding: var(--padding-lg);
     overflow-x: auto;
     max-width: 100%;
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    border-radius: var(--style-border-radius-popover);
+    display: grid;
+    gap: var(--padding-lg);
+  }
+
+  .size-guide-modal__body .sg-container {
+    display: grid;
+    gap: var(--padding-lg);
+  }
+
+  .size-guide-modal__body .sg-item {
+    background: rgb(var(--color-background-rgb));
+    box-shadow: 0 6px 18px rgb(0 0 0 / 0.06);
   }
 
   .size-guide-modal__body table {
@@ -257,6 +271,14 @@
   .size-guide-modal__body th {
     font-weight: var(--font-paragraph--weight-bold);
     background: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+  }
+
+  .size-guide-modal__body tbody tr:nth-child(even) td {
+    background: rgb(var(--color-foreground-rgb) / var(--opacity-3));
+  }
+
+  .size-guide-modal__body video {
+    outline: 0;
   }
 
   .sg-container {
