@@ -354,9 +354,7 @@
           ]
         }
       },
-      "custom_css": [
-        ".group-block--product-card .group-block-content{display: flex !important;}"
-      ],
+      "custom_css": [],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
@@ -559,11 +557,20 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {}
+                    },
+                    "custom_liquid_zAWwPw": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
+                      "settings": {
+                        "custom_liquid": "<style>\n.group-block--product-card .group-block-content {\n  display: flex !important;\n}\n</style>"
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
                     "product_title_d368TL",
-                    "price_jKmnBC"
+                    "price_jKmnBC",
+                    "custom_liquid_zAWwPw"
                   ]
                 },
                 "swatches": {
