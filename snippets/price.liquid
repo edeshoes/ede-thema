@@ -70,6 +70,11 @@
     assign price_min = price_min | money
     assign price_max = price_max | money
   endif
+
+  assign price = price | replace: ' USD', ''
+  assign compare_at_price = compare_at_price | replace: ' USD', ''
+  assign price_min = price_min | replace: ' USD', ''
+  assign price_max = price_max | replace: ' USD', ''
 -%}
 
 <div ref="priceContainer">
@@ -121,6 +126,6 @@
     {% render 'unit-price', price: unit_price, measurement: selected_variant.unit_price_measurement %}
   {%- endif -%}
 </div>
-{%- if has_volume_pricing -%}
+{%- if has_volume_pricing and is_product_card == false -%}
   <small ref="volumePricingNote" class="volume-pricing-note">{{ 'content.volume_pricing_available' | t }}</small>
 {%- endif -%}

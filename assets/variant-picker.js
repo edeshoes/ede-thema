@@ -432,7 +432,6 @@ export default class VariantPicker extends Component {
     if (!sizeFieldset && !sizeSelect) return;
     this.dataset.sizeUnit = this.#sizeUnit;
     this.dataset.sizeUnitEnabled = 'true';
-    // size heading is managed in markup/CSS; skip dynamic ::before injection
 
     this.#sizeUnitController?.abort();
     this.#sizeUnitController = new AbortController();
@@ -444,7 +443,6 @@ export default class VariantPicker extends Component {
     const wrapper = sizeFieldset ?? sizeSelect?.closest('.variant-option');
     if (legend instanceof HTMLElement || wrapper instanceof HTMLElement) {
       let toggle = null;
-      // 1) If header is placed BEFORE the fieldset (current markup), bind to that header's toggle
       if (sizeFieldset) {
         const prev = sizeFieldset.previousElementSibling;
         if (prev instanceof HTMLElement && prev.classList.contains('variant-option__header')) {
@@ -452,7 +450,6 @@ export default class VariantPicker extends Component {
           if (t instanceof HTMLElement) toggle = t;
         }
       }
-      // 2) Fallbacks: header inside wrapper or legend (older markup)
       if (!toggle) {
         toggle =
           wrapper?.querySelector('.variant-option__header .variant-size-unit-toggle') ||
@@ -464,7 +461,6 @@ export default class VariantPicker extends Component {
         toggle.className = 'variant-size-unit-toggle';
         toggle.innerHTML =
           '<button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="false">US</button><button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>';
-        // If header exists, prioritize placing toggle there, else append to legend
         const header =
           (sizeFieldset?.previousElementSibling instanceof HTMLElement &&
             sizeFieldset.previousElementSibling.classList.contains('variant-option__header')) ?
@@ -512,11 +508,9 @@ export default class VariantPicker extends Component {
    * @param {HTMLSelectElement | null} select
    */
   #applySizeHeading(fieldset, select) {
-    // no-op: we no longer inject dynamic pseudo heading
   }
 
   #ensureDynamicSizeHeadingStyle() {
-    // no-op
   }
 
   /** @returns {HTMLFieldSetElement | null} */
