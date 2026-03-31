@@ -354,6 +354,9 @@
           ]
         }
       },
+      "custom_css": [
+        ".group-block--product-card .group-block-content{display: flex !important;}"
+      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
