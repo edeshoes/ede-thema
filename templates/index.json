@@ -1750,6 +1750,7 @@
             "collection_link_button_WJVkjn": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "SHOP ALL",
                 "open_in_new_tab": false,
@@ -2130,6 +2131,7 @@
       "block_order": [
         "group_cagw6L"
       ],
+      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
