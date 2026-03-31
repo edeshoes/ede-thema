@@ -596,7 +596,7 @@
         ".group-block__media-wrapper {display: none;}",
         ".group-block--product-card {position: relative !important; overflow: unset !important;}",
         ".group-block--product-card .group-block-content {position: unset !important; flex-direction: row; justify-content: space-between !important;}",
-        "[style*=\"--horizontal-alignment: center\"] .text-block {text-align: left !important;}"
+        "[style*=\"--horizontal-alignment: center\"] .text-block {--text-align-default: left !important;}"
       ],
       "settings": {
         "product": "{{ closest.product }}",
