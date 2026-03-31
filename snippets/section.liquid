@@ -84,7 +84,11 @@
     )
     > main
     > .section-wrapper:first-child {
-    --section-height-offset: var(--header-group-height, 0);
+    --section-height-offset: var(--header-group-height, 0px);
+
+    @media screen and (max-width: 749px) {
+      --section-height-offset: 120px;
+    }
   }
 
   .custom-section-background {

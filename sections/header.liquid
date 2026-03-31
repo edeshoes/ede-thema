@@ -52,11 +52,11 @@
   endcapture
 
   capture drawer_menu
-    content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'mobile'
+    content_for 'block', type: '_header-menu', id: 'header-menu-drawer', variant: 'mobile'
   endcapture
 
   capture navigation_bar
-    content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'navigation_bar', transparent: transparent
+    content_for 'block', type: '_header-menu', id: 'header-menu-navigation-bar', variant: 'navigation_bar', transparent: transparent
   endcapture
 
   capture actions
@@ -922,22 +922,19 @@
      * the height of the header
      */
 
-  main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
+  @media screen and (min-width: 768px) {
+    main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
     &.spacing-style,
     .spacing-style {
       --section-top-offset: calc(var(--header-height) * var(--transparent-header-offset-boolean));
 
       /* Any nested sections should not be offset */
       :is(.spacing-style, .inherit-spacing) {
-        --section-top-offset: 0px;
+        --section-top-offset: unset !important;
       }
     }
-
-    /* Make sticky content immediately stick to the top of the page */
-    .sticky-content {
-      margin-top: calc(var(--header-height) * var(--transparent-header-offset-boolean) * -1);
-    }
   }
+}
 
   /* Optimize layout performance for hidden menus */
   .header-menu .menu-list__submenu {
@@ -1022,13 +1019,6 @@
   .localization-wrapper:not([hidden]) {
     translate: 0 0;
     opacity: 1;
-  }
-
-  @starting-style {
-    .localization-wrapper:not([hidden]) {
-      translate: 0 20px;
-      opacity: 0;
-    }
   }
 
   dropdown-localization-component {

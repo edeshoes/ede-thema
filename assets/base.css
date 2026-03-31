@@ -531,7 +531,8 @@ p:empty {
 }
 
 .section-content-wrapper.section-content-wrapper {
-  min-height: calc(var(--section-min-height, 'auto') - var(--section-height-offset, 0px));
+  min-height: var(--section-min-height, auto);
+  min-height: calc(var(--section-min-height) - var(--section-height-offset, 0px));
   position: relative;
   width: 100%;
   height: 100%;
@@ -998,7 +999,8 @@ summary::-webkit-details-marker {
 
 /* When header is transparent, pull the first main content section up to sit under the floating header */
 body:has(.header[transparent]) .content-for-layout > .shopify-section:first-child {
-  margin-top: calc(var(--header-group-height) * -1);
+  margin-top: 0;
+  padding-top: var(--header-group-height, 0px);
 }
 
 body:has(.header[transparent]) #header-group > .header-section {
@@ -1053,8 +1055,25 @@ body:has(.header[transparent]) #header-group > *:not(.header-section) {
 .product-grid--organic[product-grid-view='default'] .product-grid__item {
   height: fit-content;
 }
+@media screen and (max-width: 749px) {
+  .product-grid__card.product-grid__card {
+    padding-block: 0;
+  }
+  .facets-block-wrapper{
+    display: block;
+  }
+}
+.facets-block-wrapper{
+  display: none;
+}
+accordion-custom details {
+      border-top: none !important; 
+      border-bottom: none !important; 
+      margin-top: 0 !important; 
+      padding-top: 0 !important; 
+  }
 
-.product-grid__card.product-grid__card {
+.product-grid__card {
   display: flex;
   flex-flow: column nowrap;
   gap: var(--product-card-gap);
@@ -4634,7 +4653,7 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
     align-items: start;
     justify-items: start;
     text-align: left !important;
-    padding: 12px 12px 14px !important;
+    padding: 4px 4px 6px !important;
     background: transparent !important;
   }
 
@@ -4651,8 +4670,7 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
   .group-block--product-card .group-block-content :is(p, h1, h2, h3, h4, h5, h6) {
     margin: 0;
   }
-
-  .group-block--product-card .group-block-content p {
+  product-card > div > div.group-block.group-block--height-fit.group-block--width-fill.group-block--content-position-bottom.group-block--d-content-position-bottom.group-block--m-content-position-bottom.border-style.spacing-style.size-style.group-block--product-card > div.group-block-content.layout-panel-flex.layout-panel-flex--row.mobile-column > div > div.group-block-content.layout-panel-flex.layout-panel-flex--row.mobile-column > a > div > p, .group-block--product-card .group-block-content p {
     font-size: 14px !important;
     line-height: 1.15;
   }

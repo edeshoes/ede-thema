@@ -108,7 +108,7 @@ body.template-collection .card-information {
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: 12px;
-    row-gap: 8px;
+    row-gap: 2px;
   }
 
   .product-grid product-card .product-card__content > :not(a[ref='productTitleLink']):not(product-price) {
