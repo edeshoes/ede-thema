@@ -592,6 +592,10 @@
       "block_order": [
         "header"
       ],
+      "custom_css": [
+        ".group-block__media-wrapper {display: none;}",
+        ".group-block--product-card{position: relative;}"
+      ],
       "settings": {
         "product": "{{ closest.product }}",
         "recommendation_type": "related",
