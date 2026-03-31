@@ -597,13 +597,13 @@
         ".group-block--product-card {position: relative !important; overflow: unset !important;}",
         ".group-block--product-card .group-block-content {position: unset !important; flex-direction: row; justify-content: space-between !important;}",
         "[style*=\"--horizontal-alignment: center\"] .text-block {--text-align-default: left !important;}",
-        "product-price > div{text-align: right;}"
+        "product-price > div {text-align: right;}"
       ],
       "settings": {
         "product": "{{ closest.product }}",
         "recommendation_type": "related",
         "layout_type": "grid",
-        "carousel_on_mobile": false,
+        "carousel_on_mobile": true,
         "max_products": 4,
         "columns": 4,
         "mobile_columns": "2",
