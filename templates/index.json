@@ -71,7 +71,7 @@
             "text_t97TBx": {
               "type": "text",
               "settings": {
-                "text": "<h3><strong>women</strong></h3>",
+                "text": "<h3>women</h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
