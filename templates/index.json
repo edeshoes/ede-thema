@@ -220,6 +220,9 @@
         "group_iNqtqg",
         "group_hdWaUN"
       ],
+      "custom_css": [
+        "@media screen and (min-width: 60em) {.section--height-full-screen {--section-min-height: 110svh; }}"
+      ],
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
