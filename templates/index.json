@@ -233,7 +233,7 @@
         "group_hdWaUN"
       ],
       "custom_css": [
-        "@media sreen and (max-width:60em){.section-wrapper {top: 60px;}}"
+        "@media screen and (max-width: 60em) {.section-wrapper {top: 60px; }}"
       ],
       "name": "t:names.split_showcase",
       "settings": {
