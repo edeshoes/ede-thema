@@ -2330,11 +2330,11 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 }
 
 variant-picker[data-size-unit='US'] .variant-option__header .variant-size-unit-toggle::after {
-  content: 'WOMEN / US SIZE';
+  content: var(--variant-size-unit-prefix, "WOMEN") ' / US SIZE';
 }
 
 variant-picker[data-size-unit='EU'] .variant-option__header .variant-size-unit-toggle::after {
-  content: 'WOMEN / EU SIZE';
+  content: var(--variant-size-unit-prefix, "WOMEN") ' / EU SIZE';
 }
 
 .variant-option__size-guide-trigger {

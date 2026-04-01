@@ -2282,6 +2282,12 @@
           }
         ],
         "default": "equal-width-buttons"
+      },
+      {
+        "type": "text",
+        "id": "variant_size_unit_prefix",
+        "label": "Size unit prefix (örn: WOMEN)",
+        "default": "WOMEN"
       }
     ]
   }
