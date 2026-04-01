@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "custom_liquid_kFhNNT": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "<style>\n@media screen and (max-width: 749px) {\n  .group-block-content .read-more-wrapper div h3 {\n    font-size: 1.5rem !important;\n  }\n.group-block-content a{\nfont-size:.8rem;\n}\n.group-block-content{\nbottom:50px\n}\n</style>",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "section_HXQmhh": {
       "type": "section",
       "blocks": {
@@ -71,7 +83,7 @@
             "text_t97TBx": {
               "type": "text",
               "settings": {
-                "text": "<h3><strong>women</strong></h3>",
+                "text": "<h3>women</h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -220,6 +232,7 @@
         "group_iNqtqg",
         "group_hdWaUN"
       ],
+      "custom_css": [],
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -1750,6 +1763,7 @@
             "collection_link_button_WJVkjn": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "SHOP ALL",
                 "open_in_new_tab": false,
@@ -2130,6 +2144,7 @@
       "block_order": [
         "group_cagw6L"
       ],
+      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
@@ -2200,6 +2215,7 @@
     }
   },
   "order": [
+    "custom_liquid_kFhNNT",
     "section_HXQmhh",
     "section_KgHh3q",
     "section_DzXezU",
