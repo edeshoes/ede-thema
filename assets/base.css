@@ -530,6 +530,7 @@ p:empty {
   --section-min-height: 100svh;
 }
 
+
 .section-content-wrapper.section-content-wrapper {
   min-height: var(--section-min-height, auto);
   min-height: calc(var(--section-min-height) - var(--section-height-offset, 0px));
