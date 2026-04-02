@@ -354,7 +354,8 @@
         }
       },
       "custom_css": [
-        "@media (min-width: 768px) {.group-block {position: unset !important; overflow: hidden; } .group-block--content-position-bottom .group-block-content {position: absolute !important; }}"
+        "@media (min-width: 768px) {.group-block {position: unset !important; overflow: hidden; } .group-block--content-position-bottom .group-block-content {position: absolute !important; }}",
+        ".group-block-content p {font-size: 1.2rem !important;}"
       ],
       "settings": {
         "layout_type": "grid",
