@@ -145,7 +145,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<script>\n// Sayfadaki tüm fiyat elementlerini seç\nconst priceElements = document.querySelectorAll('.price');\n\npriceElements.forEach(priceItem => {\n    const text = priceItem.innerText;\n    \n    // Eğer fiyatın içinde nokta varsa parçala\n    if (text.includes('.')) {\n        const parts = text.split('.');\n        // İlk parça rakam, ikinci parça kuruş (.00)\n        priceItem.innerHTML = `${parts[0]}<span class=\"cents\">.${parts[1]}</span>`;\n    }\n});\n</script>"
+                "custom_liquid": "<script>\n(function() {\n    // Tüm fiyat elementlerini seç\n    const priceElements = document.querySelectorAll('.price');\n\n    priceElements.forEach(priceItem => {\n        const text = priceItem.innerText;\n        \n        // Eğer zaten span eklenmişse (cents sınıfı varsa) tekrar işlem yapma\n        if (text.includes('.') && !priceItem.querySelector('.cents')) {\n            const parts = text.split('.');\n            priceItem.innerHTML = `${parts[0]}<span class=\"cents\">.${parts[1]}</span>`;\n        }\n    });\n})();\n</script>"
               },
               "blocks": {}
             },
