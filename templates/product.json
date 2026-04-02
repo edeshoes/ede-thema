@@ -180,7 +180,7 @@
                       "type": "price",
                       "settings": {
                         "show_sale_price_first": true,
-                        "show_installments": true,
+                        "show_installments": false,
                         "show_tax_info": false,
                         "type_preset": "h2",
                         "width": "100%",
@@ -231,7 +231,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "variant_size_unit_prefix": "WOMEN"
               },
               "blocks": {}
             },
@@ -354,7 +355,9 @@
           ]
         }
       },
-      "custom_css": [],
+      "custom_css": [
+        ".compare-at-price {font-size: 1.5rem; color: red;}"
+      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
