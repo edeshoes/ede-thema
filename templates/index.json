@@ -14,7 +14,7 @@
       "custom_css": [],
       "name": "t:names.custom_liquid",
       "settings": {
-        "custom_liquid": "<style>\n@media screen and (max-width: 749px) {\n  .group-block-content .read-more-wrapper div h3 {\n    font-size: 1.5rem !important;\n  }\n.group-block-content a{\n    font-size:.8rem;\n}\n.group-block-content{\nbottom:50px\n}\n}\n.group-block-content{\nbottom:150px\n}\n</style>",
+        "custom_liquid": "<style>\n@media screen and (max-width: 749px) {\n  .group-block-content .read-more-wrapper div h3 {\n    font-size: 1.5rem !important;\n  }\n.group-block-content a{\n    font-size:.8rem;\n}\n.group-block-content{\n   bottom:50px !important;\n }\n}\n.group-block-content{\nbottom:150px\n}\n</style>",
         "color_scheme": "",
         "section_width": "page-width",
         "padding-block-start": 0,
