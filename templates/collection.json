@@ -145,7 +145,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<script>\n(function() {\n    // Tüm fiyat elementlerini seç\n    const priceElements = document.querySelectorAll('.price');\n\n    priceElements.forEach(priceItem => {\n        const text = priceItem.innerText;\n        \n        // Eğer zaten span eklenmişse (cents sınıfı varsa) tekrar işlem yapma\n        if (text.includes('.') && !priceItem.querySelector('.cents')) {\n            const parts = text.split('.');\n            priceItem.innerHTML = `${parts[0]}<span class=\"cents\">.${parts[1]}</span>`;\n        }\n    });\n})();\n</script>"
+                "custom_liquid": "<script>\n(function() {\n    // Tüm fiyat elementlerini seç\n    const priceElements = document.querySelectorAll('.price');\n\n    priceElements.forEach(priceItem => {\n        const text = priceItem.innerText;\n        \n        // Eğer zaten span eklenmişse (cents sınıfı varsa) tekrar işlem yapma\n        if (text.includes('.') && !priceItem.querySelector('.cents')) {\n            const parts = text.split('.');\n            priceItem.innerHTML = `${parts[0]}<span class=\"cents\">.${parts[1]}</span>`;\n        }\n    });\n})();\n</script>\n<style>\n@media screen and (max-width: 60em) {\n    .cents {\n        display: none !important; /* Diğer stillerin üzerine binmesi için !important ekleyebilirsin */\n    }\n}\n</style>"
               },
               "blocks": {}
             },
