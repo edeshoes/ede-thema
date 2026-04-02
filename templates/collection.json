@@ -168,6 +168,7 @@
                 "vertical_alignment_flex_direction_column": "flex-end",
                 "gap": 4,
                 "content_position": "bottom",
+                "content_position_mobile": "bottom",
                 "width": "fill",
                 "custom_width": 35,
                 "width_mobile": "fill",
@@ -208,6 +209,7 @@
                     "vertical_alignment_flex_direction_column": "flex-start",
                     "gap": 4,
                     "content_position": "bottom",
+                    "content_position_mobile": "bottom",
                     "width": "fill",
                     "custom_width": 40,
                     "width_mobile": "fill",
@@ -360,10 +362,22 @@
         "padding-block-start": 2,
         "padding-block-end": 48
       }
+    },
+    "custom_liquid_QHtWAc": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "<script>\nfunction formatPrice() {\n    const priceElement = document.querySelector('.price');\n    const isMobile = window.matchMedia(\"(max-width: 60em)\").matches;\n\n    if (isMobile) {\n        // Mobilde .00 kısmını sil\n        priceElement.innerText = priceElement.innerText.replace('.00', '');\n    } else {\n        // Desktopta (eğer silinmişse) geri ekle veya olduğu gibi bırak\n        // Not: Burası sayfa yenilendiğinde orijinal veriyi korumak için önemlidir.\n    }\n}\n\n// Sayfa yüklendiğinde çalıştır\nformatPrice();\n\n// Ekran boyutu değiştiğinde de kontrol etmesi için:\nwindow.addEventListener('resize', formatPrice);\n</script>",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "section",
-    "main"
+    "main",
+    "custom_liquid_QHtWAc"
   ]
 }
