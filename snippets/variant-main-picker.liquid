@@ -101,6 +101,11 @@
                 <div class="variant-size-unit-toggle" data-size-unit-toggle>
                   <button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="true">US</button>
                   <button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>
+                  <div class="variant-size-unit-label">
+                    <span class="variant-size-unit-label__prefix">{{ size_unit_prefix | escape }}</span>
+                    <span class="variant-size-unit-label__suffix variant-size-unit-label__suffix--us"> / US SIZE</span>
+                    <span class="variant-size-unit-label__suffix variant-size-unit-label__suffix--eu"> / EU SIZE</span>
+                  </div>
                 </div>
               </div>
             {%- endif -%}
@@ -213,6 +218,11 @@
                 <div class="variant-size-unit-toggle" data-size-unit-toggle>
                   <button type="button" class="variant-size-unit-toggle__button" data-unit="US" aria-selected="true">US</button>
                   <button type="button" class="variant-size-unit-toggle__button" data-unit="EU" aria-selected="false">EU</button>
+                  <div class="variant-size-unit-label">
+                    <span class="variant-size-unit-label__prefix">{{ size_unit_prefix | escape }}</span>
+                    <span class="variant-size-unit-label__suffix variant-size-unit-label__suffix--us"> / US SIZE</span>
+                    <span class="variant-size-unit-label__suffix variant-size-unit-label__suffix--eu"> / EU SIZE</span>
+                  </div>
                 </div>
               </div>
             {%- endif -%}

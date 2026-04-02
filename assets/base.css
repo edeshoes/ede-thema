@@ -2319,7 +2319,7 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   row-gap: var(--padding-xs);
 }
 
-.variant-option__header .variant-size-unit-toggle::after {
+.variant-option__header .variant-size-unit-label {
   grid-column: 1 / -1;
   justify-self: end;
   font-size: 11px;
@@ -2329,12 +2329,16 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   opacity: 0.62;
 }
 
-variant-picker[data-size-unit='US'] .variant-option__header .variant-size-unit-toggle::after {
-  content: var(--variant-size-unit-prefix, "WOMEN") ' / US SIZE';
+.variant-option__header .variant-size-unit-label__suffix--eu {
+  display: none;
 }
 
-variant-picker[data-size-unit='EU'] .variant-option__header .variant-size-unit-toggle::after {
-  content: var(--variant-size-unit-prefix, "WOMEN") ' / EU SIZE';
+variant-picker[data-size-unit='EU'] .variant-option__header .variant-size-unit-label__suffix--us {
+  display: none;
+}
+
+variant-picker[data-size-unit='EU'] .variant-option__header .variant-size-unit-label__suffix--eu {
+  display: inline;
 }
 
 .variant-option__size-guide-trigger {

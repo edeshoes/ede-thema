@@ -475,6 +475,25 @@ export default class VariantPicker extends Component {
       legend?.classList.add('variant-option__legend--with-size-toggle');
 
       if (!(toggle instanceof HTMLElement)) return;
+      const label = toggle.querySelector('.variant-size-unit-label');
+      if (!(label instanceof HTMLElement)) {
+        const next = document.createElement('div');
+        next.className = 'variant-size-unit-label';
+        next.innerHTML =
+          '<span class="variant-size-unit-label__prefix"></span><span class="variant-size-unit-label__suffix variant-size-unit-label__suffix--us"> / US SIZE</span><span class="variant-size-unit-label__suffix variant-size-unit-label__suffix--eu"> / EU SIZE</span>';
+        toggle.appendChild(next);
+      }
+      const prefixSpan = toggle.querySelector('.variant-size-unit-label__prefix');
+      if (prefixSpan instanceof HTMLElement && prefixSpan.textContent.trim() === '') {
+        let prefix = getComputedStyle(this).getPropertyValue('--variant-size-unit-prefix').trim();
+        if (
+          (prefix.startsWith('"') && prefix.endsWith('"')) ||
+          (prefix.startsWith("'") && prefix.endsWith("'"))
+        ) {
+          prefix = prefix.slice(1, -1);
+        }
+        prefixSpan.textContent = prefix || 'WOMEN';
+      }
       toggle.addEventListener(
         'click',
         (event) => {
