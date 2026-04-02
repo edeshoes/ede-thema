@@ -145,7 +145,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<script>\nfunction formatPrice() {\n    const priceElement = document.querySelector('.price');\n    const isMobile = window.matchMedia(\"(max-width: 60em)\").matches;\n\n    if (isMobile) {\n        // Mobilde .00 kısmını sil\n        priceElement.innerText = priceElement.innerText.replace('.00', '');\n    } else {\n        // Desktopta (eğer silinmişse) geri ekle veya olduğu gibi bırak\n        // Not: Burası sayfa yenilendiğinde orijinal veriyi korumak için önemlidir.\n    }\n}\n\n// Sayfa yüklendiğinde çalıştır\nformatPrice();\n\n// Ekran boyutu değiştiğinde de kontrol etmesi için:\nwindow.addEventListener('resize', formatPrice);\n</script>"
+                "custom_liquid": "<script>\n// Sayfadaki tüm fiyat elementlerini seç\nconst priceElements = document.querySelectorAll('.price');\n\npriceElements.forEach(priceItem => {\n    const text = priceItem.innerText;\n    \n    // Eğer fiyatın içinde nokta varsa parçala\n    if (text.includes('.')) {\n        const parts = text.split('.');\n        // İlk parça rakam, ikinci parça kuruş (.00)\n        priceItem.innerHTML = `${parts[0]}<span class=\"cents\">.${parts[1]}</span>`;\n    }\n});\n</script>"
               },
               "blocks": {}
             },
