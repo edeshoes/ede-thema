@@ -4,13 +4,16 @@
   Renders the cart products list or empty cart state.
 
   @param {boolean} [force_empty] - Force render empty cart state
+  @param {object} [block] - Block object (optional, when rendered as a block)
+  @param {object} [block_settings] - Settings object override (optional)
+  @param {string} [drawer_context] - Optional context identifier (e.g. 'drawer')
 
   @example
   {% render 'cart-products', force_empty: true %}
 {% enddoc %}
 
 {% liquid
-  assign block_settings = block.settings
+  assign block_settings = block_settings | default: block.settings | default: empty
 %}
 
 <script
@@ -32,6 +35,9 @@
 <div
   {{ block.shopify_attributes }}
   class="cart-items__wrapper"
+  {% if drawer_context != blank %}
+    data-drawer-context="{{ drawer_context }}"
+  {% endif %}
   {% if settings.product_title_case == 'uppercase' %}
     style="--product-title-case: uppercase;"
   {% endif %}

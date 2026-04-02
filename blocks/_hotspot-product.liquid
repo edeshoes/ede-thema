@@ -56,7 +56,7 @@
           <div
             class="hotspot-dialog__product-price {{ section.settings.product_price_preset | default: 'h6' }}"
           >
-            {% render 'price', product_resource: hotspot_product, block: block %}
+            {% render 'price', product_resource: hotspot_product %}
           </div>
         </div>
         {% if hotspot_product != blank %}

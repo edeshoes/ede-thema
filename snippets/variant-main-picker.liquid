@@ -3,6 +3,7 @@
 
   @param {object} product_resource - The product object.
   @param {object} [block] - The block object
+  @param {object} [section] - The parent section object
 {%- enddoc -%}
 
 {% assign block_settings = block.settings %}
@@ -15,10 +16,28 @@
     else
       assign strikethrough_color_mix = '#fff'
     endif
+
+    assign size_unit_prefix = block_settings.variant_size_unit_prefix | strip
+    if size_unit_prefix == blank
+      assign tags_downcased = product_resource.tags | join: ',' | downcase
+      assign type_downcased = product_resource.type | downcase
+      assign vendor_downcased = product_resource.vendor | downcase
+      assign gender_source = tags_downcased | append: ',' | append: type_downcased | append: ',' | append: vendor_downcased
+
+      if gender_source contains 'erkek' or gender_source contains 'men' or gender_source contains 'man'
+        assign size_unit_prefix = 'MEN'
+      elsif gender_source contains 'kadın' or gender_source contains 'kadin' or gender_source contains 'bayan' or gender_source contains 'women' or gender_source contains 'woman'
+        assign size_unit_prefix = 'WOMEN'
+      endif
+    endif
+
+    if size_unit_prefix == blank
+      assign size_unit_prefix = settings.variant_size_unit_prefix | default: 'WOMEN'
+    endif
   %}
   <variant-picker
     class="variant-picker spacing-style variant-picker--{{ block_settings.alignment }}"
-    style="--color-strikethrough-mix: {{ strikethrough_color_mix }}; {% render 'spacing-style', settings: block_settings %}"
+    style="--color-strikethrough-mix: {{ strikethrough_color_mix }}; --variant-size-unit-prefix: {{ size_unit_prefix | json }}; {% render 'spacing-style', settings: block_settings %}"
     data-section-id="{{ section.id }}"
     data-product-id="{{ product_resource.id }}"
     data-block-id="{{ block.id }}"

@@ -23,6 +23,7 @@
   </section>
 {% endif %}
 
+{% stylesheet %}
 .product-lifestyle-grid-section {
   margin-top: 20px;
 }
@@ -61,11 +62,14 @@
     gap: 10px;
   }
 }
+{% endstylesheet %}
 
 {% schema %}
 {
   "name": "Product lifestyle grid",
-  "templates": ["product"],
+  "enabled_on": {
+    "templates": ["product"]
+  },
   "settings": [],
   "presets": [
     {
