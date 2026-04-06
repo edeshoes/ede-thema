@@ -1704,12 +1704,12 @@
             "button_pXgJFr": {
               "type": "button",
               "settings": {
-                "label": "ARF SERIES - RAVEN BLACK",
+                "label": "ARF SERIES",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
+                "width": "custom",
+                "custom_width": 55,
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
