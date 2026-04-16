@@ -338,7 +338,7 @@
             "color_scheme": "scheme-2",
             "background_media": "image",
             "video_position": "cover",
-            "background_image": "shopify://shop_images/oxf3.webp",
+            "background_image": "shopify://shop_images/russet.png",
             "background_image_hover": "shopify://shop_images/oxf1.webp",
             "hover_transition_speed": 0.2,
             "background_image_position": "cover",
