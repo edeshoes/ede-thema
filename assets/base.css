@@ -5288,6 +5288,9 @@ product-recommendations:has([data-has-recommendations='false']) {
   .shopify-payment-button__button {
     border-radius: 18px !important;
     min-height: 58px !important;
+    min-width: 58px !important;
+    display: flex !important;
+    justify-content: center;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
   }
 
