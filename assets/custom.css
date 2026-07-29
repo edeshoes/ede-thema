@@ -189,8 +189,7 @@ body.template-collection .card-information {
 .menu-list__submenu::after,
 .menu-list__submenu::before,
 .mega-menu::after,
-.mega-menu::before,
-.header__underlay {
+.mega-menu::before {
   display: none !important;
   content: none !important;
   background: transparent !important;
