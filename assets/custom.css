@@ -172,19 +172,25 @@ body.template-collection .card-information {
 }
 .header__row .menu-list__list-item a:hover { color: #A66A3D; }
 
-/* ══ MEGA MENU — salt metin, Raum düzeni ══ */
+/* ── MEGA MENU — salt metin, bakır çerçeveli kutu ── */
 .mega-menu {
-  background: #FAF8F4;
-  border-bottom: 1px solid #E5DDD0;
-  box-shadow: 0 18px 30px -22px rgba(43,36,32,.25);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 /* görsel karoları tamamen kapat */
 .mega-menu__link-image { display: none !important; }
 
-/* kolonları düzenli 2 sütunlu metin listesine indir */
+/* panel = kompakt bakır çerçeveli kart */
 .mega-menu__grid {
   display: block !important;
-  padding: 1.8rem 3rem 2.2rem !important;
+  width: max-content !important;
+  margin: .6rem auto 1.4rem !important;
+  padding: 1.6rem 2.6rem 1.9rem !important;
+  background: #FAF8F4 !important;
+  border: 1px solid #A66A3D !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 30px -22px rgba(43,36,32,.25);
 }
 .mega-menu__list {
   display: grid !important;
