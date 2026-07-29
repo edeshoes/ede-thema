@@ -314,7 +314,8 @@ content: "▾";
 
 /* ══ CONTACT — Ede giydirmesi ══ */
 form[action*="contact"] {
-  max-width: 480px !important;
+  width: min(460px, 92vw) !important;
+  max-width: 460px !important;
   margin-inline: auto !important;
   display: grid !important;
   gap: .7rem !important;
@@ -342,11 +343,15 @@ form[action*="contact"] textarea::placeholder {
 }
 form[action*="contact"] input:focus,
 form[action*="contact"] textarea:focus {
-  border-color: #A66A3D !important;
+  border-color: rgba(166,106,61,.45) !important;
   outline: none !important;
-  box-shadow: 0 0 0 3px rgba(166,106,61,.12) !important;
+  box-shadow: 0 0 0 2px rgba(166,106,61,.08) !important;
 }
-form[action*="contact"] textarea { min-height: 120px !important; }
+form[action*="contact"] textarea {
+  min-height: 0 !important;
+  height: 130px !important;
+  resize: vertical !important;
+}
 form[action*="contact"] button[type="submit"],
 form[action*="contact"] .button {
   justify-self: end !important;
@@ -354,7 +359,7 @@ form[action*="contact"] .button {
   color: #FAF8F4 !important;
   border: none !important;
   border-radius: 10px !important;
-  padding: .75rem 2.2rem !important;
+  padding: .55rem 1.7rem !important;
   font-family: 'TRT', sans-serif !important;
   font-size: .85rem !important;
   letter-spacing: 1.5px !important;
