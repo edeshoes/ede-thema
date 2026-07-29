@@ -171,8 +171,8 @@ body.template-collection .card-information {
   letter-spacing: 1.8px;
 }
 .header__row .menu-list__list-item a:hover { color: #A66A3D; }
-.header__row { padding-block: 1.1rem !important; align-items: center !important; }
-.header__row ul:has(> .menu-list__list-item) { column-gap: 2.6rem !important; gap: 2.6rem !important; }
+.header__row { padding-block: .4rem !important; }
+.header__row .menu-list__list-item { margin-inline: 1.15rem !important; }
 
 /* ── MEGA MENU — salt metin, bakır çerçeveli kutu ── */
 .menu-list__submenu,
@@ -262,7 +262,7 @@ strong, b, .price { font-weight: 500; }
 /* dropdown'u olan maddelere minik ok */
 .header__row .menu-list__list-item:has(.menu-list__submenu) > a {
   position: relative !important;
-  padding-right: .9em !important;
+  padding-right: .8em !important;
 }
 .header__row .menu-list__list-item:has(.menu-list__submenu) > a::after {
 content: "▾";
@@ -270,7 +270,7 @@ content: "▾";
   right: .05em;
   top: 50%;
   transform: translateY(-52%);
-  font-size: .8em;
+  font-size: 1em;
   opacity: .6;
 }
 
