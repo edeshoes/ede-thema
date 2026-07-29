@@ -196,6 +196,14 @@ body.template-collection .card-information {
   border: none !important;
   outline: none !important;
   filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.menu-list__submenu,
+.menu-list__submenu-inner,
+.mega-menu {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 .mega-menu::before {
   display: none !important;
