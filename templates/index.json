@@ -78,6 +78,7 @@
         "text_UcMC4G",
         "custom_liquid_Gpa9Ed"
       ],
+      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -114,6 +115,7 @@
     },
     "custom_liquid_kFhNNT": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [],
       "name": "t:names.custom_liquid",
       "settings": {
@@ -388,6 +390,7 @@
         "group_9yqNf6",
         "group_FxcG9F"
       ],
+      "disabled": true,
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -682,6 +685,7 @@
         "group_iNqtqg",
         "group_hdWaUN"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 60em) {.section-wrapper {top: 60px; }}"
       ],
@@ -696,7 +700,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 0,
         "section_width": "page-width",
-        "section_height": "full-screen",
+        "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "scheme-3",
         "background_media": "none",
@@ -978,6 +982,7 @@
         "group_nXhQYm",
         "group_697Lmm"
       ],
+      "disabled": true,
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -1271,6 +1276,7 @@
         "group_rxBMGC",
         "group_epQKEy"
       ],
+      "disabled": true,
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -1564,6 +1570,7 @@
         "group_g7yHV9",
         "group_DVt4Xk"
       ],
+      "disabled": true,
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -1857,6 +1864,7 @@
         "group_thn4dV",
         "group_4YwN3i"
       ],
+      "disabled": true,
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -2150,6 +2158,7 @@
         "group_NA9Nrq",
         "group_QA3WLQ"
       ],
+      "disabled": true,
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
