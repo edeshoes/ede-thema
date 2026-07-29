@@ -173,11 +173,9 @@ body.template-collection .card-information {
 .header__row .menu-list__list-item a:hover { color: #A66A3D; }
 
 /* ── MEGA MENU — salt metin, bakır çerçeveli kutu ── */
-.mega-menu {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
+.mega-menu .section-background,
+.mega-menu > .section-background { display: none !important; }
+.mega-menu { border: none !important; box-shadow: none !important; }
 /* görsel karoları tamamen kapat */
 .mega-menu__link-image { display: none !important; }
 
