@@ -193,7 +193,13 @@ body.template-collection .card-information {
   border: 1px solid rgba(166,106,61,.28) !important;
   border-radius: 10px !important;
   box-shadow: 0 22px 44px -24px rgba(43,36,32,.22) !important;
+  max-height: calc(100vh - 240px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
+.mega-menu__grid::-webkit-scrollbar { width: 6px; }
+.mega-menu__grid::-webkit-scrollbar-thumb { background: rgba(166,106,61,.35); border-radius: 3px; }
+
 .mega-menu__list {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(170px, max-content)) !important;
