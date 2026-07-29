@@ -313,7 +313,7 @@ content: "▾";
 .mega-menu__list { row-gap: .55rem !important; }
 
 /* ══ CONTACT — Ede giydirmesi ══ */
-form[action*="contact"] {
+.page-contact form[action*="contact"] {
   width: min(460px, 92vw) !important;
   max-width: 460px !important;
   margin-inline: auto !important;
@@ -321,11 +321,11 @@ form[action*="contact"] {
   gap: .7rem !important;
 }
 /* sayfa başlığını gizle — nav'dan gelindi, tekrar gereksiz */
-.section-content-wrapper:has(form[action*="contact"]) h1,
-main:has(form[action*="contact"]) h1 { display: none !important; }
+.section-content-wrapper:has(.page-contact form[action*="contact"]) h1,
+main:has(.page-contact form[action*="contact"]) h1 { display: none !important; }
 
-form[action*="contact"] input,
-form[action*="contact"] textarea {
+.page-contact form[action*="contact"] input,
+.page-contact form[action*="contact"] textarea {
   width: 100% !important;
   background: #FCFAF7 !important;
   border: 1px solid #E5DDD0 !important;
@@ -336,24 +336,24 @@ form[action*="contact"] textarea {
   font-weight: 300 !important;
   font-size: .95rem !important;
 }
-form[action*="contact"] input::placeholder,
-form[action*="contact"] textarea::placeholder {
+.page-contact form[action*="contact"] input::placeholder,
+.page-contact form[action*="contact"] textarea::placeholder {
   color: rgba(90,74,61,.45) !important;
   font-weight: 300 !important;
 }
-form[action*="contact"] input:focus,
-form[action*="contact"] textarea:focus {
+.page-contact form[action*="contact"] input:focus,
+.page-contact form[action*="contact"] textarea:focus {
   border-color: rgba(166,106,61,.45) !important;
   outline: none !important;
   box-shadow: 0 0 0 2px rgba(166,106,61,.08) !important;
 }
-form[action*="contact"] textarea {
+.page-contact form[action*="contact"] textarea {
   min-height: 0 !important;
   height: 130px !important;
   resize: vertical !important;
 }
-form[action*="contact"] button[type="submit"],
-form[action*="contact"] .button {
+.page-contact form[action*="contact"] button[type="submit"],
+.page-contact form[action*="contact"] .button {
   justify-self: end !important;
   background: #2B2420 !important;
   color: #FAF8F4 !important;
@@ -365,4 +365,4 @@ form[action*="contact"] .button {
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
 }
-form[action*="contact"] button[type="submit"]:hover { background: #A66A3D !important; }
+.page-contact form[action*="contact"] button[type="submit"]:hover { background: #A66A3D !important; }
