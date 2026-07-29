@@ -189,6 +189,11 @@ body.template-collection .card-information {
 .menu-list__submenu::after,
 .menu-list__submenu::before,
 .mega-menu::after,
+.header__navigation-bar-row {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 .header__underlay {
   --color-submenu: 0 0 0 / 0 !important;
   background: transparent !important;
