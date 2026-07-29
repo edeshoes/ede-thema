@@ -313,6 +313,9 @@ content: "▾";
 .mega-menu__list { row-gap: .55rem !important; }
 
 /* ══ CONTACT — Ede giydirmesi ══ */
+form[action*="contact"]:not(:has(textarea)) {
+  all: revert !important;
+}
 .page-contact form[action*="contact"] {
   width: min(460px, 92vw) !important;
   max-width: 460px !important;
