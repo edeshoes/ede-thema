@@ -314,18 +314,23 @@ content: "▾";
 
 /* ══ CONTACT — Ede giydirmesi ══ */
 form[action*="contact"] {
-  max-width: 560px !important;
+  max-width: 480px !important;
   margin-inline: auto !important;
   display: grid !important;
-  gap: .9rem !important;
+  gap: .7rem !important;
 }
+/* sayfa başlığını gizle — nav'dan gelindi, tekrar gereksiz */
+.section-content-wrapper:has(form[action*="contact"]) h1,
+main:has(form[action*="contact"]) h1 { display: none !important; }
+
 form[action*="contact"] input,
 form[action*="contact"] textarea {
   width: 100% !important;
   background: #FCFAF7 !important;
   border: 1px solid #E5DDD0 !important;
   border-radius: 12px !important;
-  padding: .85rem 1.1rem !important;
+  padding: .65rem .95rem !important;
+  line-height: 1.4 !important;
   font-family: 'TRT', sans-serif !important;
   font-weight: 300 !important;
   font-size: .95rem !important;
@@ -341,10 +346,10 @@ form[action*="contact"] textarea:focus {
   outline: none !important;
   box-shadow: 0 0 0 3px rgba(166,106,61,.12) !important;
 }
-form[action*="contact"] textarea { min-height: 150px !important; }
+form[action*="contact"] textarea { min-height: 120px !important; }
 form[action*="contact"] button[type="submit"],
 form[action*="contact"] .button {
-  justify-self: start !important;
+  justify-self: end !important;
   background: #2B2420 !important;
   color: #FAF8F4 !important;
   border: none !important;
