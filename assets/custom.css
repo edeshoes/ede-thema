@@ -182,7 +182,17 @@ body.template-collection .card-information {
   border: none !important;
   box-shadow: none !important;
 }
-
+.menu-list__list-item::after,
+.menu-list__list-item::before,
+.menu-list__submenu::after,
+.menu-list__submenu::before,
+.mega-menu::after,
+.mega-menu::before,
+.header__underlay {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+}
 /* panel = kompakt bakır çerçeveli kart */
 .mega-menu__grid {
   display: block !important;
