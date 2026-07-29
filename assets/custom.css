@@ -311,3 +311,35 @@ content: "▾";
 }
 .mega-menu__link .wrap-text { font-size: .9rem; letter-spacing: .4px; }
 .mega-menu__list { row-gap: .55rem !important; }
+
+/* ══ CONTACT — Ede giydirmesi ══ */
+.section-content-wrapper:has(.contact-form),
+.contact-form {
+  max-width: 680px !important;
+  margin-inline: auto !important;
+}
+.contact-form input,
+.contact-form textarea {
+  background: #FCFAF7 !important;
+  border: 1px solid #E5DDD0 !important;
+  border-radius: 8px !important;
+  font-family: 'TRT', sans-serif !important;
+  font-weight: 300 !important;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #A66A3D !important;
+  outline: none !important;
+}
+.contact-form textarea { min-height: 180px !important; }
+.contact-form button[type="submit"] {
+  background: #2B2420 !important;
+  color: #FAF8F4 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: .9rem 2.6rem !important;
+  font-family: 'TRT', sans-serif !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+.contact-form button[type="submit"]:hover { background: #A66A3D !important; }
