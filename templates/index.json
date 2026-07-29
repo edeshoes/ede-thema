@@ -11,7 +11,7 @@
   "sections": {
     "custom_liquid_FP6BDP": {
       "type": "custom-liquid",
-      "name": "t:names.custom_liquid",
+      "name": "bosluk olan hero",
       "settings": {
         "custom_liquid": "<div class=\"ede-hero\" id=\"edeHero\">\n\n  <!-- ==================== SLIDE 1 ==================== -->\n  <div class=\"ede-hero__slide is-active\">\n    <picture>\n      <source media=\"(max-width: 768px)\" srcset=\"{{ 'ede-hero-1-mobile.jpg' | file_url }}\">\n      <img src=\"{{ 'ede-hero-1-desktop.jpg' | file_url }}\" alt=\"Handmade barefoot shoes\" loading=\"eager\" fetchpriority=\"high\">\n    </picture>\n    <div class=\"ede-hero__scrim\"></div>\n    <div class=\"ede-hero__content\">\n      <h1>Handmade Barefoot Shoes for Grounded Living</h1>\n      <p>Soft leather. Natural movement. A more connected way to walk — handcrafted in small batches.</p>\n      <p class=\"ede-hero__note\"><em>Made by hand in Gaziantep, Türkiye.</em></p>\n      <div class=\"ede-hero__buttons\">\n        <a class=\"ede-btn ede-btn--solid\" href=\"/collections/women\">Shop Women</a>\n        <a class=\"ede-btn ede-btn--outline\" href=\"/collections/men\">Shop Men</a>\n      </div>\n    </div>\n  </div>\n\n  <!-- ==================== SLIDE 2 ==================== -->\n  <div class=\"ede-hero__slide\">\n    <picture>\n      <source media=\"(max-width: 768px)\" srcset=\"{{ 'ede-hero-2-mobile.jpg' | file_url }}\">\n      <img src=\"{{ 'ede-hero-2-desktop.jpg' | file_url }}\" alt=\"Our atelier in Gaziantep\" loading=\"lazy\">\n    </picture>\n    <div class=\"ede-hero__scrim\"></div>\n    <div class=\"ede-hero__content\">\n      <h2>Three Generations. One Workshop.</h2>\n      <p>Every pair is cut, stitched and finished by hand — the same way since 1950.</p>\n      <div class=\"ede-hero__buttons\">\n        <a class=\"ede-btn ede-btn--solid\" href=\"/pages/process\">Our Process</a>\n      </div>\n    </div>\n  </div>\n\n  <!-- ==================== SLIDE 3 ==================== -->\n  <div class=\"ede-hero__slide\">\n    <picture>\n      <source media=\"(max-width: 768px)\" srcset=\"{{ 'ede-hero-3-mobile.jpg' | file_url }}\">\n      <img src=\"{{ 'ede-hero-3-desktop.jpg' | file_url }}\" alt=\"Feel the ground beneath you\" loading=\"lazy\">\n    </picture>\n    <div class=\"ede-hero__scrim\"></div>\n    <div class=\"ede-hero__content\">\n      <h2>Feel the Ground Again</h2>\n      <p>Zero drop, wide toe box, leather sole with a copper touchpoint — stay connected to the earth.</p>\n      <div class=\"ede-hero__buttons\">\n        <a class=\"ede-btn ede-btn--solid\" href=\"/collections/womens-earthing-chukka-boots\">Explore Earthing</a>\n      </div>\n    </div>\n  </div>\n\n  <!-- Bullet navigasyon -->\n  <div class=\"ede-hero__bullets\" role=\"tablist\" aria-label=\"Hero slides\">\n    <button class=\"is-active\" aria-label=\"Slide 1\"></button>\n    <button aria-label=\"Slide 2\"></button>\n    <button aria-label=\"Slide 3\"></button>\n  </div>\n</div>\n\n<style>\n  .ede-hero {\n    position: relative;\n    width: 100vw;\n    margin-left: calc(50% - 50vw);\n    margin-right: calc(50% - 50vw);\n    aspect-ratio: 2 / 1;           /* edeshoes 2:1 kuralı */\n    max-height: 88vh;\n    overflow: hidden;\n    background: #EDE5DA;\n  }\n  @media (max-width: 768px) {\n    .ede-hero { aspect-ratio: 4 / 5; max-height: none; }  /* dikey mobil */\n  }\n\n  .ede-hero__slide {\n    position: absolute;\n    inset: 0;\n    opacity: 0;\n    transition: opacity .8s ease;\n    pointer-events: none;\n  }\n  .ede-hero__slide.is-active {\n    opacity: 1;\n    pointer-events: auto;\n  }\n  .ede-hero__slide picture,\n  .ede-hero__slide img {\n    position: absolute;\n    inset: 0;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    display: block;\n  }\n\n  /* Okunurluk için yumuşak scrim */\n  .ede-hero__scrim {\n    position: absolute;\n    inset: 0;\n    background: linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.08) 45%, rgba(0,0,0,0) 70%);\n  }\n  @media (max-width: 768px) {\n    .ede-hero__scrim {\n      background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,.35) 100%);\n    }\n  }\n\n  .ede-hero__content {\n    position: absolute;\n    left: 6vw;\n    top: 50%;\n    transform: translateY(-50%);\n    max-width: 560px;\n    color: #FFFFFF;\n    z-index: 2;\n  }\n  @media (max-width: 768px) {\n    .ede-hero__content {\n      left: 6vw; right: 6vw;\n      top: auto; bottom: 8vh;\n      transform: none;\n      max-width: none;\n    }\n  }\n\n  .ede-hero__content h1,\n  .ede-hero__content h2 {\n    font-size: clamp(30px, 4.2vw, 58px);\n    line-height: 1.08;\n    margin: 0 0 18px;\n    font-weight: 500;\n  }\n  .ede-hero__content p {\n    font-size: clamp(15px, 1.2vw, 18px);\n    line-height: 1.5;\n    margin: 0 0 10px;\n  }\n  .ede-hero__note { opacity: .92; }\n\n  .ede-hero__buttons {\n    display: flex;\n    gap: 14px;\n    margin-top: 22px;\n    flex-wrap: wrap;\n  }\n  .ede-btn {\n    display: inline-block;\n    padding: 14px 30px;\n    font-size: 15px;\n    text-decoration: none;\n    letter-spacing: .02em;\n    transition: opacity .25s ease, background-color .25s ease;\n  }\n  .ede-btn--solid {\n    background: #7A5843;\n    color: #fff;\n  }\n  .ede-btn--solid:hover { opacity: .9; }\n  .ede-btn--outline {\n    border: 1px solid rgba(255,255,255,.85);\n    color: #fff;\n  }\n  .ede-btn--outline:hover { background: rgba(255,255,255,.12); }\n\n  /* Raum tarzı bullet'lar — sağ alt */\n  .ede-hero__bullets {\n    position: absolute;\n    right: 28px;\n    bottom: 22px;\n    display: flex;\n    gap: 10px;\n    z-index: 3;\n  }\n  .ede-hero__bullets button {\n    width: 9px;\n    height: 9px;\n    border-radius: 50%;\n    border: 1px solid rgba(255,255,255,.9);\n    background: transparent;\n    padding: 0;\n    cursor: pointer;\n    transition: background-color .3s ease, transform .3s ease;\n  }\n  .ede-hero__bullets button.is-active {\n    background: #fff;\n    transform: scale(1.15);\n  }\n</style>\n\n<script>\n  (function () {\n    var INTERVAL = 7000;   /* 7 saniye — edeshoes kuralı */\n\n    var root = document.getElementById('edeHero');\n    if (!root) return;\n    var slides = root.querySelectorAll('.ede-hero__slide');\n    var bullets = root.querySelectorAll('.ede-hero__bullets button');\n    var index = 0, timer = null;\n\n    function show(i) {\n      slides[index].classList.remove('is-active');\n      bullets[index].classList.remove('is-active');\n      index = i % slides.length;\n      slides[index].classList.add('is-active');\n      bullets[index].classList.add('is-active');\n    }\n    function next() { show(index + 1); }\n    function restart() {\n      clearInterval(timer);\n      timer = setInterval(next, INTERVAL);\n    }\n\n    bullets.forEach(function (b, i) {\n      b.addEventListener('click', function () { show(i); restart(); });\n    });\n\n    restart();\n  })();\n</script>",
         "color_scheme": "",
@@ -20,147 +20,20 @@
         "padding-block-end": 0
       }
     },
-    "hero_8wnt6F": {
-      "type": "hero",
-      "blocks": {
-        "text_nKtXiV": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "",
-            "width": "fit-content",
-            "max_width": "narrow",
-            "alignment": "left",
-            "type_preset": "h1",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "text_UcMC4G": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "",
-            "width": "fit-content",
-            "max_width": "narrow",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 32,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_nKtXiV",
-        "text_UcMC4G"
-      ],
-      "disabled": true,
-      "name": "t:names.hero",
+    "custom_liquid_XtyzBq": {
+      "type": "custom-liquid",
+      "name": "model grid",
       "settings": {
-        "media_type_1": "image",
-        "image_1": "shopify://shop_images/20_a23e28de-4c2c-4018-9ac0-78a62b0c434c.png",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": true,
-        "media_type_1_mobile": "image",
-        "image_1_mobile": "shopify://shop_images/slider1_218cdfa9-dd59-4a2d-9e0d-8dd9f75c314d.png",
-        "media_type_2_mobile": "image",
-        "link": "",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
-        "section_width": "full-width",
-        "section_height": "custom",
-        "section_height_custom": 85,
-        "color_scheme": "scheme-5",
-        "toggle_overlay": true,
-        "overlay_color": "#00000026",
-        "overlay_style": "gradient",
-        "gradient_direction": "to top",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
+        "custom_liquid": "<!-- ============================================================\n     EDEBAREFOOT MODEL KART GRID v4 (NİHAİ)\n     Düzeltmeler:\n     · Karolar VARSAYILAN GÖRÜNÜR — belirme animasyonu ancak script\n       çalışırsa devreye girer (tema editörü yeniden çizimlerinde\n       görünmez kalma sorunu çözüldü)\n     · shopify:section:load dinleyicisi — editörde her yeniden\n       çizimde kendini yeniden başlatır\n     · Etiket konumu %12 (ayakkabıya yakın) · Tıklama garantisi dahil\n\n     KURULUM: \"model grid\" bölümündeki eski kodu tamamen sil,\n     bu dosyanın TAMAMINI yapıştır, Save.\n     ============================================================ -->\n\n{% assign WOMEN_CARDS = \"womens-barefoot-loafers:Loafers,womens-barefoot-boat-shoes:Boat Shoes,barefoot-ballet-flats:Ballet Flats,womens-barefoot-flats:Flats,womens-barefoot-oxfords:Oxfords,womens-chelsea-boots:Chelsea Boots,womens-barefoot-moccasins:Moccasins,womens-barefoot-boots:Boots\" | split: \",\" %}\n{% assign MEN_CARDS = \"mens-barefoot-loafers:Loafers,mens-barefoot-boat-shoes:Boat Shoes,mens-barefoot-oxfords:Oxfords,mens-chelsea-boots:Chelsea Boots\" | split: \",\" %}\n\n<div class=\"ede-vitrine\" id=\"edeVitrine\">\n\n  <div class=\"ede-vitrine__group\">\n    <h2 class=\"ede-vitrine__title\">Women</h2>\n    <div class=\"ede-vitrine__grid\">\n      {% for item in WOMEN_CARDS %}\n        {% assign parts = item | split: \":\" %}\n        {% assign c = collections[parts[0]] %}\n        {% assign img1 = c.image %}\n        {% if img1 == blank %}{% assign img1 = c.products.first.featured_image %}{% endif %}\n        {% assign img2 = c.products[1].featured_image %}\n        {% if img2 == blank %}{% assign img2 = c.products.first.images[1] %}{% endif %}\n        <a class=\"ede-tile\" href=\"/collections/{{ parts[0] }}\" style=\"--d: {{ forloop.index0 | modulo: 4 | times: 80 }}ms\">\n          {% if img1 %}<img class=\"ede-tile__img1\" src=\"{{ img1 | image_url: width: 1000 }}\" alt=\"{{ parts[1] }}\" loading=\"lazy\">{% endif %}\n          {% if img2 %}<img class=\"ede-tile__img2\" src=\"{{ img2 | image_url: width: 1000 }}\" alt=\"\" loading=\"lazy\" aria-hidden=\"true\">{% endif %}\n          <span class=\"ede-tile__meta\">\n            <span class=\"ede-tile__label\">{{ parts[1] }}</span>\n            <span class=\"ede-tile__price\">{{ c.products.first.price | money }}</span>\n          </span>\n        </a>\n      {% endfor %}\n    </div>\n    <div class=\"ede-vitrine__more\"><a href=\"/collections/women\">View all women</a></div>\n  </div>\n\n  <div class=\"ede-vitrine__group\">\n    <h2 class=\"ede-vitrine__title\">Men</h2>\n    <div class=\"ede-vitrine__grid\">\n      {% for item in MEN_CARDS %}\n        {% assign parts = item | split: \":\" %}\n        {% assign c = collections[parts[0]] %}\n        {% assign img1 = c.image %}\n        {% if img1 == blank %}{% assign img1 = c.products.first.featured_image %}{% endif %}\n        {% assign img2 = c.products[1].featured_image %}\n        {% if img2 == blank %}{% assign img2 = c.products.first.images[1] %}{% endif %}\n        <a class=\"ede-tile\" href=\"/collections/{{ parts[0] }}\" style=\"--d: {{ forloop.index0 | modulo: 4 | times: 80 }}ms\">\n          {% if img1 %}<img class=\"ede-tile__img1\" src=\"{{ img1 | image_url: width: 1000 }}\" alt=\"{{ parts[1] }}\" loading=\"lazy\">{% endif %}\n          {% if img2 %}<img class=\"ede-tile__img2\" src=\"{{ img2 | image_url: width: 1000 }}\" alt=\"\" loading=\"lazy\" aria-hidden=\"true\">{% endif %}\n          <span class=\"ede-tile__meta\">\n            <span class=\"ede-tile__label\">{{ parts[1] }}</span>\n            <span class=\"ede-tile__price\">{{ c.products.first.price | money }}</span>\n          </span>\n        </a>\n      {% endfor %}\n    </div>\n    <div class=\"ede-vitrine__more\"><a href=\"/collections/men\">View all men</a></div>\n  </div>\n\n</div>\n\n<style>\n  .ede-vitrine {\n    width: 100vw;\n    margin-left: calc(50% - 50vw);\n    margin-right: calc(50% - 50vw);\n    padding: 56px 0 24px;\n  }\n  .ede-vitrine__group + .ede-vitrine__group { margin-top: 40px; }\n\n  .ede-vitrine__title {\n    text-align: center;\n    font-size: clamp(24px, 2.4vw, 32px);\n    font-weight: 500;\n    letter-spacing: .02em;\n    margin: 0 0 30px;\n  }\n\n  .ede-vitrine__grid {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 0;\n  }\n  @media (max-width: 900px) {\n    .ede-vitrine__grid { grid-template-columns: repeat(2, 1fr); }\n  }\n\n  /* VARSAYILAN: görünür. Animasyon başlangıç durumu ancak\n     script .is-js ekleyebilirse uygulanır. */\n  .ede-tile {\n    position: relative;\n    display: block;\n    aspect-ratio: 4 / 5;\n    overflow: hidden;\n    text-decoration: none;\n    color: #2B2420;\n    background: #F2EDE6;\n  }\n  .ede-vitrine.is-js .ede-tile {\n    opacity: 0;\n    transform: translateY(26px);\n    transition: opacity .7s ease var(--d, 0ms), transform .7s ease var(--d, 0ms);\n  }\n  .ede-vitrine.is-js .ede-tile.is-revealed {\n    opacity: 1;\n    transform: translateY(0);\n  }\n\n  .ede-tile img {\n    position: absolute;\n    inset: 0;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    display: block;\n  }\n  .ede-tile__img2 { opacity: 0; transition: opacity .45s ease; }\n\n  .ede-tile__meta {\n    position: absolute;\n    left: 0; right: 0;\n    bottom: 12%;\n    text-align: center;\n    z-index: 2;\n    pointer-events: none;\n  }\n  .ede-tile__label {\n    display: block;\n    font-size: clamp(13px, 1.1vw, 16px);\n    letter-spacing: .03em;\n  }\n  .ede-tile__price {\n    display: block;\n    margin-top: 3px;\n    font-size: clamp(12px, 1vw, 14px);\n    color: #6B6258;\n    opacity: 0;\n    transition: opacity .45s ease;\n  }\n\n  @media (hover: hover) {\n    .ede-tile:hover .ede-tile__img2 { opacity: 1; }\n    .ede-tile:hover .ede-tile__price { opacity: .7; }\n  }\n  .ede-tile.is-inview .ede-tile__img2 { opacity: 1; }\n  .ede-tile.is-inview .ede-tile__price { opacity: .7; }\n\n  .ede-vitrine__more {\n    text-align: center;\n    margin-top: 26px;\n  }\n  .ede-vitrine__more a {\n    font-size: 14px;\n    color: #7A5843;\n    text-decoration: none;\n    border-bottom: 1px solid currentColor;\n    padding-bottom: 2px;\n  }\n</style>\n\n<script>\n  (function () {\n    function initEdeVitrine() {\n      var root = document.getElementById('edeVitrine');\n      if (!root || root.dataset.edeInit === '1') return;\n      root.dataset.edeInit = '1';\n\n      var tiles = Array.prototype.slice.call(root.querySelectorAll('.ede-tile'));\n\n      /* Tıklama garantisi */\n      tiles.forEach(function (t) {\n        t.addEventListener('click', function (ev) {\n          ev.preventDefault();\n          ev.stopPropagation();\n          window.location.assign(t.getAttribute('href'));\n        }, true);\n      });\n\n      /* Belirme animasyonu — script çalışıyorsa aktive et */\n      if ('IntersectionObserver' in window) {\n        root.classList.add('is-js');\n        var revealObs = new IntersectionObserver(function (entries) {\n          entries.forEach(function (e) {\n            if (e.isIntersecting) {\n              e.target.classList.add('is-revealed');\n              revealObs.unobserve(e.target);\n            }\n          });\n        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });\n        tiles.forEach(function (t) { revealObs.observe(t); });\n      }\n\n      /* Dokunmatik: orta bantta otomatik ikinci görsel + fiyat */\n      var isTouch = window.matchMedia('(hover: none)').matches;\n      if (isTouch && 'IntersectionObserver' in window) {\n        var inviewObs = new IntersectionObserver(function (entries) {\n          entries.forEach(function (e) {\n            e.target.classList.toggle('is-inview', e.isIntersecting);\n          });\n        }, { rootMargin: '-35% 0px -35% 0px' });\n        tiles.forEach(function (t) { inviewObs.observe(t); });\n      }\n    }\n\n    if (document.readyState === 'loading') {\n      document.addEventListener('DOMContentLoaded', initEdeVitrine);\n    } else {\n      initEdeVitrine();\n    }\n    /* Tema editörü bölümü yeniden çizdiğinde yeniden başlat */\n    document.addEventListener('shopify:section:load', function () {\n      var root = document.getElementById('edeVitrine');\n      if (root) root.dataset.edeInit = '';\n      initEdeVitrine();\n    });\n  })();\n</script>",
+        "color_scheme": "",
+        "section_width": "page-width",
         "padding-block-start": 0,
         "padding-block-end": 0
-      }
-    },
-    "marquee_9AMajF": {
-      "type": "marquee",
-      "blocks": {
-        "text_RGxHtE": {
-          "type": "text",
-          "settings": {
-            "text": "<h1><a href=\"/collections/all\" title=\"All products\">SHOP NOW </a></h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h1",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "tight",
-            "letter_spacing": "tight",
-            "case": "none",
-            "wrap": "nowrap",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_RGxHtE"
-      ],
-      "disabled": true,
-      "name": "t:names.marquee_section",
-      "settings": {
-        "movement_direction": "normal",
-        "color_scheme": "scheme-5",
-        "padding-block-start": 48,
-        "padding-block-end": 48,
-        "gap_between_elements": 100
       }
     }
   },
   "order": [
     "custom_liquid_FP6BDP",
-    "hero_8wnt6F",
-    "marquee_9AMajF"
+    "custom_liquid_XtyzBq"
   ]
 }
