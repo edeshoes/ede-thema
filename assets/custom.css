@@ -195,7 +195,11 @@ body.template-collection .card-information {
 }
 /* panel = kompakt bakır çerçeveli kart */
 .mega-menu__grid {
-  display: block !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(170px, max-content)) !important;
+  column-gap: 4.5rem !important;
+  row-gap: .45rem !important;
+  align-items: start !important;
   width: max-content !important;
   margin: .6rem auto 1.4rem !important;
   padding: 1.6rem 2.6rem 1.9rem !important;
@@ -210,17 +214,7 @@ body.template-collection .card-information {
 .mega-menu__grid::-webkit-scrollbar { width: 6px; }
 .mega-menu__grid::-webkit-scrollbar-thumb { background: rgba(166,106,61,.35); border-radius: 3px; }
 
-.mega-menu__list {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(170px, 1fr)) !important;
-  grid-auto-flow: row !important;
-  column-gap: 4.5rem !important;
-  row-gap: .45rem !important;
-  justify-content: start !important;
-  width: max-content !important;
-}
-.mega-menu__list > li { width: auto !important; }
-}
+.mega-menu__list, .mega-menu__list > li { display: contents !important; }
 .mega-menu__column {
   width: auto !important;
   margin: 0 !important;
@@ -263,12 +257,14 @@ strong, b, .price { font-weight: 500; }
   font-weight: 400;
 }
 /* dropdown'u olan maddelere minik ok */
+.header__row .menu-list__list-item > a { white-space: nowrap !important; }
 .header__row .menu-list__list-item:has(.menu-list__submenu) > a::after {
   content: "▾";
-  font-size: .62em;
-  margin-left: .4em;
+  display: inline-block;
+  font-size: .6em;
+  margin-left: .35em;
   opacity: .55;
-  vertical-align: .15em;
+  transform: translateY(-.1em);
 }
 
 /* dropdown: ince kesim + nefes */
