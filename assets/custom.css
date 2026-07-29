@@ -257,7 +257,12 @@ strong, b, .price { font-weight: 500; }
   font-weight: 400;
 }
 /* dropdown'u olan maddelere minik ok */
-.header__row .menu-list__list-item > a { white-space: nowrap !important; }
+.header__row .menu-list__list-item > a {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
 .header__row .menu-list__list-item:has(.menu-list__submenu) > a::after {
   content: "▾";
   display: inline-block;
