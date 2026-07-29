@@ -189,7 +189,14 @@ body.template-collection .card-information {
 .menu-list__submenu::after,
 .menu-list__submenu::before,
 .mega-menu::after,
-.header__underlay { --color-submenu: 0 0 0 / 0 !important; background: transparent !important; }
+.header__underlay {
+  --color-submenu: 0 0 0 / 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  filter: none !important;
+}
 .mega-menu::before {
   display: none !important;
   content: none !important;
