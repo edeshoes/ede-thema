@@ -212,11 +212,14 @@ body.template-collection .card-information {
 
 .mega-menu__list {
   display: grid !important;
-  grid-template-columns: repeat(2, minmax(170px, max-content)) !important;
+  grid-template-columns: repeat(2, minmax(170px, 1fr)) !important;
   grid-auto-flow: row !important;
   column-gap: 4.5rem !important;
-  row-gap: .4rem !important;
+  row-gap: .45rem !important;
   justify-content: start !important;
+  width: max-content !important;
+}
+.mega-menu__list > li { width: auto !important; }
 }
 .mega-menu__column {
   width: auto !important;
@@ -257,7 +260,15 @@ strong, b, .price { font-weight: 500; }
 .header__row .menu-list__list-item a,
 .header__row .menu-list__list-item summary {
   font-family: 'TRT', sans-serif !important;
-  font-weight: 300;
+  font-weight: 400;
+}
+/* dropdown'u olan maddelere minik ok */
+.header__row .menu-list__list-item:has(.menu-list__submenu) > a::after {
+  content: "▾";
+  font-size: .62em;
+  margin-left: .4em;
+  opacity: .55;
+  vertical-align: .15em;
 }
 
 /* dropdown: ince kesim + nefes */
