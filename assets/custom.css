@@ -214,3 +214,38 @@ body.template-collection .card-information {
 }
 .mega-menu__link:hover { color: #A66A3D; }
 .mega-menu__link .wrap-text { text-transform: none; font-size: .95rem; }
+
+/* ══ TRT — KURUMSAL FONT ══ */
+@font-face { font-family:'TRT'; src:url('/cdn/shop/files/TRT-LIGHT.TTF') format('truetype'); font-weight:300; font-style:normal; font-display:swap; }
+@font-face { font-family:'TRT'; src:url('/cdn/shop/files/TRT-LIGHTITALIC.TTF') format('truetype'); font-weight:300; font-style:italic; font-display:swap; }
+@font-face { font-family:'TRT'; src:url('/cdn/shop/files/TRT-REGULAR.TTF') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'TRT'; src:url('/cdn/shop/files/TRT-REGULARITALIC.TTF') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
+@font-face { font-family:'TRT'; src:url('/cdn/shop/files/TRT-MEDIUM.TTF') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'TRT'; src:url('/cdn/shop/files/TRT-MEDIUMITALIC.TTF') format('truetype'); font-weight:500; font-style:italic; font-display:swap; }
+@font-face { font-family:'TRT'; src:url('/cdn/shop/files/TRT-BOLD.TTF') format('truetype'); font-weight:700; font-style:normal; font-display:swap; }
+@font-face { font-family:'TRT'; src:url('/cdn/shop/files/TRT-BOLDITALIC.TTF') format('truetype'); font-weight:700; font-style:italic; font-display:swap; }
+
+/* site geneli uygulama */
+body, p, span, a, li, input, textarea, select, button, .button {
+  font-family: 'TRT', 'Jost', sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'TRT', 'Jost', sans-serif !important;
+  font-weight: 300 !important;
+}
+strong, b, .price { font-weight: 500; }
+
+/* nav: TRT-LIGHT ile zarif hal */
+.header__row .menu-list__list-item a,
+.header__row .menu-list__list-item summary {
+  font-family: 'TRT', sans-serif !important;
+  font-weight: 300;
+}
+
+/* dropdown: ince kesim + nefes */
+.mega-menu__link {
+  font-family: 'TRT', sans-serif !important;
+  font-weight: 300 !important;
+}
+.mega-menu__link .wrap-text { font-size: .9rem; letter-spacing: .4px; }
+.mega-menu__list { row-gap: .55rem !important; }
