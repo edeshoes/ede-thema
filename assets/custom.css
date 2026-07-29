@@ -313,33 +313,46 @@ content: "▾";
 .mega-menu__list { row-gap: .55rem !important; }
 
 /* ══ CONTACT — Ede giydirmesi ══ */
-.section-content-wrapper:has(.contact-form),
-.contact-form {
-  max-width: 680px !important;
+form[action*="contact"] {
+  max-width: 560px !important;
   margin-inline: auto !important;
+  display: grid !important;
+  gap: .9rem !important;
 }
-.contact-form input,
-.contact-form textarea {
+form[action*="contact"] input,
+form[action*="contact"] textarea {
+  width: 100% !important;
   background: #FCFAF7 !important;
   border: 1px solid #E5DDD0 !important;
-  border-radius: 8px !important;
+  border-radius: 12px !important;
+  padding: .85rem 1.1rem !important;
   font-family: 'TRT', sans-serif !important;
   font-weight: 300 !important;
+  font-size: .95rem !important;
 }
-.contact-form input:focus,
-.contact-form textarea:focus {
+form[action*="contact"] input::placeholder,
+form[action*="contact"] textarea::placeholder {
+  color: rgba(90,74,61,.45) !important;
+  font-weight: 300 !important;
+}
+form[action*="contact"] input:focus,
+form[action*="contact"] textarea:focus {
   border-color: #A66A3D !important;
   outline: none !important;
+  box-shadow: 0 0 0 3px rgba(166,106,61,.12) !important;
 }
-.contact-form textarea { min-height: 180px !important; }
-.contact-form button[type="submit"] {
+form[action*="contact"] textarea { min-height: 150px !important; }
+form[action*="contact"] button[type="submit"],
+form[action*="contact"] .button {
+  justify-self: start !important;
   background: #2B2420 !important;
   color: #FAF8F4 !important;
   border: none !important;
-  border-radius: 8px !important;
-  padding: .9rem 2.6rem !important;
+  border-radius: 10px !important;
+  padding: .75rem 2.2rem !important;
   font-family: 'TRT', sans-serif !important;
+  font-size: .85rem !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
 }
-.contact-form button[type="submit"]:hover { background: #A66A3D !important; }
+form[action*="contact"] button[type="submit"]:hover { background: #A66A3D !important; }
