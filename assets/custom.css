@@ -215,7 +215,11 @@ body.template-collection .card-information {
   content: none !important;
   background: transparent !important;
 }
-.mega-menu { padding-top: .9rem !important; }
+.mega-menu {
+  padding-top: .9rem !important;
+  padding-bottom: 1.4rem !important;
+  padding-inline: 4rem !important;
+}
 /* panel = kompakt bakır çerçeveli kart */
 .mega-menu__grid {
   display: grid !important;
@@ -224,7 +228,7 @@ body.template-collection .card-information {
   row-gap: .45rem !important;
   align-items: start !important;
   width: max-content !important;
-  margin: 0 auto 1.4rem !important;
+  margin: 0 auto 0 !important;
   padding: 1.6rem 2.6rem 1.9rem !important;
   background: #FAF8F4 !important;
   border: 1px solid rgba(166,106,61,.28) !important;
